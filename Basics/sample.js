@@ -10,5 +10,5 @@ switch(color)
   console.log('The color is '+color);
   break;
   case 'blue':
-  console.log(`The colors is not ${color}`);
+  console.log(`The colors is ${color}`);
 }

@@ -18,7 +18,7 @@ using StarvisDB;
 using MahApps.Metro.Controls;
 using System.Windows.Media.Animation;
 using Starvis.Properties;
-
+using Starvis.Utilities;
 namespace Starvis
 {
     /// <summary>
@@ -173,6 +173,11 @@ namespace Starvis
         private void MainWindowTest_Loaded(object sender, RoutedEventArgs e)
         {
             new BaseWindow().SettingsInsertUpdate("Mode", "Text Mode");
+        }
+
+        private void Listen_Click(object sender, RoutedEventArgs e)
+        {
+            SpeechToText.ConverSpeechToText();
         }
     }
 }

@@ -48,7 +48,8 @@
                                 <GradientStop Color="#FF53C271" Offset="0.135"/>
                             </LinearGradientBrush>
                         </Grid.Background>
-                        <TextBox Margin="10,4,394,0" Controls:TextBoxHelper.Watermark="Type Your Command...."   TextChanged="TextBox_TextChanged" Height="25" Width="400" RenderTransformOrigin="0.774,0.414"/>
+                        <TextBox Margin="10,19,151,15" Controls:TextBoxHelper.Watermark="Type Your Command...."   TextChanged="TextBox_TextChanged" Height="25" RenderTransformOrigin="0.774,0.414"/>
+                        <Button Content="Listen" HorizontalAlignment="Left" Margin="473,19,0,0" VerticalAlignment="Top" Width="91" RenderTransformOrigin="0.244,1.474" Click="Listen_Click"/>
                     </Grid>
                     <Grid Height="438">
                         <Grid.Background>
@@ -58,9 +59,10 @@
                             </LinearGradientBrush>
                         </Grid.Background>
                         <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="*"/>
-                            <ColumnDefinition Width="*"/>
-                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="150*"/>
+                            <ColumnDefinition Width="51*"/>
+                            <ColumnDefinition Width="202*"/>
+                            <ColumnDefinition Width="201*"/>
 
                         </Grid.ColumnDefinitions>
                         <Grid.RowDefinitions>
@@ -68,7 +70,7 @@
                             <RowDefinition Height="184"/>
                             <RowDefinition/>
                         </Grid.RowDefinitions>
-                        <StackPanel Panel.ZIndex="2" x:Name="pnlLeftMenu" Orientation="Horizontal" HorizontalAlignment="Left" Margin="-150,0,0,-31.8" Grid.RowSpan="3" Grid.ColumnSpan="2" Width="198">
+                        <StackPanel Panel.ZIndex="2" x:Name="pnlLeftMenu" Orientation="Horizontal" HorizontalAlignment="Left" Margin="-150,0,0,-31.6" Grid.RowSpan="3" Width="198">
                             <Border  BorderThickness="0,0,0,8" Width="150" Background="#FF53C271" Margin="0,0,0,0" >
                                 <TabControl x:Name="Tabs"  TabStripPlacement="Right" SelectionChanged="TabControl_SelectionChanged"  Height="438" VerticalAlignment="Top" Margin="0.2,0.2,-0.4,0" Background="#FF53C271" Foreground="#FF53C271">
                                     <TabControl.Resources>
@@ -406,8 +408,8 @@
 
                             </Grid>
                         </StackPanel>
-                        <Label Content="hello" Margin="0,0,5.8,184" Grid.RowSpan="2"/>
-                        <Grid Margin="9.4,10,10,21.2" Grid.RowSpan="3" Grid.Column="2" >
+                        <Label Content="hello" Margin="0,0,5.6,184" Grid.RowSpan="2" Grid.ColumnSpan="2"/>
+                        <Grid Margin="9.8,10,10,21.4" Grid.RowSpan="3" Grid.Column="3" >
 
                             <local:Profile x:Name="ProfileTab" VerticalAlignment="Top" Margin="0,0,0.4,-23.4" Loaded="Profiles_Loaded" Height="358" Visibility="Visible"/>
                             <local:Outlook x:Name="OutlookTab" VerticalAlignment="Top" Margin="0,0,10,-21"  Height="358" Visibility="Hidden"/>

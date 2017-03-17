@@ -3,10 +3,16 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
+             xmlns:ControlzEx="clr-namespace:ControlzEx;assembly=MahApps.Metro"
              xmlns:local="clr-namespace:Starvis"
-             mc:Ignorable="d" 
-             d:DesignHeight="300" d:DesignWidth="300">
-    <Grid>
-            
+             mc:Ignorable="d">
+    <Grid Margin="-261,0,0,0">
+
+        <DataGrid x:Name="dataGrid" Margin="28,129,35,35.6"/>
+        <TextBox Controls:TextBoxHelper.Watermark="Enter your url" x:Name="txtUrl" HorizontalAlignment="Left" Height="23" Margin="23,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="476" />
+        <TextBox  Controls:TextBoxHelper.Watermark="Enter you text command" x:Name="txtText" HorizontalAlignment="Left" Height="23" Margin="26,47,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="118"/>
+        <TextBox Controls:TextBoxHelper.Watermark="Enter your voice command" x:Name="txtVoice" HorizontalAlignment="Left" Height="23" Margin="155,47,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="356"/>
+        <Button Content="Add" HorizontalAlignment="Left" Margin="99,87,0,0" VerticalAlignment="Top" Width="283" Click="Add_Click"/>
     </Grid>
 </UserControl>

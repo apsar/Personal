@@ -171,15 +171,15 @@ namespace Starvis
             
         //}
 
-        private void MainWindowTest_Loaded(object sender, RoutedEventArgs e)
-        {
-            new BaseWindow().SettingsInsertUpdate("Mode", "Text Mode");
-        }
+        //private void MainWindowTest_Loaded(object sender, RoutedEventArgs e)
+        //{
+        //    new BaseWindow().SettingsInsertUpdate("Mode", "Text Mode");
+        //}
 
-        private void Listen_Click(object sender, RoutedEventArgs e)
-        {
-            SpeechToText.ConverSpeechToText();
-        }
+        //private void Listen_Click(object sender, RoutedEventArgs e)
+        //{
+        //    SpeechToText.ConverSpeechToText();
+        //}
 
         private void TextBox_TextChanged(object sender, RoutedEventArgs e)
         {
@@ -198,8 +198,7 @@ namespace Starvis
                 }
             }
         }
-<<<<<<< HEAD
-=======
+
 
         private void MainWindowTest_Loaded(object sender, RoutedEventArgs e)
         {
@@ -217,7 +216,11 @@ namespace Starvis
             if (e.Key != System.Windows.Input.Key.Enter) return;
 
             e.Handled = true;
-            string textCommand = textMain.Text;
+
+            Batch b = new Batch();
+            //string textValue = this.MainText.Text;
+           
+            string textCommand = MainText.Text;
             if(!string.IsNullOrWhiteSpace(textCommand))
             {
                 if(!textCommand.Contains(" "))
@@ -233,6 +236,7 @@ namespace Starvis
                     }
                     else
                     {
+    
                         CommandExecution cmdExecution = new CommandExecution();
                         int RowID;
                         var db = new Models();
@@ -253,6 +257,10 @@ namespace Starvis
                                 cmdExecution.CopyToClipBoard(RowID);
                             }
 
+                        }
+                        else if (commands[0].Equals("A", StringComparison.InvariantCultureIgnoreCase))
+                        {
+                            b.findexe(commands[0]);
                         }
                         else if (commands[0].Equals("B", StringComparison.InvariantCultureIgnoreCase))
                         {
@@ -304,6 +312,6 @@ namespace Starvis
                 }
             }
         }
->>>>>>> 773317fa188c14090ab8a39ee5ee1c41504be0ac
+
     }
 }

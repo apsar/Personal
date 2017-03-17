@@ -47,18 +47,13 @@
                                 <GradientStop Color="#FF53C271" Offset="0.135"/>
                             </LinearGradientBrush>
                         </Grid.Background>
-<<<<<<< HEAD
-                        <TextBox Margin="10,31,149,22" x:Name="MainText" Controls:TextBoxHelper.Watermark="Type Your Command...." RenderTransformOrigin="0.774,0.414"/>
+
+                        <TextBox Margin="10,31,149,22" KeyUp="TextBox_KeyUp" x:Name="MainText" Controls:TextBoxHelper.Watermark="Type Your Command...." RenderTransformOrigin="0.774,0.414"/>
                         <Button HorizontalAlignment="Left" Margin="461,31,0,0" Content="Get" VerticalAlignment="Top" Width="52px" Height="42px"  Click="TextBox_TextChanged" RenderTransformOrigin="2.62,0.579"/>
                         <Button HorizontalAlignment="Left" Margin="518,31,0,0" VerticalAlignment="Top" Width="52" Height="42px"  Click="Listen_Click">
                             <Image Source="/images/appbar.microphone.google.png" Width="32px" Height="32px" />
                         </Button>
-=======
-                        <TextBox Margin="10,19,151,15" x:Name="textMain" Controls:TextBoxHelper.Watermark="Type Your Command...."   TextChanged="TextBox_TextChanged" KeyUp="TextBox_KeyUp" Height="25" RenderTransformOrigin="0.774,0.414"/>
-                        <TextBox Margin="10,19,151,15" x:Name="MainText" Controls:TextBoxHelper.Watermark="Type Your Command...."   TextChanged="TextBox_TextChanged" Height="25" RenderTransformOrigin="0.774,0.414"/>
-                        <Button Content="Listen" HorizontalAlignment="Left" Margin="473,19,0,0" VerticalAlignment="Top" Width="91" RenderTransformOrigin="0.244,1.474" Click="Listen_Click"/>
->>>>>>> 773317fa188c14090ab8a39ee5ee1c41504be0ac
-                    </Grid>
+                </Grid>
                     <Grid Height="438">
                         <Grid.Background>
                             <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
@@ -237,7 +232,7 @@
 
                                     </TabItem>
 
-                                    <TabItem  x:Name="Code" Height="50" Width="162"   >
+                                    <!--<TabItem  x:Name="Code" Height="50" Width="162"   >
 
                                         <TabItem.Background>
                                             <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
@@ -275,7 +270,7 @@
 
 
 
-                                    </TabItem>
+                                    </TabItem>-->
 
                                     <TabItem  x:Name="Settings" Height="50" Width="162"   >
 

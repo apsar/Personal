@@ -12,27 +12,17 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using Starvis.Utilities;
-using Microsoft.CognitiveServices.SpeechRecognition;
 
 namespace Starvis
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Interaction logic for Profile.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class Profile : UserControl
     {
-        public  MainWindow()
+        public Profile()
         {
             InitializeComponent();
-            test();
-
-        }
-        public  void test()
-        {
-           
-            SpeechToText.ConverSpeechToText();
-
         }
     }
 }

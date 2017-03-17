@@ -12,27 +12,17 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using Starvis.Utilities;
-using Microsoft.CognitiveServices.SpeechRecognition;
 
 namespace Starvis
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Interaction logic for HotKey.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class HotKey : UserControl
     {
-        public  MainWindow()
+        public HotKey()
         {
             InitializeComponent();
-            test();
-
-        }
-        public  void test()
-        {
-           
-            SpeechToText.ConverSpeechToText();
-
         }
     }
 }

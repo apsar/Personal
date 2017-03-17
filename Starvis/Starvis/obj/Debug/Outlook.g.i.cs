@@ -9,6 +9,8 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
+using ControlzEx;
+using MahApps.Metro.Controls;
 using Starvis;
 using System;
 using System.Diagnostics;

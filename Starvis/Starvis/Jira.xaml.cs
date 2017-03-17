@@ -16,11 +16,11 @@ using System.Windows.Shapes;
 namespace Starvis
 {
     /// <summary>
-    /// Interaction logic for VisualStudio.xaml
+    /// Interaction logic for Jira.xaml
     /// </summary>
-    public partial class VisualStudio : UserControl
+    public partial class Jira : UserControl
     {
-        public VisualStudio()
+        public Jira()
         {
             InitializeComponent();
         }

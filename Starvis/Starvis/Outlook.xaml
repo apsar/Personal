@@ -6,7 +6,22 @@
              xmlns:local="clr-namespace:Starvis"
              mc:Ignorable="d" 
              d:DesignHeight="300" d:DesignWidth="300">
-    <Grid>
-            
+    <Grid Margin="-261,0,0,0">
+        <ComboBox x:Name="comboBox" HorizontalAlignment="Left" Margin="16,42,0,0" VerticalAlignment="Top" Width="120" SelectionChanged="comboBox_SelectionChanged" SelectedValue="ALL">
+            <ComboBoxItem Tag="ALL">All Commands</ComboBoxItem>
+            <ComboBoxItem Tag="COMPOSE">Compose Email</ComboBoxItem>
+            <ComboBoxItem Tag="SEARCH">Search Email</ComboBoxItem>
+            <ComboBoxItem Tag="READ">Read Email</ComboBoxItem>
+        </ComboBox>
+        <StackPanel Name="COMPOSESTACK" HorizontalAlignment="Left" Height="214" Margin="164,76,0,0" VerticalAlignment="Top" Width="362" Visibility="Hidden"/>
+        <StackPanel Name="SEARCHSTACK" HorizontalAlignment="Left" Height="214" Margin="164,76,0,0" VerticalAlignment="Top" Width="362" Visibility="Hidden"/>
+        <StackPanel Name="READSTACK" HorizontalAlignment="Left" Height="214" Margin="164,76,0,0" VerticalAlignment="Top" Width="362" Visibility="Hidden"/>
+        <StackPanel Name="ALLSTACK" HorizontalAlignment="Left" Height="214" Margin="164,76,0,0" VerticalAlignment="Top" Width="387" Visibility="Visible">
+            <DataGrid x:Name="dataGrid" Height="214"/>
+        </StackPanel>
+        <TextBox x:Name="textBox" HorizontalAlignment="Left" Height="23" Margin="202,41,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="137" TextChanged="textBox_TextChanged"/>
+        <TextBox x:Name="textBox1" HorizontalAlignment="Left" Height="23" Margin="365,41,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="171"/>
+        <Label x:Name="label" Content="Text Command" HorizontalAlignment="Left" Margin="202,10,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="label1" Content="Voice Command" HorizontalAlignment="Left" Margin="365,10,0,0" VerticalAlignment="Top"/>
     </Grid>
 </UserControl>

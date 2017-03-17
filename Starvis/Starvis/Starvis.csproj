@@ -190,6 +190,7 @@
     </Compile>
     <Compile Include="Utilities\Batch.cs" />
     <Compile Include="Utilities\CommandExecution.cs" />
+    <Compile Include="Utilities\OutlookUtils.cs" />
     <Compile Include="Utilities\SpeechToText.cs" />
     <Compile Include="Utilities\TextAnalysis.cs" />
     <Compile Include="BaseWindow.cs" />
@@ -296,7 +297,9 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <Resource Include="images\appbar.social.jira.png" />

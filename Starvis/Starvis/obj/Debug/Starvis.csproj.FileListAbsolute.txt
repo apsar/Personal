@@ -68,7 +68,6 @@ C:\Users\Sbabu\Documents\Personal1\Starvis\Starvis\bin\Debug\System.Diagnostics.
 C:\Users\Sbabu\Documents\Personal1\Starvis\Starvis\bin\Debug\System.Interactive.Async.xml
 C:\Users\Sbabu\Documents\Personal1\Starvis\Starvis\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
 C:\Users\Sbabu\Documents\Personal1\Starvis\Starvis\bin\Debug\System.Text.Encodings.Web.xml
-C:\Users\Sbabu\Documents\Personal1\Starvis\Starvis\obj\Debug\Starvis.csprojResolveAssemblyReference.cache
 C:\Users\Sbabu\Documents\Personal1\Starvis\Starvis\obj\Debug\Arena.g.cs
 C:\Users\Sbabu\Documents\Personal1\Starvis\Starvis\obj\Debug\Browse.g.cs
 C:\Users\Sbabu\Documents\Personal1\Starvis\Starvis\obj\Debug\Code.g.cs
@@ -98,3 +97,4 @@ C:\Users\Sbabu\Documents\Personal1\Starvis\Starvis\obj\Debug\Starvis.Properties.
 C:\Users\Sbabu\Documents\Personal1\Starvis\Starvis\obj\Debug\Starvis.csproj.GenerateResource.Cache
 C:\Users\Sbabu\Documents\Personal1\Starvis\Starvis\obj\Debug\Starvis.exe
 C:\Users\Sbabu\Documents\Personal1\Starvis\Starvis\obj\Debug\Starvis.pdb
+C:\Users\Sbabu\Documents\Personal1\Starvis\Starvis\obj\Debug\Starvis.csprojResolveAssemblyReference.cache

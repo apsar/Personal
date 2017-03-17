@@ -24,10 +24,5 @@ namespace Starvis
         {
             InitializeComponent();
         }
-
-        private void textBox_TextChanged(object sender, TextChangedEventArgs e)
-        {
-
-        }
     }
 }

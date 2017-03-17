@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 D:\Hackathon\Personal\Starvis\Starvis\bin\Debug\Starvis.exe.config
 D:\Hackathon\Personal\Starvis\Starvis\bin\Debug\Starvis.exe
 D:\Hackathon\Personal\Starvis\Starvis\bin\Debug\Starvis.pdb
@@ -12,3 +13,6 @@ D:\Hackathon\Personal\Starvis\Starvis\obj\Debug\Starvis.Properties.Resources.res
 D:\Hackathon\Personal\Starvis\Starvis\obj\Debug\Starvis.csproj.GenerateResource.Cache
 D:\Hackathon\Personal\Starvis\Starvis\obj\Debug\Starvis.exe
 D:\Hackathon\Personal\Starvis\Starvis\obj\Debug\Starvis.pdb
+=======
+C:\Users\raravi\Documents\Personal\Starvis\Starvis\bin\Debug\Starvis.exe.config
+>>>>>>> 504a57492d6180d0519192490edadce88f872fe6

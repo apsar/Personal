@@ -12,6 +12,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using StarvisDB;
+using Microsoft.EntityFrameworkCore;
 
 namespace Starvis
 {
@@ -23,10 +25,22 @@ namespace Starvis
         public Outlook()
         {
             InitializeComponent();
+            Loaded += Window_Loaded;
+        }
+
+        private void Window_Loaded(object sender, RoutedEventArgs e)
+        {
+            // do work here
+            Models models = new Models();
+            dataGrid.ItemsSource = models.OutlookDB.ToList();
         }
 
         private void comboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
+            if (!comboBox.IsLoaded)
+            {
+                return;
+            }
             int index = comboBox.SelectedIndex;
             
             switch (index)

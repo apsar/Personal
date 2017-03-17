@@ -113,7 +113,17 @@ namespace Starvis
             ProfileTab.Visibility = System.Windows.Visibility.Hidden;
             OutlookTab.Visibility = System.Windows.Visibility.Hidden;
             JiraTab.Visibility = System.Windows.Visibility.Hidden;
-
+            
+                BrowseTab.Visibility = System.Windows.Visibility.Hidden;
+          
+                ArenaTab.Visibility = System.Windows.Visibility.Hidden;
+           
+                SettingsTab.Visibility = System.Windows.Visibility.Hidden;
+            
+                VisualStudioTab.Visibility = System.Windows.Visibility.Hidden;
+           
+                HotKeyTab.Visibility = System.Windows.Visibility.Hidden;
+           
 
         }
 
@@ -165,6 +175,11 @@ namespace Starvis
         {
            
             SpeechToText.ConverSpeechToText();
+
+        }
+
+        private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
+        {
 
         }
     }

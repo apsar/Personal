@@ -196,7 +196,7 @@
     <Compile Include="Jira.xaml.cs">
       <DependentUpon>Jira.xaml</DependentUpon>
     </Compile>
-    <Compile Include="TextToSpeech.cs" />
+    <Compile Include="Utilities\TextToSpeech.cs" />
     <Page Include="Arena.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

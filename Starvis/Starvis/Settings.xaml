@@ -9,19 +9,19 @@
              d:DesignHeight="358" d:DesignWidth="526"
              Loaded="UserControl_Loaded">
     <Grid>
-        <Label Content="Name" HorizontalAlignment="Left" Margin="37,47,0,0" VerticalAlignment="Top" Width="79"/>
-        <TextBox Name="Name" HorizontalAlignment="Left" Height="23" Margin="141,50,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="208"/>
-        <Label Content="Gender" HorizontalAlignment="Left" Margin="37,88,0,0" VerticalAlignment="Top"/>
-        <RadioButton Name="G_Male" Content="Male" HorizontalAlignment="Left" Margin="131,97,0,0" VerticalAlignment="Top" Checked="RadioButton_Checked"/>
-        <RadioButton Name="G_Female" Content="Female" HorizontalAlignment="Left" Margin="199,97,0,0" VerticalAlignment="Top" Checked="RadioButton_Checked_1"/>
-        <Label Content="Language Preference" HorizontalAlignment="Left" Margin="10,136,0,0" VerticalAlignment="Top" Width="120"/>
-        <ComboBox Name="LangPre" HorizontalAlignment="Left" Margin="141,139,0,0" VerticalAlignment="Top" Width="165">
+        <Label Content="Name" HorizontalAlignment="Left" Margin="102,47,0,0" VerticalAlignment="Top" Width="79"/>
+        <TextBox Name="Name" HorizontalAlignment="Left" Height="23" Margin="186,47,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="208"/>
+        <Label Content="Gender" HorizontalAlignment="Left" Margin="102,92,0,0" VerticalAlignment="Top"/>
+        <RadioButton Name="G_Male" Content="Male" HorizontalAlignment="Left" Margin="183,96,0,0" VerticalAlignment="Top" Checked="RadioButton_Checked" RenderTransformOrigin="1.722,0.818"/>
+        <RadioButton Name="G_Female" Content="Female" HorizontalAlignment="Left" Margin="263,96,0,0" VerticalAlignment="Top" Checked="RadioButton_Checked_1"/>
+        <Label Content="Language Preference" HorizontalAlignment="Left" Margin="52,136,0,0" VerticalAlignment="Top" Width="120"/>
+        <ComboBox Name="LangPre" HorizontalAlignment="Left" Margin="186,136,0,0" VerticalAlignment="Top" Width="165">
             <ComboBoxItem Content="English - US" HorizontalAlignment="Left" Width="163.2"/>
             <ComboBoxItem Content="English - IN" HorizontalAlignment="Left" Width="163.2"/>
         </ComboBox>
-        <Label Content="BING API Key" HorizontalAlignment="Left" Margin="10,189,0,0" VerticalAlignment="Top" Width="106"/>
-        <TextBox Name="BINGKEY" HorizontalAlignment="Left" Height="23" Margin="141,189,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="208" />
-        <Controls:ToggleSwitch Name="Mode" OffLabel="Text Mode" OnLabel="Voice Mode"  Header="Voice Mode" FontFamily="Tahoma" OnSwitchBrush="#CC2DEE2F" Margin="19,234,92.4,68.4" RenderTransformOrigin="0.5,0.5">
+        <Label Content="BING API Key" HorizontalAlignment="Left" Margin="80,189,0,0" VerticalAlignment="Top" Width="106"/>
+        <TextBox Name="BINGKEY" HorizontalAlignment="Left" Height="23" Margin="186,189,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="208" />
+        <Controls:ToggleSwitch Name="Mode" OffLabel="Text Mode" OnLabel="Voice Mode"  Header="Voice Mode" FontFamily="Tahoma" OnSwitchBrush="#CC2DEE2F" Margin="75,230,36.4,72.4" RenderTransformOrigin="0.5,0.5">
             <Controls:ToggleSwitch.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
@@ -31,7 +31,7 @@
                 </TransformGroup>
             </Controls:ToggleSwitch.RenderTransform>
         </Controls:ToggleSwitch>
-        <Button Content="Save" HorizontalAlignment="Left" Margin="20,319,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click"/>
+        <Button Content="Save" HorizontalAlignment="Left" Margin="77,311,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click"/>
 
     </Grid>
 

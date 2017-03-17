@@ -21,7 +21,7 @@ namespace StarvisDB
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlite("Data Source=Starvis.db");
+            optionsBuilder.UseSqlite("Data Source=Starvis.db;");
         }
     }
 

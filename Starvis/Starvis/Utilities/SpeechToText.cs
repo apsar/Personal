@@ -54,6 +54,7 @@ namespace Starvis.Utilities
                 Console.WriteLine("No phrase response is available.");
                 result.tableName = "INVALID";
                 result.rowID = -1;
+                micClient.EndMicAndRecognition();
             }
             else
             {
@@ -74,13 +75,14 @@ namespace Starvis.Utilities
                     response.Add(item.DisplayText);
                 }
                 resultTable = GetDirectMatchingPrefix(response);
+                result.tableName = resultTable;
                 for (int i = 0; i < e.PhraseResponse.Results.Length; i++)
                 {
                     if(!resultTable.Equals("INVALID",StringComparison.InvariantCultureIgnoreCase))
                     {
                         break;
                     }
-                    string sentence = Regex.Replace(e.PhraseResponse.Results[i].DisplayText, "[^a-zA-Z0-9_]+", "");
+                    string sentence = Regex.Replace(e.PhraseResponse.Results[i].DisplayText, "[^a-zA-Z0-9_ ]+", "");
                     if (sentence.Contains(" "))
                     {
                         prefix = sentence.Substring(0, sentence.IndexOf(" "));
@@ -94,7 +96,7 @@ namespace Starvis.Utilities
                     result.tableName = resultTable;
                   
                 }
-                resultRowRecord = GetDirectMatchingRowRecord(response);
+                resultRowRecord = GetDirectMatchingRowRecord(response,result.tableName);
                 result.rowID = resultRowRecord;
                 for (int i = 0; i < e.PhraseResponse.Results.Length; i++)
                 {
@@ -102,19 +104,29 @@ namespace Starvis.Utilities
                     {
                         break;
                     }
-                    string sentence = Regex.Replace(e.PhraseResponse.Results[i].DisplayText, "[^a-zA-Z0-9_]+", "");
+                    string sentence = Regex.Replace(e.PhraseResponse.Results[i].DisplayText, "[^a-zA-Z0-9_  ]+", "");
                     if (sentence.Length > 0)
                     {
                         int j = sentence.IndexOf(" ") + 1;
                         sentence = sentence.Substring(j);
-                        resultRowRecord = GetMatchingRow(prefix, sentence);
+                        resultRowRecord = GetMatchingRow(result.tableName, sentence);
                         result.rowID = resultRowRecord;
                     }
                   
 
                 }
+                
 
 
+            }
+            CommandExecution cmdExec = new CommandExecution();
+            if (result == null || result.tableName == "INVALID" || result.rowID == -1)
+            {
+                TextToSpeech.Speak("Sorry! I did not get you.");
+            }
+            else if (result.tableName == "BROWSE")
+            {
+                cmdExec.Run(result.rowID);
             }
         }
 
@@ -152,11 +164,7 @@ namespace Starvis.Utilities
 
         }
 
-        public static DbRecord ListenSpeechAndGetDbRecord()
-        {
-            ConverSpeechToText();
-            return result;
-        }
+        
         public static string GetMatchingPrefix(string prefix)
         {
 
@@ -203,7 +211,7 @@ namespace Starvis.Utilities
                             allCommands.Add(item.VoiceCommand);
                         }
                         closeVoiceCommand = GetClosestString(sentence, allCommands, 3);
-                        if (closeVoiceCommand.Equals("INVALID", StringComparison.InvariantCultureIgnoreCase))
+                        if (!closeVoiceCommand.Equals("INVALID", StringComparison.InvariantCultureIgnoreCase))
                         {
                             resultRecord = db.ArenaDB.Where(a => closeVoiceCommand.Equals(a.VoiceCommand, StringComparison.InvariantCultureIgnoreCase)).FirstOrDefault().ArenaID;
                         }
@@ -222,7 +230,7 @@ namespace Starvis.Utilities
                             allCommands.Add(item.VoiceCommand);
                         }
                         closeVoiceCommand = GetClosestString(sentence, allCommands, 3);
-                        if (closeVoiceCommand.Equals("INVALID", StringComparison.InvariantCultureIgnoreCase))
+                        if (!closeVoiceCommand.Equals("INVALID", StringComparison.InvariantCultureIgnoreCase))
                         {
                             resultRecord = db.WebDB.Where(a => closeVoiceCommand.Equals(a.VoiceCommand, StringComparison.InvariantCultureIgnoreCase)).FirstOrDefault().WebID;
                         }
@@ -242,7 +250,7 @@ namespace Starvis.Utilities
                             allCommands.Add(item.VoiceCommand);
                         }
                         closeVoiceCommand = GetClosestString(sentence, allCommands, 3);
-                        if (closeVoiceCommand.Equals("INVALID", StringComparison.InvariantCultureIgnoreCase))
+                        if (!closeVoiceCommand.Equals("INVALID", StringComparison.InvariantCultureIgnoreCase))
                         {
                             resultRecord = db.HotKeyDB.Where(a => closeVoiceCommand.Equals(a.VoiceCommand, StringComparison.InvariantCultureIgnoreCase)).FirstOrDefault().HotKeyID;
                         }
@@ -262,7 +270,7 @@ namespace Starvis.Utilities
                             allCommands.Add(item.VoiceCommand);
                         }
                         closeVoiceCommand = GetClosestString(sentence, allCommands, 3);
-                        if (closeVoiceCommand.Equals("INVALID", StringComparison.InvariantCultureIgnoreCase))
+                        if (!closeVoiceCommand.Equals("INVALID", StringComparison.InvariantCultureIgnoreCase))
                         {
                             resultRecord = db.OutlookDB.Where(a => closeVoiceCommand.Equals(a.VoiceCommand, StringComparison.InvariantCultureIgnoreCase)).FirstOrDefault().OutlookID;
                         }
@@ -282,7 +290,7 @@ namespace Starvis.Utilities
                             allCommands.Add(item.VoiceCommand);
                         }
                         closeVoiceCommand = GetClosestString(sentence, allCommands, 3);
-                        if (closeVoiceCommand.Equals("INVALID", StringComparison.InvariantCultureIgnoreCase))
+                        if (!closeVoiceCommand.Equals("INVALID", StringComparison.InvariantCultureIgnoreCase))
                         {
                             resultRecord = db.ProfileDB.Where(a => closeVoiceCommand.Equals(a.VoiceCommand, StringComparison.InvariantCultureIgnoreCase)).FirstOrDefault().ProfileDBID;
                         }
@@ -307,7 +315,7 @@ namespace Starvis.Utilities
                             allCommands.Add(item.VoiceCommand);
                         }
                         closeVoiceCommand = GetClosestString(sentence, allCommands, 3);
-                        if (closeVoiceCommand.Equals("INVALID", StringComparison.InvariantCultureIgnoreCase))
+                        if (!closeVoiceCommand.Equals("INVALID", StringComparison.InvariantCultureIgnoreCase))
                         {
                             resultRecord = db.JIRADB.Where(a => closeVoiceCommand.Equals(a.VoiceCommand, StringComparison.InvariantCultureIgnoreCase)).FirstOrDefault().JIRAID;
                         }
@@ -327,7 +335,7 @@ namespace Starvis.Utilities
                             allCommands.Add(item.VoiceCommand);
                         }
                         closeVoiceCommand = GetClosestString(sentence, allCommands, 3);
-                        if (closeVoiceCommand.Equals("INVALID", StringComparison.InvariantCultureIgnoreCase))
+                        if (!closeVoiceCommand.Equals("INVALID", StringComparison.InvariantCultureIgnoreCase))
                         {
                             resultRecord = db.CodeBaseDB.Where(a => closeVoiceCommand.Equals(a.VoiceCommand, StringComparison.InvariantCultureIgnoreCase)).FirstOrDefault().CodeBaseID;
                         }
@@ -374,7 +382,11 @@ namespace Starvis.Utilities
         {
             foreach (var item in prefix)
             {
-                string i = Regex.Replace(item, "[^a-zA-Z0-9_]+", "");
+                string i = Regex.Replace(item, "[^a-zA-Z0-9_ ]+", "");
+                i.Replace(".", "");
+                i.Replace(",", "");
+                i.Replace("?", "");
+                i.Replace("!", "");
                 if (i.Contains(" "))
                 {
                     i = i.Substring(0, i.IndexOf(" "));
@@ -416,21 +428,25 @@ namespace Starvis.Utilities
             return "INVALID";
         }
 
-        public static int GetDirectMatchingRowRecord(List<string> response)
+        public static int GetDirectMatchingRowRecord(List<string> response,string prefix)
         {
             var db = new Models();
             int resultRecord = -1;
             string closeVoiceCommand;
             foreach (var item in response)
             {
-                string sentence = Regex.Replace(item, "[^a-zA-Z0-9_]+", "");
+                string sentence = Regex.Replace(item, "[^a-zA-Z0-9_ ]+", "");
+                sentence.Replace(".", "");
+                sentence.Replace(",", "");
+                sentence.Replace("?", "");
+                sentence.Replace("!", "");
                 if (sentence.Length > 0)
                 {
                     int j = sentence.IndexOf(" ") + 1;
                     sentence = sentence.Substring(j);
                    
                 }
-                if (sentence.Equals("ARENA", StringComparison.InvariantCultureIgnoreCase))
+                if (prefix.Equals("ARENA", StringComparison.InvariantCultureIgnoreCase))
                 {
                     if (db.ArenaDB.Any(a => sentence.Equals(a.VoiceCommand, StringComparison.InvariantCultureIgnoreCase)))
                     {
@@ -439,7 +455,7 @@ namespace Starvis.Utilities
                     }
 
                 }
-                else if (sentence.Equals("BROWSE", StringComparison.InvariantCultureIgnoreCase))
+                else if (prefix.Equals("BROWSE", StringComparison.InvariantCultureIgnoreCase))
                 {
                     if (db.WebDB.Any(w => sentence.Equals(w.VoiceCommand, StringComparison.InvariantCultureIgnoreCase)))
                     {
@@ -448,7 +464,7 @@ namespace Starvis.Utilities
                     }
 
                 }
-                else if (sentence.Equals("HOTKEY", StringComparison.InvariantCultureIgnoreCase))
+                else if (prefix.Equals("HOTKEY", StringComparison.InvariantCultureIgnoreCase))
                 {
                     if (db.HotKeyDB.Any(h => sentence.Equals(h.VoiceCommand, StringComparison.InvariantCultureIgnoreCase)))
                     {
@@ -457,7 +473,7 @@ namespace Starvis.Utilities
                     }
 
                 }
-                else if (sentence.Equals("OUTLOOK", StringComparison.InvariantCultureIgnoreCase))
+                else if (prefix.Equals("OUTLOOK", StringComparison.InvariantCultureIgnoreCase))
                 {
                     if (db.OutlookDB.Any(o => sentence.Equals(o.VoiceCommand, StringComparison.InvariantCultureIgnoreCase)))
                     {
@@ -466,7 +482,7 @@ namespace Starvis.Utilities
                     }
 
                 }
-                else if (sentence.Equals("PROFILE", StringComparison.InvariantCultureIgnoreCase))
+                else if (prefix.Equals("PROFILE", StringComparison.InvariantCultureIgnoreCase))
                 {
                     if (db.ProfileDB.Any(p => sentence.Equals(p.VoiceCommand, StringComparison.InvariantCultureIgnoreCase)))
                     {
@@ -475,7 +491,7 @@ namespace Starvis.Utilities
                     }
 
                 }
-                else if (sentence.Equals("JIRA", StringComparison.InvariantCultureIgnoreCase))
+                else if (prefix.Equals("JIRA", StringComparison.InvariantCultureIgnoreCase))
                 {
                     if (db.JIRADB.Any(j => sentence.Equals(j.VoiceCommand, StringComparison.InvariantCultureIgnoreCase)))
                     {
@@ -484,7 +500,7 @@ namespace Starvis.Utilities
                     }
 
                 }
-                else if (sentence.Equals("CODE", StringComparison.InvariantCultureIgnoreCase))
+                else if (prefix.Equals("CODE", StringComparison.InvariantCultureIgnoreCase))
                 {
                     if (db.CodeBaseDB.Any(c => sentence.Equals(c.VoiceCommand, StringComparison.InvariantCultureIgnoreCase)))
                     {

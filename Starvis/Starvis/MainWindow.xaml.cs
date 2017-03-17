@@ -167,12 +167,29 @@ namespace Starvis
 
         private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
         {
-
+            Batch b = new Batch();
+             string textValue = this.MainText.Text;
+            if(!string.IsNullOrEmpty(textValue))
+            {
+                string[] array = textValue.Split(' ');
+                if (!string.IsNullOrEmpty(array[0]) && !string.IsNullOrEmpty(array[1]))
+                {
+                    if ("a".Equals(array[0].ToLower()))
+                    {
+                        b.findexe(array[1]);
+                    }
+                }
+            }
         }
 
         private void MainWindowTest_Loaded(object sender, RoutedEventArgs e)
         {
             new BaseWindow().SettingsInsertUpdate("Mode", "Text Mode");
+        }
+
+        private void Listen_Click(object sender, RoutedEventArgs e)
+        {
+            SpeechToText.ConverSpeechToText();
         }
     }
 }

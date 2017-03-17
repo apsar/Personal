@@ -12,10 +12,10 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using StarvisDB;
 using MahApps.Metro.Controls;
 using System.Windows.Media.Animation;
 using Starvis.Properties;
-
 
 namespace Starvis
 {
@@ -28,6 +28,13 @@ namespace Starvis
         public MainWindow()
         {
             InitializeComponent();
+
+            using (var db = new Models())
+            {
+                var blog = new SettingsDB {  Key = "Key", Value = "Value" };
+                db.SettingsDB.Add(blog);
+                db.SaveChanges();
+            }
         }
 
         private void StackPanel_MouseEnter(object sender, MouseEventArgs e)
@@ -98,7 +105,17 @@ namespace Starvis
             ProfileTab.Visibility = System.Windows.Visibility.Hidden;
             OutlookTab.Visibility = System.Windows.Visibility.Hidden;
             JiraTab.Visibility = System.Windows.Visibility.Hidden;
-
+            
+                BrowseTab.Visibility = System.Windows.Visibility.Hidden;
+          
+                ArenaTab.Visibility = System.Windows.Visibility.Hidden;
+           
+                SettingsTab.Visibility = System.Windows.Visibility.Hidden;
+            
+                VisualStudioTab.Visibility = System.Windows.Visibility.Hidden;
+           
+                HotKeyTab.Visibility = System.Windows.Visibility.Hidden;
+           
 
         }
 
@@ -146,6 +163,11 @@ namespace Starvis
 
 
         private void listBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
+
+        private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
         {
 
         }

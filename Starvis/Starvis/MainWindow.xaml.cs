@@ -24,5 +24,9 @@ namespace Starvis
         {
             InitializeComponent();
         }
+        public void test()
+        {
+
+        }
     }
 }

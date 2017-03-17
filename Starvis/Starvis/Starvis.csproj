@@ -320,6 +320,10 @@
   <ItemGroup>
     <None Include="Resources\beep.wav" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="images\appbar.chevron.left.png" />
+    <Resource Include="images\appbar.chevron.right.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>

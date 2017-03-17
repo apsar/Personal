@@ -48,7 +48,7 @@
                                 <GradientStop Color="#FF53C271" Offset="0.135"/>
                             </LinearGradientBrush>
                         </Grid.Background>
-                        <TextBox Margin="10,19,151,15" Controls:TextBoxHelper.Watermark="Type Your Command...."   TextChanged="TextBox_TextChanged" Height="25" RenderTransformOrigin="0.774,0.414"/>
+                        <TextBox Margin="10,19,151,15" x:Name="textMain" Controls:TextBoxHelper.Watermark="Type Your Command...."   TextChanged="TextBox_TextChanged" KeyUp="TextBox_KeyUp" Height="25" RenderTransformOrigin="0.774,0.414"/>
                         <Button Content="Listen" HorizontalAlignment="Left" Margin="473,19,0,0" VerticalAlignment="Top" Width="91" RenderTransformOrigin="0.244,1.474" Click="Listen_Click"/>
                     </Grid>
                     <Grid Height="438">

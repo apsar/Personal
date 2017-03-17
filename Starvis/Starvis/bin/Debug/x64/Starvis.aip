@@ -1,0 +1,248 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<DOCUMENT Type="Advanced Installer" CreateVersion="13.7" version="13.7" Modules="simple" RootPath="." Language="en" Id="{DF2232C2-F8CA-403B-AC91-6C23374AB96E}">
+  <COMPONENT cid="caphyon.advinst.msicomp.ProjectOptionsComponent">
+    <ROW Name="HiddenItems" Value="AppXProductDetailsComponent;AppXDependenciesComponent;AppXAppDetailsComponent;AppXVisualAssetsComponent;AppXCapabilitiesComponent;AppXAppDeclarationsComponent;AppXUriRulesComponent"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiPropsComponent">
+    <ROW Property="AI_BITMAP_DISPLAY_MODE" Value="0"/>
+    <ROW Property="ALLUSERS" Value="1"/>
+    <ROW Property="ARPCOMMENTS" Value="This installer database contains the logic and data required to install [|ProductName]." ValueLocId="*"/>
+    <ROW Property="Manufacturer" Value="Xome"/>
+    <ROW Property="ProductCode" Value="1033:{600E19A0-C6C8-485E-8AD8-F63E16E7417C} " Type="16"/>
+    <ROW Property="ProductLanguage" Value="1033"/>
+    <ROW Property="ProductName" Value="Starvis"/>
+    <ROW Property="ProductVersion" Value="1.0.0" Type="32"/>
+    <ROW Property="SecureCustomProperties" Value="OLDPRODUCTS;AI_NEWERPRODUCTFOUND"/>
+    <ROW Property="UpgradeCode" Value="{117B99E2-5AC0-4CB7-BB8A-CEF3356B35BE}"/>
+    <ROW Property="WindowsType9X" MultiBuildValue="DefaultBuild:Windows 9x/ME" ValueLocId="-"/>
+    <ROW Property="WindowsType9XDisplay" MultiBuildValue="DefaultBuild:Windows 9x/ME" ValueLocId="-"/>
+    <ROW Property="WindowsTypeNT40" MultiBuildValue="DefaultBuild:Windows NT 4.0" ValueLocId="-"/>
+    <ROW Property="WindowsTypeNT40Display" MultiBuildValue="DefaultBuild:Windows NT 4.0" ValueLocId="-"/>
+    <ROW Property="WindowsTypeNT50" MultiBuildValue="DefaultBuild:Windows 2000" ValueLocId="-"/>
+    <ROW Property="WindowsTypeNT50Display" MultiBuildValue="DefaultBuild:Windows 2000" ValueLocId="-"/>
+    <ROW Property="WindowsTypeNT5X" MultiBuildValue="DefaultBuild:Windows XP/2003 RTM, Windows XP/2003 SP1, Windows XP SP2 x86" ValueLocId="-"/>
+    <ROW Property="WindowsTypeNT5XDisplay" MultiBuildValue="DefaultBuild:Windows XP/2003 RTM, Windows XP/2003 SP1, Windows XP SP2 x86" ValueLocId="-"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiDirsComponent">
+    <ROW Directory="APPDIR" Directory_Parent="TARGETDIR" DefaultDir="APPDIR:." IsPseudoRoot="1"/>
+    <ROW Directory="DesktopFolder" Directory_Parent="TARGETDIR" DefaultDir="DESKTO~1|DesktopFolder" IsPseudoRoot="1"/>
+    <ROW Directory="TARGETDIR" DefaultDir="SourceDir"/>
+    <ROW Directory="x64_Dir" Directory_Parent="APPDIR" DefaultDir="x64"/>
+    <ROW Directory="x86_Dir" Directory_Parent="APPDIR" DefaultDir="x86"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiCompsComponent">
+    <ROW Component="MahApps.Metro.dll" ComponentId="{2F39ECD3-AC69-415F-8AC8-0383794F97AB}" Directory_="APPDIR" Attributes="0" KeyPath="MahApps.Metro.dll"/>
+    <ROW Component="MahApps.Metro.xml" ComponentId="{2EB41A3F-69AE-4A51-8BF4-40E70FBD6D6E}" Directory_="APPDIR" Attributes="0" KeyPath="MahApps.Metro.xml" Type="0"/>
+    <ROW Component="MaterialDesignColors.dll" ComponentId="{F06925EC-4495-433F-8685-474EECEDDE63}" Directory_="APPDIR" Attributes="0" KeyPath="MaterialDesignColors.dll"/>
+    <ROW Component="MaterialDesignThemes.MahApps.dll" ComponentId="{917DAF4F-A803-4751-B167-57C39C73484D}" Directory_="APPDIR" Attributes="0" KeyPath="MaterialDesignThemes.MahApps.dll"/>
+    <ROW Component="MaterialDesignThemes.Wpf.dll" ComponentId="{C48F1ADA-6D17-4EDE-A34A-F650D3296FB0}" Directory_="APPDIR" Attributes="0" KeyPath="MaterialDesignThemes.Wpf.dll"/>
+    <ROW Component="Microsoft.AspNetCore.Hosting.Abstraction" ComponentId="{0FDA429D-1326-4906-BA56-A66E94A8C6B9}" Directory_="APPDIR" Attributes="0" KeyPath="Microsoft.AspNetCore.Hosting.Abstractions.dll"/>
+    <ROW Component="Microsoft.AspNetCore.Hosting.Server.Abst" ComponentId="{3372D27F-8793-4844-8557-059D0328E162}" Directory_="APPDIR" Attributes="0" KeyPath="Microsoft.AspNetCore.Hosting.Server.Abstractions.dll"/>
+    <ROW Component="Microsoft.AspNetCore.Http.Abstractions.d" ComponentId="{9C0129EA-4964-4406-B21F-0F4D4387503C}" Directory_="APPDIR" Attributes="0" KeyPath="Microsoft.AspNetCore.Http.Abstractions.dll"/>
+    <ROW Component="Microsoft.AspNetCore.Http.Features.dll" ComponentId="{1D9FBAEA-1751-4658-858C-033A20774477}" Directory_="APPDIR" Attributes="0" KeyPath="Microsoft.AspNetCore.Http.Features.dll"/>
+    <ROW Component="Microsoft.Data.Sqlite.dll" ComponentId="{B1CC7CD0-C42D-4025-A6FE-441A1631F82E}" Directory_="APPDIR" Attributes="0" KeyPath="Microsoft.Data.Sqlite.dll"/>
+    <ROW Component="Microsoft.EntityFrameworkCore.Design.dll" ComponentId="{C4D71645-2AE4-4789-8940-6D429BF80A00}" Directory_="APPDIR" Attributes="0" KeyPath="Microsoft.EntityFrameworkCore.Design.dll"/>
+    <ROW Component="Microsoft.EntityFrameworkCore.Relation_1" ComponentId="{9660E6DC-A2F0-4895-A45C-397A15B3F474}" Directory_="APPDIR" Attributes="0" KeyPath="Microsoft.EntityFrameworkCore.Relational.dll"/>
+    <ROW Component="Microsoft.EntityFrameworkCore.Relational" ComponentId="{EF165976-2598-49DA-8778-CC61EB8A81C6}" Directory_="APPDIR" Attributes="0" KeyPath="Microsoft.EntityFrameworkCore.Relational.Design.dll"/>
+    <ROW Component="Microsoft.EntityFrameworkCore.SqlServer." ComponentId="{853FAFE8-13F9-4693-9262-98AC417A5831}" Directory_="APPDIR" Attributes="0" KeyPath="Microsoft.EntityFrameworkCore.SqlServer.dll"/>
+    <ROW Component="Microsoft.EntityFrameworkCore.Sqlite.dll" ComponentId="{24A19B63-E087-4DC2-83DE-5684D3E0F1A6}" Directory_="APPDIR" Attributes="0" KeyPath="Microsoft.EntityFrameworkCore.Sqlite.dll"/>
+    <ROW Component="Microsoft.EntityFrameworkCore.dll" ComponentId="{D78AD760-3751-422B-A3D8-BE29672B1165}" Directory_="APPDIR" Attributes="0" KeyPath="Microsoft.EntityFrameworkCore.dll"/>
+    <ROW Component="Microsoft.Extensions.Caching.Abstraction" ComponentId="{21FC7BBE-F336-442A-8268-C7936B695738}" Directory_="APPDIR" Attributes="0" KeyPath="Microsoft.Extensions.Caching.Abstractions.dll"/>
+    <ROW Component="Microsoft.Extensions.Caching.Memory.dll" ComponentId="{10043ED8-C886-413A-B235-08615EFFA5FF}" Directory_="APPDIR" Attributes="0" KeyPath="Microsoft.Extensions.Caching.Memory.dll"/>
+    <ROW Component="Microsoft.Extensions.Configuration.Abstr" ComponentId="{6615FE6F-364A-4D58-9F4A-0D8DA22A44F0}" Directory_="APPDIR" Attributes="0" KeyPath="Microsoft.Extensions.Configuration.Abstractions.dll"/>
+    <ROW Component="Microsoft.Extensions.DependencyInjecti_1" ComponentId="{4BD19FED-4113-4BE0-BF73-820A2BC17E79}" Directory_="APPDIR" Attributes="0" KeyPath="Microsoft.Extensions.DependencyInjection.dll"/>
+    <ROW Component="Microsoft.Extensions.DependencyInjection" ComponentId="{A12C2882-4FE2-457A-BB2B-B36F3936EFD6}" Directory_="APPDIR" Attributes="0" KeyPath="Microsoft.Extensions.DependencyInjection.Abstractions.dll"/>
+    <ROW Component="Microsoft.Extensions.FileProviders.Abstr" ComponentId="{A62EB1D7-F1A9-4BC9-AF8E-611C8AC1A57D}" Directory_="APPDIR" Attributes="0" KeyPath="Microsoft.Extensions.FileProviders.Abstractions.dll"/>
+    <ROW Component="Microsoft.Extensions.Logging.Abstraction" ComponentId="{9F6B3819-0A5C-4F35-A3FB-3E77AABBB1BA}" Directory_="APPDIR" Attributes="0" KeyPath="Microsoft.Extensions.Logging.Abstractions.dll"/>
+    <ROW Component="Microsoft.Extensions.Logging.dll" ComponentId="{FB7032F7-463A-4612-B4F6-178C5CCBAA12}" Directory_="APPDIR" Attributes="0" KeyPath="Microsoft.Extensions.Logging.dll"/>
+    <ROW Component="Microsoft.Extensions.Options.dll" ComponentId="{28A25DA7-A8DD-45E9-A188-82BFD7CF1649}" Directory_="APPDIR" Attributes="0" KeyPath="Microsoft.Extensions.Options.dll"/>
+    <ROW Component="Microsoft.Extensions.Primitives.dll" ComponentId="{33BAD5DC-E233-4796-8A15-73CDF68B1EA4}" Directory_="APPDIR" Attributes="0" KeyPath="Microsoft.Extensions.Primitives.dll"/>
+    <ROW Component="ProductInformation" ComponentId="{1E5D9DD8-D73A-4DB7-90A7-CFA77CA44DF2}" Directory_="APPDIR" Attributes="4" KeyPath="Version"/>
+    <ROW Component="Remotion.Linq.dll" ComponentId="{21E52D69-06F0-420C-9B83-8CF4C4E992BB}" Directory_="APPDIR" Attributes="0" KeyPath="Remotion.Linq.dll"/>
+    <ROW Component="SpeechClient.dll" ComponentId="{83989979-D004-44E3-A2DC-1EE04344CE4B}" Directory_="APPDIR" Attributes="0" KeyPath="SpeechClient.dll"/>
+    <ROW Component="Starvis.exe" ComponentId="{4AE7FCB9-6A5D-492F-830F-088A9C3FB902}" Directory_="APPDIR" Attributes="0" KeyPath="Starvis.exe"/>
+    <ROW Component="System.Collections.Immutable.dll" ComponentId="{CBD63D51-14F2-44B9-B99B-7A8AF8162089}" Directory_="APPDIR" Attributes="0" KeyPath="System.Collections.Immutable.dll"/>
+    <ROW Component="System.Diagnostics.DiagnosticSource.dll" ComponentId="{D75F0944-7FCD-42C3-98C7-3D26CAAF865E}" Directory_="APPDIR" Attributes="0" KeyPath="System.Diagnostics.DiagnosticSource.dll"/>
+    <ROW Component="System.Interactive.Async.dll" ComponentId="{19AB68E5-ADE6-4E10-ABFA-317232216FD2}" Directory_="APPDIR" Attributes="0" KeyPath="System.Interactive.Async.dll"/>
+    <ROW Component="System.Runtime.CompilerServices.Unsafe.d" ComponentId="{15234A44-61A1-4AC8-8FF8-6522CCC6A105}" Directory_="APPDIR" Attributes="0" KeyPath="System.Runtime.CompilerServices.Unsafe.dll"/>
+    <ROW Component="System.Runtime.InteropServices.RuntimeIn" ComponentId="{FBC888A7-7AFA-40B4-AC7D-1850628EFAFB}" Directory_="APPDIR" Attributes="0" KeyPath="System.Runtime.InteropServices.RuntimeInformation.dll"/>
+    <ROW Component="System.Text.Encodings.Web.dll" ComponentId="{8A45843B-B6DE-4268-8D5F-58DD1C7E892A}" Directory_="APPDIR" Attributes="0" KeyPath="System.Text.Encodings.Web.dll"/>
+    <ROW Component="System.Windows.Interactivity.dll" ComponentId="{09339AA1-8E5D-4E49-B34B-03DB18F5CA1F}" Directory_="APPDIR" Attributes="0" KeyPath="System.Windows.Interactivity.dll"/>
+    <ROW Component="sqlite3.dll" ComponentId="{F63BCEDF-FF62-49FB-9721-E040C45B2D41}" Directory_="x86_Dir" Attributes="0" KeyPath="sqlite3.dll"/>
+    <ROW Component="sqlite3.dll_1" ComponentId="{491CBE46-9FEF-4921-B3F8-945BB76CA693}" Directory_="x64_Dir" Attributes="256" KeyPath="sqlite3.dll_1"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiFeatsComponent">
+    <ROW Feature="MainFeature" Title="MainFeature" Description="Description" Display="1" Level="1" Directory_="APPDIR" Attributes="0" Components="MahApps.Metro.dll MahApps.Metro.xml MaterialDesignColors.dll MaterialDesignThemes.MahApps.dll MaterialDesignThemes.Wpf.dll Microsoft.AspNetCore.Hosting.Abstraction Microsoft.AspNetCore.Hosting.Server.Abst Microsoft.AspNetCore.Http.Abstractions.d Microsoft.AspNetCore.Http.Features.dll Microsoft.Data.Sqlite.dll Microsoft.EntityFrameworkCore.Design.dll Microsoft.EntityFrameworkCore.Relation_1 Microsoft.EntityFrameworkCore.Relational Microsoft.EntityFrameworkCore.SqlServer. Microsoft.EntityFrameworkCore.Sqlite.dll Microsoft.EntityFrameworkCore.dll Microsoft.Extensions.Caching.Abstraction Microsoft.Extensions.Caching.Memory.dll Microsoft.Extensions.Configuration.Abstr Microsoft.Extensions.DependencyInjecti_1 Microsoft.Extensions.DependencyInjection Microsoft.Extensions.FileProviders.Abstr Microsoft.Extensions.Logging.Abstraction Microsoft.Extensions.Logging.dll Microsoft.Extensions.Options.dll Microsoft.Extensions.Primitives.dll ProductInformation Remotion.Linq.dll SpeechClient.dll Starvis.exe System.Collections.Immutable.dll System.Diagnostics.DiagnosticSource.dll System.Interactive.Async.dll System.Runtime.CompilerServices.Unsafe.d System.Runtime.InteropServices.RuntimeIn System.Text.Encodings.Web.dll System.Windows.Interactivity.dll sqlite3.dll sqlite3.dll_1"/>
+    <ATTRIBUTE name="CurrentFeature" value="MainFeature"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiFilesComponent">
+    <ROW File="MahApps.Metro.dll" Component_="MahApps.Metro.dll" FileName="MAHAPP~1.DLL|MahApps.Metro.dll" Attributes="0" SourcePath="..\MahApps.Metro.dll" SelfReg="false" NextFile="MahApps.Metro.pdb"/>
+    <ROW File="MahApps.Metro.pdb" Component_="MahApps.Metro.dll" FileName="MAHAPP~1.PDB|MahApps.Metro.pdb" Attributes="0" SourcePath="..\MahApps.Metro.pdb" SelfReg="false" NextFile="MahApps.Metro.xml"/>
+    <ROW File="MahApps.Metro.xml" Component_="MahApps.Metro.xml" FileName="MAHAPP~1.XML|MahApps.Metro.xml" Attributes="0" SourcePath="..\MahApps.Metro.xml" SelfReg="false" NextFile="MaterialDesignColors.dll"/>
+    <ROW File="MaterialDesignColors.dll" Component_="MaterialDesignColors.dll" FileName="MATERI~1.DLL|MaterialDesignColors.dll" Attributes="0" SourcePath="..\MaterialDesignColors.dll" SelfReg="false" NextFile="MaterialDesignThemes.MahApps.dll"/>
+    <ROW File="MaterialDesignThemes.MahApps.dll" Component_="MaterialDesignThemes.MahApps.dll" FileName="MATERI~2.DLL|MaterialDesignThemes.MahApps.dll" Attributes="0" SourcePath="..\MaterialDesignThemes.MahApps.dll" SelfReg="false" NextFile="MaterialDesignThemes.Wpf.dll"/>
+    <ROW File="MaterialDesignThemes.Wpf.dll" Component_="MaterialDesignThemes.Wpf.dll" FileName="MATERI~3.DLL|MaterialDesignThemes.Wpf.dll" Attributes="0" SourcePath="..\MaterialDesignThemes.Wpf.dll" SelfReg="false" NextFile="MaterialDesignThemes.Wpf.pdb"/>
+    <ROW File="MaterialDesignThemes.Wpf.pdb" Component_="MaterialDesignThemes.Wpf.dll" FileName="MATERI~1.PDB|MaterialDesignThemes.Wpf.pdb" Attributes="0" SourcePath="..\MaterialDesignThemes.Wpf.pdb" SelfReg="false" NextFile="MaterialDesignThemes.Wpf.xml"/>
+    <ROW File="MaterialDesignThemes.Wpf.xml" Component_="MahApps.Metro.xml" FileName="MATERI~1.XML|MaterialDesignThemes.Wpf.xml" Attributes="0" SourcePath="..\MaterialDesignThemes.Wpf.xml" SelfReg="false" NextFile="Microsoft.AspNetCore.Hosting.Abstractions.dll"/>
+    <ROW File="Microsoft.AspNetCore.Hosting.Abstractions.dll" Component_="Microsoft.AspNetCore.Hosting.Abstraction" FileName="MICROS~1.DLL|Microsoft.AspNetCore.Hosting.Abstractions.dll" Attributes="0" SourcePath="..\Microsoft.AspNetCore.Hosting.Abstractions.dll" SelfReg="false" NextFile="Microsoft.AspNetCore.Hosting.Abstractions.xml"/>
+    <ROW File="Microsoft.AspNetCore.Hosting.Abstractions.xml" Component_="MahApps.Metro.xml" FileName="MICROS~1.XML|Microsoft.AspNetCore.Hosting.Abstractions.xml" Attributes="0" SourcePath="..\Microsoft.AspNetCore.Hosting.Abstractions.xml" SelfReg="false" NextFile="Microsoft.AspNetCore.Hosting.Server.Abstractions.dll"/>
+    <ROW File="Microsoft.AspNetCore.Hosting.Server.Abstractions.dll" Component_="Microsoft.AspNetCore.Hosting.Server.Abst" FileName="MICROS~2.DLL|Microsoft.AspNetCore.Hosting.Server.Abstractions.dll" Attributes="0" SourcePath="..\Microsoft.AspNetCore.Hosting.Server.Abstractions.dll" SelfReg="false" NextFile="Microsoft.AspNetCore.Hosting.Server.Abstractions.xml"/>
+    <ROW File="Microsoft.AspNetCore.Hosting.Server.Abstractions.xml" Component_="MahApps.Metro.xml" FileName="MICROS~2.XML|Microsoft.AspNetCore.Hosting.Server.Abstractions.xml" Attributes="0" SourcePath="..\Microsoft.AspNetCore.Hosting.Server.Abstractions.xml" SelfReg="false" NextFile="Microsoft.AspNetCore.Http.Abstractions.dll"/>
+    <ROW File="Microsoft.AspNetCore.Http.Abstractions.dll" Component_="Microsoft.AspNetCore.Http.Abstractions.d" FileName="MICROS~3.DLL|Microsoft.AspNetCore.Http.Abstractions.dll" Attributes="0" SourcePath="..\Microsoft.AspNetCore.Http.Abstractions.dll" SelfReg="false" NextFile="Microsoft.AspNetCore.Http.Abstractions.xml"/>
+    <ROW File="Microsoft.AspNetCore.Http.Abstractions.xml" Component_="MahApps.Metro.xml" FileName="MICROS~3.XML|Microsoft.AspNetCore.Http.Abstractions.xml" Attributes="0" SourcePath="..\Microsoft.AspNetCore.Http.Abstractions.xml" SelfReg="false" NextFile="Microsoft.AspNetCore.Http.Features.dll"/>
+    <ROW File="Microsoft.AspNetCore.Http.Features.dll" Component_="Microsoft.AspNetCore.Http.Features.dll" FileName="MICROS~4.DLL|Microsoft.AspNetCore.Http.Features.dll" Attributes="0" SourcePath="..\Microsoft.AspNetCore.Http.Features.dll" SelfReg="false" NextFile="Microsoft.AspNetCore.Http.Features.xml"/>
+    <ROW File="Microsoft.AspNetCore.Http.Features.xml" Component_="MahApps.Metro.xml" FileName="MICROS~4.XML|Microsoft.AspNetCore.Http.Features.xml" Attributes="0" SourcePath="..\Microsoft.AspNetCore.Http.Features.xml" SelfReg="false" NextFile="Microsoft.Data.Sqlite.dll"/>
+    <ROW File="Microsoft.Data.Sqlite.dll" Component_="Microsoft.Data.Sqlite.dll" FileName="MICROS~5.DLL|Microsoft.Data.Sqlite.dll" Attributes="0" SourcePath="..\Microsoft.Data.Sqlite.dll" SelfReg="false" NextFile="Microsoft.Data.Sqlite.xml"/>
+    <ROW File="Microsoft.Data.Sqlite.xml" Component_="MahApps.Metro.xml" FileName="MICROS~5.XML|Microsoft.Data.Sqlite.xml" Attributes="0" SourcePath="..\Microsoft.Data.Sqlite.xml" SelfReg="false" NextFile="Microsoft.EntityFrameworkCore.Design.dll"/>
+    <ROW File="Microsoft.EntityFrameworkCore.Design.dll" Component_="Microsoft.EntityFrameworkCore.Design.dll" FileName="MICROS~6.DLL|Microsoft.EntityFrameworkCore.Design.dll" Attributes="0" SourcePath="..\Microsoft.EntityFrameworkCore.Design.dll" SelfReg="false" NextFile="Microsoft.EntityFrameworkCore.Design.xml"/>
+    <ROW File="Microsoft.EntityFrameworkCore.Design.xml" Component_="MahApps.Metro.xml" FileName="MICROS~6.XML|Microsoft.EntityFrameworkCore.Design.xml" Attributes="0" SourcePath="..\Microsoft.EntityFrameworkCore.Design.xml" SelfReg="false" NextFile="Microsoft.EntityFrameworkCore.dll"/>
+    <ROW File="Microsoft.EntityFrameworkCore.Relational.Design.dll" Component_="Microsoft.EntityFrameworkCore.Relational" FileName="MICROS~8.DLL|Microsoft.EntityFrameworkCore.Relational.Design.dll" Attributes="0" SourcePath="..\Microsoft.EntityFrameworkCore.Relational.Design.dll" SelfReg="false" NextFile="Microsoft.EntityFrameworkCore.Relational.Design.xml"/>
+    <ROW File="Microsoft.EntityFrameworkCore.Relational.Design.xml" Component_="MahApps.Metro.xml" FileName="MICROS~7.XML|Microsoft.EntityFrameworkCore.Relational.Design.xml" Attributes="0" SourcePath="..\Microsoft.EntityFrameworkCore.Relational.Design.xml" SelfReg="false" NextFile="Microsoft.EntityFrameworkCore.Relational.dll"/>
+    <ROW File="Microsoft.EntityFrameworkCore.Relational.dll" Component_="Microsoft.EntityFrameworkCore.Relation_1" FileName="MICROS~9.DLL|Microsoft.EntityFrameworkCore.Relational.dll" Attributes="0" SourcePath="..\Microsoft.EntityFrameworkCore.Relational.dll" SelfReg="false" NextFile="Microsoft.EntityFrameworkCore.Relational.xml"/>
+    <ROW File="Microsoft.EntityFrameworkCore.Relational.xml" Component_="MahApps.Metro.xml" FileName="MICROS~8.XML|Microsoft.EntityFrameworkCore.Relational.xml" Attributes="0" SourcePath="..\Microsoft.EntityFrameworkCore.Relational.xml" SelfReg="false" NextFile="Microsoft.EntityFrameworkCore.Sqlite.dll"/>
+    <ROW File="Microsoft.EntityFrameworkCore.SqlServer.dll" Component_="Microsoft.EntityFrameworkCore.SqlServer." FileName="MICRO~11.DLL|Microsoft.EntityFrameworkCore.SqlServer.dll" Attributes="0" SourcePath="..\Microsoft.EntityFrameworkCore.SqlServer.dll" SelfReg="false" NextFile="Microsoft.EntityFrameworkCore.SqlServer.xml"/>
+    <ROW File="Microsoft.EntityFrameworkCore.SqlServer.xml" Component_="MahApps.Metro.xml" FileName="MICRO~10.XML|Microsoft.EntityFrameworkCore.SqlServer.xml" Attributes="0" SourcePath="..\Microsoft.EntityFrameworkCore.SqlServer.xml" SelfReg="false" NextFile="Microsoft.EntityFrameworkCore.xml"/>
+    <ROW File="Microsoft.EntityFrameworkCore.Sqlite.dll" Component_="Microsoft.EntityFrameworkCore.Sqlite.dll" FileName="MICRO~10.DLL|Microsoft.EntityFrameworkCore.Sqlite.dll" Attributes="0" SourcePath="..\Microsoft.EntityFrameworkCore.Sqlite.dll" SelfReg="false" NextFile="Microsoft.EntityFrameworkCore.Sqlite.xml"/>
+    <ROW File="Microsoft.EntityFrameworkCore.Sqlite.xml" Component_="MahApps.Metro.xml" FileName="MICROS~9.XML|Microsoft.EntityFrameworkCore.Sqlite.xml" Attributes="0" SourcePath="..\Microsoft.EntityFrameworkCore.Sqlite.xml" SelfReg="false" NextFile="Microsoft.EntityFrameworkCore.SqlServer.dll"/>
+    <ROW File="Microsoft.EntityFrameworkCore.dll" Component_="Microsoft.EntityFrameworkCore.dll" FileName="MICROS~7.DLL|Microsoft.EntityFrameworkCore.dll" Attributes="0" SourcePath="..\Microsoft.EntityFrameworkCore.dll" SelfReg="false" NextFile="Microsoft.EntityFrameworkCore.Relational.Design.dll"/>
+    <ROW File="Microsoft.EntityFrameworkCore.xml" Component_="MahApps.Metro.xml" FileName="MICRO~11.XML|Microsoft.EntityFrameworkCore.xml" Attributes="0" SourcePath="..\Microsoft.EntityFrameworkCore.xml" SelfReg="false" NextFile="Microsoft.Extensions.Caching.Abstractions.dll"/>
+    <ROW File="Microsoft.Extensions.Caching.Abstractions.dll" Component_="Microsoft.Extensions.Caching.Abstraction" FileName="MICRO~12.DLL|Microsoft.Extensions.Caching.Abstractions.dll" Attributes="0" SourcePath="..\Microsoft.Extensions.Caching.Abstractions.dll" SelfReg="false" NextFile="Microsoft.Extensions.Caching.Abstractions.xml"/>
+    <ROW File="Microsoft.Extensions.Caching.Abstractions.xml" Component_="MahApps.Metro.xml" FileName="MICRO~12.XML|Microsoft.Extensions.Caching.Abstractions.xml" Attributes="0" SourcePath="..\Microsoft.Extensions.Caching.Abstractions.xml" SelfReg="false" NextFile="Microsoft.Extensions.Caching.Memory.dll"/>
+    <ROW File="Microsoft.Extensions.Caching.Memory.dll" Component_="Microsoft.Extensions.Caching.Memory.dll" FileName="MICRO~13.DLL|Microsoft.Extensions.Caching.Memory.dll" Attributes="0" SourcePath="..\Microsoft.Extensions.Caching.Memory.dll" SelfReg="false" NextFile="Microsoft.Extensions.Caching.Memory.xml"/>
+    <ROW File="Microsoft.Extensions.Caching.Memory.xml" Component_="MahApps.Metro.xml" FileName="MICRO~13.XML|Microsoft.Extensions.Caching.Memory.xml" Attributes="0" SourcePath="..\Microsoft.Extensions.Caching.Memory.xml" SelfReg="false" NextFile="Microsoft.Extensions.Configuration.Abstractions.dll"/>
+    <ROW File="Microsoft.Extensions.Configuration.Abstractions.dll" Component_="Microsoft.Extensions.Configuration.Abstr" FileName="MICRO~14.DLL|Microsoft.Extensions.Configuration.Abstractions.dll" Attributes="0" SourcePath="..\Microsoft.Extensions.Configuration.Abstractions.dll" SelfReg="false" NextFile="Microsoft.Extensions.Configuration.Abstractions.xml"/>
+    <ROW File="Microsoft.Extensions.Configuration.Abstractions.xml" Component_="MahApps.Metro.xml" FileName="MICRO~14.XML|Microsoft.Extensions.Configuration.Abstractions.xml" Attributes="0" SourcePath="..\Microsoft.Extensions.Configuration.Abstractions.xml" SelfReg="false" NextFile="Microsoft.Extensions.DependencyInjection.Abstractions.dll"/>
+    <ROW File="Microsoft.Extensions.DependencyInjection.Abstractions.dll" Component_="Microsoft.Extensions.DependencyInjection" FileName="MICRO~15.DLL|Microsoft.Extensions.DependencyInjection.Abstractions.dll" Attributes="0" SourcePath="..\Microsoft.Extensions.DependencyInjection.Abstractions.dll" SelfReg="false" NextFile="Microsoft.Extensions.DependencyInjection.Abstractions.xml"/>
+    <ROW File="Microsoft.Extensions.DependencyInjection.Abstractions.xml" Component_="MahApps.Metro.xml" FileName="MICRO~15.XML|Microsoft.Extensions.DependencyInjection.Abstractions.xml" Attributes="0" SourcePath="..\Microsoft.Extensions.DependencyInjection.Abstractions.xml" SelfReg="false" NextFile="Microsoft.Extensions.DependencyInjection.dll"/>
+    <ROW File="Microsoft.Extensions.DependencyInjection.dll" Component_="Microsoft.Extensions.DependencyInjecti_1" FileName="MICRO~16.DLL|Microsoft.Extensions.DependencyInjection.dll" Attributes="0" SourcePath="..\Microsoft.Extensions.DependencyInjection.dll" SelfReg="false" NextFile="Microsoft.Extensions.DependencyInjection.xml"/>
+    <ROW File="Microsoft.Extensions.DependencyInjection.xml" Component_="MahApps.Metro.xml" FileName="MICRO~16.XML|Microsoft.Extensions.DependencyInjection.xml" Attributes="0" SourcePath="..\Microsoft.Extensions.DependencyInjection.xml" SelfReg="false" NextFile="Microsoft.Extensions.FileProviders.Abstractions.dll"/>
+    <ROW File="Microsoft.Extensions.FileProviders.Abstractions.dll" Component_="Microsoft.Extensions.FileProviders.Abstr" FileName="MICRO~17.DLL|Microsoft.Extensions.FileProviders.Abstractions.dll" Attributes="0" SourcePath="..\Microsoft.Extensions.FileProviders.Abstractions.dll" SelfReg="false" NextFile="Microsoft.Extensions.FileProviders.Abstractions.xml"/>
+    <ROW File="Microsoft.Extensions.FileProviders.Abstractions.xml" Component_="MahApps.Metro.xml" FileName="MICRO~17.XML|Microsoft.Extensions.FileProviders.Abstractions.xml" Attributes="0" SourcePath="..\Microsoft.Extensions.FileProviders.Abstractions.xml" SelfReg="false" NextFile="Microsoft.Extensions.Logging.Abstractions.dll"/>
+    <ROW File="Microsoft.Extensions.Logging.Abstractions.dll" Component_="Microsoft.Extensions.Logging.Abstraction" FileName="MICRO~18.DLL|Microsoft.Extensions.Logging.Abstractions.dll" Attributes="0" SourcePath="..\Microsoft.Extensions.Logging.Abstractions.dll" SelfReg="false" NextFile="Microsoft.Extensions.Logging.Abstractions.xml"/>
+    <ROW File="Microsoft.Extensions.Logging.Abstractions.xml" Component_="MahApps.Metro.xml" FileName="MICRO~18.XML|Microsoft.Extensions.Logging.Abstractions.xml" Attributes="0" SourcePath="..\Microsoft.Extensions.Logging.Abstractions.xml" SelfReg="false" NextFile="Microsoft.Extensions.Logging.dll"/>
+    <ROW File="Microsoft.Extensions.Logging.dll" Component_="Microsoft.Extensions.Logging.dll" FileName="MICRO~19.DLL|Microsoft.Extensions.Logging.dll" Attributes="0" SourcePath="..\Microsoft.Extensions.Logging.dll" SelfReg="false" NextFile="Microsoft.Extensions.Logging.xml"/>
+    <ROW File="Microsoft.Extensions.Logging.xml" Component_="MahApps.Metro.xml" FileName="MICRO~19.XML|Microsoft.Extensions.Logging.xml" Attributes="0" SourcePath="..\Microsoft.Extensions.Logging.xml" SelfReg="false" NextFile="Microsoft.Extensions.Options.dll"/>
+    <ROW File="Microsoft.Extensions.Options.dll" Component_="Microsoft.Extensions.Options.dll" FileName="MICRO~20.DLL|Microsoft.Extensions.Options.dll" Attributes="0" SourcePath="..\Microsoft.Extensions.Options.dll" SelfReg="false" NextFile="Microsoft.Extensions.Options.xml"/>
+    <ROW File="Microsoft.Extensions.Options.xml" Component_="MahApps.Metro.xml" FileName="MICRO~20.XML|Microsoft.Extensions.Options.xml" Attributes="0" SourcePath="..\Microsoft.Extensions.Options.xml" SelfReg="false" NextFile="Microsoft.Extensions.Primitives.dll"/>
+    <ROW File="Microsoft.Extensions.Primitives.dll" Component_="Microsoft.Extensions.Primitives.dll" FileName="MICRO~21.DLL|Microsoft.Extensions.Primitives.dll" Attributes="0" SourcePath="..\Microsoft.Extensions.Primitives.dll" SelfReg="false" NextFile="Microsoft.Extensions.Primitives.xml"/>
+    <ROW File="Microsoft.Extensions.Primitives.xml" Component_="MahApps.Metro.xml" FileName="MICRO~21.XML|Microsoft.Extensions.Primitives.xml" Attributes="0" SourcePath="..\Microsoft.Extensions.Primitives.xml" SelfReg="false" NextFile="Remotion.Linq.dll"/>
+    <ROW File="Remotion.Linq.dll" Component_="Remotion.Linq.dll" FileName="REMOTI~1.DLL|Remotion.Linq.dll" Attributes="0" SourcePath="..\Remotion.Linq.dll" SelfReg="false" NextFile="Remotion.Linq.xml"/>
+    <ROW File="Remotion.Linq.xml" Component_="MahApps.Metro.xml" FileName="REMOTI~1.XML|Remotion.Linq.xml" Attributes="0" SourcePath="..\Remotion.Linq.xml" SelfReg="false" NextFile="SpeechClient.dll"/>
+    <ROW File="SpeechClient.dll" Component_="SpeechClient.dll" FileName="SPEECH~1.DLL|SpeechClient.dll" Attributes="0" SourcePath="..\SpeechClient.dll" SelfReg="false" NextFile="Starvis.db"/>
+    <ROW File="Starvis.db" Component_="MahApps.Metro.xml" FileName="Starvis.db" Attributes="0" SourcePath="..\Starvis.db" SelfReg="false" NextFile="Starvis.exe"/>
+    <ROW File="Starvis.exe" Component_="Starvis.exe" FileName="Starvis.exe" Attributes="0" SourcePath="..\Starvis.exe" SelfReg="false" NextFile="Starvis.exe.config" DigSign="true"/>
+    <ROW File="Starvis.exe.config" Component_="MahApps.Metro.xml" FileName="STARVI~1.CON|Starvis.exe.config" Attributes="0" SourcePath="..\Starvis.exe.config" SelfReg="false" NextFile="Starvis.pdb"/>
+    <ROW File="Starvis.pdb" Component_="Starvis.exe" FileName="Starvis.pdb" Attributes="0" SourcePath="..\Starvis.pdb" SelfReg="false" NextFile="System.Collections.Immutable.dll"/>
+    <ROW File="System.Collections.Immutable.dll" Component_="System.Collections.Immutable.dll" FileName="SYSTEM~1.DLL|System.Collections.Immutable.dll" Attributes="0" SourcePath="..\System.Collections.Immutable.dll" SelfReg="false" NextFile="System.Collections.Immutable.xml"/>
+    <ROW File="System.Collections.Immutable.xml" Component_="MahApps.Metro.xml" FileName="SYSTEM~1.XML|System.Collections.Immutable.xml" Attributes="0" SourcePath="..\System.Collections.Immutable.xml" SelfReg="false" NextFile="System.Diagnostics.DiagnosticSource.dll"/>
+    <ROW File="System.Diagnostics.DiagnosticSource.dll" Component_="System.Diagnostics.DiagnosticSource.dll" FileName="SYSTEM~2.DLL|System.Diagnostics.DiagnosticSource.dll" Attributes="0" SourcePath="..\System.Diagnostics.DiagnosticSource.dll" SelfReg="false" NextFile="System.Diagnostics.DiagnosticSource.xml"/>
+    <ROW File="System.Diagnostics.DiagnosticSource.xml" Component_="MahApps.Metro.xml" FileName="SYSTEM~2.XML|System.Diagnostics.DiagnosticSource.xml" Attributes="0" SourcePath="..\System.Diagnostics.DiagnosticSource.xml" SelfReg="false" NextFile="System.Interactive.Async.dll"/>
+    <ROW File="System.Interactive.Async.dll" Component_="System.Interactive.Async.dll" FileName="SYSTEM~3.DLL|System.Interactive.Async.dll" Attributes="0" SourcePath="..\System.Interactive.Async.dll" SelfReg="false" NextFile="System.Interactive.Async.xml"/>
+    <ROW File="System.Interactive.Async.xml" Component_="MahApps.Metro.xml" FileName="SYSTEM~3.XML|System.Interactive.Async.xml" Attributes="0" SourcePath="..\System.Interactive.Async.xml" SelfReg="false" NextFile="System.Runtime.CompilerServices.Unsafe.dll"/>
+    <ROW File="System.Runtime.CompilerServices.Unsafe.dll" Component_="System.Runtime.CompilerServices.Unsafe.d" FileName="SYSTEM~4.DLL|System.Runtime.CompilerServices.Unsafe.dll" Attributes="0" SourcePath="..\System.Runtime.CompilerServices.Unsafe.dll" SelfReg="false" NextFile="System.Runtime.CompilerServices.Unsafe.xml"/>
+    <ROW File="System.Runtime.CompilerServices.Unsafe.xml" Component_="MahApps.Metro.xml" FileName="SYSTEM~4.XML|System.Runtime.CompilerServices.Unsafe.xml" Attributes="0" SourcePath="..\System.Runtime.CompilerServices.Unsafe.xml" SelfReg="false" NextFile="System.Runtime.InteropServices.RuntimeInformation.dll"/>
+    <ROW File="System.Runtime.InteropServices.RuntimeInformation.dll" Component_="System.Runtime.InteropServices.RuntimeIn" FileName="SYSTEM~5.DLL|System.Runtime.InteropServices.RuntimeInformation.dll" Attributes="0" SourcePath="..\System.Runtime.InteropServices.RuntimeInformation.dll" SelfReg="false" NextFile="System.Text.Encodings.Web.dll"/>
+    <ROW File="System.Text.Encodings.Web.dll" Component_="System.Text.Encodings.Web.dll" FileName="SYSTEM~6.DLL|System.Text.Encodings.Web.dll" Attributes="0" SourcePath="..\System.Text.Encodings.Web.dll" SelfReg="false" NextFile="System.Text.Encodings.Web.xml"/>
+    <ROW File="System.Text.Encodings.Web.xml" Component_="MahApps.Metro.xml" FileName="SYSTEM~5.XML|System.Text.Encodings.Web.xml" Attributes="0" SourcePath="..\System.Text.Encodings.Web.xml" SelfReg="false" NextFile="System.Windows.Interactivity.dll"/>
+    <ROW File="System.Windows.Interactivity.dll" Component_="System.Windows.Interactivity.dll" FileName="SYSTEM~7.DLL|System.Windows.Interactivity.dll" Attributes="0" SourcePath="..\System.Windows.Interactivity.dll" SelfReg="false" NextFile="sqlite3.dll"/>
+    <ROW File="sqlite3.dll" Component_="sqlite3.dll" FileName="sqlite3.dll" Attributes="0" SourcePath="..\x86\sqlite3.dll" SelfReg="false" NextFile="sqlite3.dll_1"/>
+    <ROW File="sqlite3.dll_1" Component_="sqlite3.dll_1" FileName="sqlite3.dll" Attributes="0" SourcePath="sqlite3.dll" SelfReg="false"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.BuildComponent">
+    <ROW BuildKey="DefaultBuild" BuildName="DefaultBuild" BuildOrder="1" BuildType="0" Languages="en" InstallationType="4" UseLargeSchema="true"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.DictionaryComponent">
+    <ROW Path="&lt;AI_DICTS&gt;ui.ail"/>
+    <ROW Path="&lt;AI_DICTS&gt;ui_en.ail"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.FragmentComponent">
+    <ROW Fragment="CommonUI.aip" Path="&lt;AI_FRAGS&gt;CommonUI.aip"/>
+    <ROW Fragment="FolderDlg.aip" Path="&lt;AI_THEMES&gt;classic\fragments\FolderDlg.aip"/>
+    <ROW Fragment="MaintenanceTypeDlg.aip" Path="&lt;AI_THEMES&gt;classic\fragments\MaintenanceTypeDlg.aip"/>
+    <ROW Fragment="MaintenanceWelcomeDlg.aip" Path="&lt;AI_THEMES&gt;classic\fragments\MaintenanceWelcomeDlg.aip"/>
+    <ROW Fragment="SequenceDialogs.aip" Path="&lt;AI_THEMES&gt;classic\fragments\SequenceDialogs.aip"/>
+    <ROW Fragment="Sequences.aip" Path="&lt;AI_FRAGS&gt;Sequences.aip"/>
+    <ROW Fragment="StaticUIStrings.aip" Path="&lt;AI_FRAGS&gt;StaticUIStrings.aip"/>
+    <ROW Fragment="UI.aip" Path="&lt;AI_THEMES&gt;classic\fragments\UI.aip"/>
+    <ROW Fragment="Validation.aip" Path="&lt;AI_FRAGS&gt;Validation.aip"/>
+    <ROW Fragment="VerifyRemoveDlg.aip" Path="&lt;AI_THEMES&gt;classic\fragments\VerifyRemoveDlg.aip"/>
+    <ROW Fragment="VerifyRepairDlg.aip" Path="&lt;AI_THEMES&gt;classic\fragments\VerifyRepairDlg.aip"/>
+    <ROW Fragment="WelcomeDlg.aip" Path="&lt;AI_THEMES&gt;classic\fragments\WelcomeDlg.aip"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiBinaryComponent">
+    <ROW Name="aicustact.dll" SourcePath="&lt;AI_CUSTACTS&gt;aicustact.dll"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiControlEventComponent">
+    <ROW Dialog_="WelcomeDlg" Control_="Next" Event="NewDialog" Argument="FolderDlg" Condition="AI_INSTALL" Ordering="1"/>
+    <ROW Dialog_="FolderDlg" Control_="Next" Event="NewDialog" Argument="VerifyReadyDlg" Condition="AI_INSTALL" Ordering="201"/>
+    <ROW Dialog_="FolderDlg" Control_="Back" Event="NewDialog" Argument="WelcomeDlg" Condition="AI_INSTALL" Ordering="1"/>
+    <ROW Dialog_="MaintenanceWelcomeDlg" Control_="Next" Event="NewDialog" Argument="MaintenanceTypeDlg" Condition="AI_MAINT" Ordering="99"/>
+    <ROW Dialog_="VerifyReadyDlg" Control_="Install" Event="EndDialog" Argument="Return" Condition="AI_MAINT" Ordering="198"/>
+    <ROW Dialog_="VerifyReadyDlg" Control_="Back" Event="NewDialog" Argument="CustomizeDlg" Condition="AI_MAINT" Ordering="202"/>
+    <ROW Dialog_="VerifyReadyDlg" Control_="Install" Event="EndDialog" Argument="Return" Condition="AI_INSTALL" Ordering="197"/>
+    <ROW Dialog_="VerifyReadyDlg" Control_="Back" Event="NewDialog" Argument="FolderDlg" Condition="AI_INSTALL" Ordering="201"/>
+    <ROW Dialog_="CustomizeDlg" Control_="Next" Event="NewDialog" Argument="VerifyReadyDlg" Condition="AI_MAINT" Ordering="101"/>
+    <ROW Dialog_="CustomizeDlg" Control_="Back" Event="NewDialog" Argument="MaintenanceTypeDlg" Condition="AI_MAINT" Ordering="1"/>
+    <ROW Dialog_="MaintenanceTypeDlg" Control_="ChangeButton" Event="NewDialog" Argument="CustomizeDlg" Condition="AI_MAINT" Ordering="501"/>
+    <ROW Dialog_="MaintenanceTypeDlg" Control_="Back" Event="NewDialog" Argument="MaintenanceWelcomeDlg" Condition="AI_MAINT" Ordering="1"/>
+    <ROW Dialog_="MaintenanceTypeDlg" Control_="RemoveButton" Event="NewDialog" Argument="VerifyRemoveDlg" Condition="AI_MAINT AND InstallMode=&quot;Remove&quot;" Ordering="601"/>
+    <ROW Dialog_="VerifyRemoveDlg" Control_="Back" Event="NewDialog" Argument="MaintenanceTypeDlg" Condition="AI_MAINT AND InstallMode=&quot;Remove&quot;" Ordering="1"/>
+    <ROW Dialog_="MaintenanceTypeDlg" Control_="RepairButton" Event="NewDialog" Argument="VerifyRepairDlg" Condition="AI_MAINT AND InstallMode=&quot;Repair&quot;" Ordering="601"/>
+    <ROW Dialog_="VerifyRepairDlg" Control_="Back" Event="NewDialog" Argument="MaintenanceTypeDlg" Condition="AI_MAINT AND InstallMode=&quot;Repair&quot;" Ordering="1"/>
+    <ROW Dialog_="VerifyRepairDlg" Control_="Repair" Event="EndDialog" Argument="Return" Condition="AI_MAINT AND InstallMode=&quot;Repair&quot;" Ordering="399" Options="1"/>
+    <ROW Dialog_="VerifyRemoveDlg" Control_="Remove" Event="EndDialog" Argument="Return" Condition="AI_MAINT AND InstallMode=&quot;Remove&quot;" Ordering="299" Options="1"/>
+    <ROW Dialog_="PatchWelcomeDlg" Control_="Next" Event="NewDialog" Argument="VerifyReadyDlg" Condition="AI_PATCH" Ordering="201"/>
+    <ROW Dialog_="ResumeDlg" Control_="Install" Event="EndDialog" Argument="Return" Condition="AI_RESUME" Ordering="299"/>
+    <ROW Dialog_="VerifyReadyDlg" Control_="Install" Event="EndDialog" Argument="Return" Condition="AI_PATCH" Ordering="199"/>
+    <ROW Dialog_="VerifyReadyDlg" Control_="Back" Event="NewDialog" Argument="PatchWelcomeDlg" Condition="AI_PATCH" Ordering="203"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiCustActComponent">
+    <ROW Action="AI_DOWNGRADE" Type="19" Target="4010"/>
+    <ROW Action="AI_DpiContentScale" Type="1" Source="aicustact.dll" Target="DpiContentScale"/>
+    <ROW Action="AI_EnableDebugLog" Type="321" Source="aicustact.dll" Target="EnableDebugLog"/>
+    <ROW Action="AI_InstallModeCheck" Type="1" Source="aicustact.dll" Target="UpdateInstallMode" WithoutSeq="true"/>
+    <ROW Action="AI_PREPARE_UPGRADE" Type="65" Source="aicustact.dll" Target="PrepareUpgrade"/>
+    <ROW Action="AI_RESTORE_LOCATION" Type="65" Source="aicustact.dll" Target="RestoreLocation"/>
+    <ROW Action="AI_ResolveKnownFolders" Type="1" Source="aicustact.dll" Target="AI_ResolveKnownFolders"/>
+    <ROW Action="AI_SHOW_LOG" Type="65" Source="aicustact.dll" Target="LaunchLogFile" WithoutSeq="true"/>
+    <ROW Action="AI_STORE_LOCATION" Type="51" Source="ARPINSTALLLOCATION" Target="[APPDIR]"/>
+    <ROW Action="SET_APPDIR" Type="307" Source="APPDIR" Target="[ProgramFilesFolder][Manufacturer]\[ProductName]"/>
+    <ROW Action="SET_SHORTCUTDIR" Type="307" Source="SHORTCUTDIR" Target="[ProgramMenuFolder][ProductName]"/>
+    <ROW Action="SET_TARGETDIR_TO_APPDIR" Type="51" Source="TARGETDIR" Target="[APPDIR]"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiInstExSeqComponent">
+    <ROW Action="AI_DOWNGRADE" Condition="AI_NEWERPRODUCTFOUND AND (UILevel &lt;&gt; 5)" Sequence="210"/>
+    <ROW Action="AI_RESTORE_LOCATION" Condition="APPDIR=&quot;&quot;" Sequence="749"/>
+    <ROW Action="AI_STORE_LOCATION" Condition="(Not Installed) OR REINSTALL" Sequence="1501"/>
+    <ROW Action="AI_PREPARE_UPGRADE" Condition="AI_UPGRADE=&quot;No&quot; AND (Not Installed)" Sequence="1399"/>
+    <ROW Action="AI_ResolveKnownFolders" Sequence="52"/>
+    <ROW Action="AI_EnableDebugLog" Sequence="51"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiInstallUISequenceComponent">
+    <ROW Action="AI_RESTORE_LOCATION" Condition="APPDIR=&quot;&quot;" Sequence="749"/>
+    <ROW Action="AI_ResolveKnownFolders" Sequence="53"/>
+    <ROW Action="AI_DpiContentScale" Sequence="52"/>
+    <ROW Action="AI_EnableDebugLog" Sequence="51"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiLaunchConditionsComponent">
+    <ROW Condition="(VersionNT &lt;&gt; 400)" Description="[ProductName] cannot be installed on [WindowsTypeNT40Display]." DescriptionLocId="AI.LaunchCondition.NoNT40" IsPredefined="true" Builds="DefaultBuild"/>
+    <ROW Condition="(VersionNT &lt;&gt; 500)" Description="[ProductName] cannot be installed on [WindowsTypeNT50Display]." DescriptionLocId="AI.LaunchCondition.NoNT50" IsPredefined="true" Builds="DefaultBuild"/>
+    <ROW Condition="(VersionNT64 OR ((VersionNT &lt;&gt; 501) OR (ServicePackLevel = 3))) AND ((VersionNT &lt;&gt; 502) OR (ServicePackLevel = 2))" Description="[ProductName] cannot be installed on [WindowsTypeNT5XDisplay]." DescriptionLocId="AI.LaunchCondition.NoNT5X" IsPredefined="true" Builds="DefaultBuild"/>
+    <ROW Condition="VersionNT" Description="[ProductName] cannot be installed on [WindowsType9XDisplay]." DescriptionLocId="AI.LaunchCondition.No9X" IsPredefined="true" Builds="DefaultBuild"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiRegsComponent">
+    <ROW Registry="Path" Root="-1" Key="Software\[Manufacturer]\[ProductName]" Name="Path" Value="[APPDIR]" Component_="ProductInformation"/>
+    <ROW Registry="Version" Root="-1" Key="Software\[Manufacturer]\[ProductName]" Name="Version" Value="[ProductVersion]" Component_="ProductInformation"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiShortsComponent">
+    <ROW Shortcut="Starvis" Directory_="DesktopFolder" Name="Starvis" Component_="Starvis.exe" Target="[#Starvis.exe]" Hotkey="0" IconIndex="0" ShowCmd="1" WkDir="APPDIR"/>
+    <ROW Shortcut="Starvis1" Directory_="DesktopFolder" Name="Starvis1" Component_="Starvis.exe" Target="[#Starvis.exe]" Hotkey="0" IconIndex="0" ShowCmd="1" WkDir="APPDIR"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiThemeComponent">
+    <ATTRIBUTE name="UsedTheme" value="classic"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiUpgradeComponent">
+    <ROW UpgradeCode="[|UpgradeCode]" VersionMin="0.0.1" VersionMax="[|ProductVersion]" Attributes="257" ActionProperty="OLDPRODUCTS"/>
+    <ROW UpgradeCode="[|UpgradeCode]" VersionMin="[|ProductVersion]" Attributes="2" ActionProperty="AI_NEWERPRODUCTFOUND"/>
+  </COMPONENT>
+</DOCUMENT>

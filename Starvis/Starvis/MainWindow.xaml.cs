@@ -27,6 +27,7 @@ namespace Starvis
     public partial class MainWindow : MetroWindow
 
     {
+        
         public  MainWindow()
         {
             InitializeComponent();
@@ -175,9 +176,103 @@ namespace Starvis
             new BaseWindow().SettingsInsertUpdate("Mode", "Text Mode");
         }
 
+        [STAThread]
         private void Listen_Click(object sender, RoutedEventArgs e)
         {
             SpeechToText.ConverSpeechToText();
+        }
+
+        private void TextBox_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.Key != System.Windows.Input.Key.Enter) return;
+
+            e.Handled = true;
+            string textCommand = textMain.Text;
+            if(!string.IsNullOrWhiteSpace(textCommand))
+            {
+                if(!textCommand.Contains(" "))
+                {
+                    TextToSpeech.Speak("Please enter the full command");
+                }
+                else
+                {
+                    string[] commands = textCommand.Split(' ');
+                    if(commands.Count()<2)
+                    {
+                        TextToSpeech.Speak("Please enter the full command");
+                    }
+                    else
+                    {
+                        CommandExecution cmdExecution = new CommandExecution();
+                        int RowID;
+                        var db = new Models();
+                        if(commands[0].Equals("B",StringComparison.InvariantCultureIgnoreCase))
+                        {
+                            if (db.WebDB.Any(w=>w.TextCommand.Equals(commands[1],StringComparison.InvariantCultureIgnoreCase)))
+                            {
+                                RowID = db.WebDB.Where(w => w.TextCommand.Equals(commands[1], StringComparison.InvariantCultureIgnoreCase)).FirstOrDefault().WebID;
+                                cmdExecution.Run(RowID);
+                            }
+
+                        }
+                        else if (commands[0].Equals("C", StringComparison.InvariantCultureIgnoreCase))
+                        {
+                            if (db.HotKeyDB.Any(w => w.TextCommand.Equals(commands[1], StringComparison.InvariantCultureIgnoreCase)))
+                            {
+                                RowID = db.HotKeyDB.Where(w => w.TextCommand.Equals(commands[1], StringComparison.InvariantCultureIgnoreCase)).FirstOrDefault().HotKeyID;
+                                cmdExecution.CopyToClipBoard(RowID);
+                            }
+
+                        }
+                        else if (commands[0].Equals("B", StringComparison.InvariantCultureIgnoreCase))
+                        {
+                            if (db.WebDB.Any(w => w.TextCommand.Equals(commands[1], StringComparison.InvariantCultureIgnoreCase)))
+                            {
+                                RowID = db.WebDB.Where(w => w.TextCommand.Equals(commands[1], StringComparison.InvariantCultureIgnoreCase)).FirstOrDefault().WebID;
+                                cmdExecution.Run(RowID);
+                            }
+
+                        }
+                        else if (commands[0].Equals("B", StringComparison.InvariantCultureIgnoreCase))
+                        {
+                            if (db.WebDB.Any(w => w.TextCommand.Equals(commands[1], StringComparison.InvariantCultureIgnoreCase)))
+                            {
+                                RowID = db.WebDB.Where(w => w.TextCommand.Equals(commands[1], StringComparison.InvariantCultureIgnoreCase)).FirstOrDefault().WebID;
+                                cmdExecution.Run(RowID);
+                            }
+
+                        }
+                        else if (commands[0].Equals("B", StringComparison.InvariantCultureIgnoreCase))
+                        {
+                            if (db.WebDB.Any(w => w.TextCommand.Equals(commands[1], StringComparison.InvariantCultureIgnoreCase)))
+                            {
+                                RowID = db.WebDB.Where(w => w.TextCommand.Equals(commands[1], StringComparison.InvariantCultureIgnoreCase)).FirstOrDefault().WebID;
+                                cmdExecution.Run(RowID);
+                            }
+
+
+                        }
+                       else  if (commands[0].Equals("B", StringComparison.InvariantCultureIgnoreCase))
+                        {
+                            if (db.WebDB.Any(w => w.TextCommand.Equals(commands[1], StringComparison.InvariantCultureIgnoreCase)))
+                            {
+                                RowID = db.WebDB.Where(w => w.TextCommand.Equals(commands[1], StringComparison.InvariantCultureIgnoreCase)).FirstOrDefault().WebID;
+                                cmdExecution.Run(RowID);
+                            }
+
+                        }
+                        if (commands[0].Equals("B", StringComparison.InvariantCultureIgnoreCase))
+                        {
+                            if (db.WebDB.Any(w => w.TextCommand.Equals(commands[1], StringComparison.InvariantCultureIgnoreCase)))
+                            {
+                                RowID = db.WebDB.Where(w => w.TextCommand.Equals(commands[1], StringComparison.InvariantCultureIgnoreCase)).FirstOrDefault().WebID;
+                                cmdExecution.Run(RowID);
+                            }
+
+                        }
+                    }
+                }
+            }
         }
     }
 }

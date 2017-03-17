@@ -13,11 +13,13 @@ namespace Starvis
         public static SpeechSynthesizer speaker = new SpeechSynthesizer();
         public static void Speak(string text)
         {
+            speaker.SelectVoiceByHints(VoiceGender.Female, VoiceAge.Adult);
             speaker.Speak(text);
         }
 
         public static void SpeakAsync(string text)
         {
+            speaker.SelectVoiceByHints(VoiceGender.Female,VoiceAge.Adult);
             speaker.SpeakAsync(text);
         }
     }

@@ -38,6 +38,7 @@ namespace Starvis
             db.SaveChanges();
             
             ResetFields();
+            PopulateGrid();
         }
         void ResetFields()
         {

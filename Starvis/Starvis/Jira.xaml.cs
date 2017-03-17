@@ -64,7 +64,7 @@ namespace Starvis
 
         private void btnCreate_Click(object sender, RoutedEventArgs e)
         {
-            if (SelectCategory.SelectedIndex == 2)
+            if (SelectCategory.SelectedIndex == 0)
             {
                 string url = null;
                 if (SelectProject.Text == "REO")

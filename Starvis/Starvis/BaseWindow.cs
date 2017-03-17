@@ -48,11 +48,21 @@ namespace Starvis
         public string GetCurrentModeType()
         {
             Models models = new Models();
-            SettingsDB rec = models.SettingsDB.Where(q => q.Key == "Name").FirstOrDefault();
+            SettingsDB rec = models.SettingsDB.Where(q => q.Key == "Mode").FirstOrDefault();
             if (rec != null)
                 return rec.Value;
 
             return null;
+        }
+
+        public void OutlookInsert(OutlookDB row)
+        {
+            using (Models db = new Models())
+            {
+                Models models = new Models();
+                db.OutlookDB.Add(row);
+                db.SaveChanges();
+            }
         }
     }
 }

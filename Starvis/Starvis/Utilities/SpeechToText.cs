@@ -128,6 +128,7 @@ namespace Starvis.Utilities
             {
                 cmdExec.Run(result.rowID);
             }
+<<<<<<< HEAD
             else if(result.tableName =="ARENA")
             {
                 Batch b = new Batch();
@@ -139,6 +140,15 @@ namespace Starvis.Utilities
                         b.findexe(text.TextCommand);
                     }
                 }
+=======
+            else if (result.tableName == "JIRA")
+            {
+                cmdExec.ExecuteResult(result.rowID);
+            }
+            else if (result.tableName == "OUTLOOK")
+            {
+                new OutlookUtils().HandleOutlookOperations(result.rowID);
+>>>>>>> a6e3e1dc870e57aa487ba2483f9f936186b45837
             }
         }
 

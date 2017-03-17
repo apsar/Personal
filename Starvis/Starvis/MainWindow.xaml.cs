@@ -260,7 +260,7 @@ namespace Starvis
                         }
                         else if (commands[0].Equals("A", StringComparison.InvariantCultureIgnoreCase))
                         {
-                            b.findexe(commands[0]);
+                            b.findexe(commands[1]);
                         }
                         else if (commands[0].Equals("J", StringComparison.InvariantCultureIgnoreCase))
                         {

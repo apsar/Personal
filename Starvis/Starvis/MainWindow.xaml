@@ -91,6 +91,46 @@
 
                                     </TabControl.Resources>
 
+
+                                    <TabItem  x:Name="Arena" Height="50" Width="162"   >
+
+                                        <TabItem.Background>
+                                            <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+                                                <GradientStop Color="#FFF0F0F0" Offset="0"/>
+                                                <GradientStop Color="#FF53C271" Offset="0.029"/>
+                                            </LinearGradientBrush>
+                                        </TabItem.Background>
+                                        <TabItem.Header >
+
+                                            <TextBlock 
+                                                    VerticalAlignment="Center"  HorizontalAlignment="Center"
+                                                    TextBlock.FontFamily="Tahoma"
+                                                    TextBlock.FontWeight="UltraLight"
+                                                    TextBlock.LineHeight="30"
+                                                    TextBlock.FontStretch="SemiExpanded"
+                                                    TextBlock.Foreground="White"                                                                  
+                                                    TextOptions.TextFormattingMode="Display"
+                                                   
+                                            
+                                            Style="{StaticResource HeaderTextBlockStyle}"  Height="50" Width="162"
+                     ><InlineUIContainer>
+                                                    <Image  x:Name="img4"   Source="/images/appbar.social.apple.appstore.png" Margin="+10,+10,+10,+10"  Width="32px" Height="32px"/>
+                                                </InlineUIContainer><Run Text=" "/><InlineUIContainer>
+                                                    <StackPanel Margin="+10,+15,+10,+10" Width="69">
+                                                        <TextBlock><Run Text="Arena"/></TextBlock> 
+                                                   
+                                                    </StackPanel>
+                                                </InlineUIContainer></TextBlock>
+
+
+
+                                        </TabItem.Header>
+
+
+
+
+                                    </TabItem>
+
                                     <!--<TabItem  x:Name="Profile" Height="50" Width="162" Cursor="AppStarting"   >
 
                                         <TabItem.Background>
@@ -192,44 +232,7 @@
                                     </TabItem>
 
 
-                                    <TabItem  x:Name="Arena" Height="50" Width="162"   >
-
-                                        <TabItem.Background>
-                                            <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
-                                                <GradientStop Color="#FFF0F0F0" Offset="0"/>
-                                                <GradientStop Color="#FF53C271" Offset="0.029"/>
-                                            </LinearGradientBrush>
-                                        </TabItem.Background>
-                                        <TabItem.Header >
-
-                                            <TextBlock 
-                                                    VerticalAlignment="Center"  HorizontalAlignment="Center"
-                                                    TextBlock.FontFamily="Tahoma"
-                                                    TextBlock.FontWeight="UltraLight"
-                                                    TextBlock.LineHeight="30"
-                                                    TextBlock.FontStretch="SemiExpanded"
-                                                    TextBlock.Foreground="White"                                                                  
-                                                    TextOptions.TextFormattingMode="Display"
-                                                   
-                                            
-                                            Style="{StaticResource HeaderTextBlockStyle}"  Height="50" Width="162"
-                     ><InlineUIContainer>
-                                                    <Image  x:Name="img4"   Source="/images/appbar.social.apple.appstore.png" Margin="+10,+10,+10,+10"  Width="32px" Height="32px"/>
-                                                </InlineUIContainer><Run Text=" "/><InlineUIContainer>
-                                                    <StackPanel Margin="+10,+15,+10,+10" Width="69">
-                                                        <TextBlock><Run Text="Arena"/></TextBlock> 
-                                                   
-                                                    </StackPanel>
-                                                </InlineUIContainer></TextBlock>
-
-
-
-                                        </TabItem.Header>
-
-
-
-
-                                    </TabItem>
+                                    
 
                                     <!--<TabItem  x:Name="Code" Height="50" Width="162"   >
 
@@ -271,46 +274,7 @@
 
                                     </TabItem>-->
 
-                                    <TabItem  x:Name="Settings" Height="50" Width="162"   >
-
-                                        <TabItem.Background>
-                                            <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
-                                                <GradientStop Color="#FFF0F0F0" Offset="0"/>
-                                                <GradientStop Color="#FF53C271" Offset="0.029"/>
-                                            </LinearGradientBrush>
-                                        </TabItem.Background>
-                                        <TabItem.Header >
-
-                                            <TextBlock 
-                                                    VerticalAlignment="Center"  HorizontalAlignment="Center"
-                                                    TextBlock.FontFamily="Tahoma"
-                                                    TextBlock.FontWeight="UltraLight"
-                                                    TextBlock.LineHeight="30"
-                                                    TextBlock.FontStretch="SemiExpanded"
-                                                    TextBlock.Foreground="White"                                                                  
-                                                    TextOptions.TextFormattingMode="Display"
-                                                   
-                                            
-                                            Style="{StaticResource HeaderTextBlockStyle}"  Height="50" Width="162"
-                     ><InlineUIContainer>
-                                                    <Image  x:Name="img6"   Source="/images/appbar.settings.png" Margin="+10,+10,+10,+10"  Width="32px" Height="32px"/>
-                                                </InlineUIContainer><Run Text=" "/><InlineUIContainer>
-                                                    <StackPanel Margin="+10,+15,+10,+10" Width="69">
-                                                        <TextBlock><Run Text="Settings"/></TextBlock> 
-                                                   
-                                                    </StackPanel>
-                                                </InlineUIContainer></TextBlock>
-
-
-
-                                        </TabItem.Header>
-
-
-
-
-                                    </TabItem>
-
-
+                
 
                                     <TabItem  x:Name="HotKey" Height="50" Width="162"   >
 
@@ -377,6 +341,46 @@
                                                 </InlineUIContainer><Run Text=" "/><InlineUIContainer>
                                                     <StackPanel Margin="+10,+15,+10,+10" Width="69">
                                                         <TextBlock><Run Text="Browse"/></TextBlock> 
+                                                   
+                                                    </StackPanel>
+                                                </InlineUIContainer></TextBlock>
+
+
+
+                                        </TabItem.Header>
+
+
+
+
+                                    </TabItem>
+
+
+                                    <TabItem  x:Name="Settings" Height="50" Width="162"   >
+
+                                        <TabItem.Background>
+                                            <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+                                                <GradientStop Color="#FFF0F0F0" Offset="0"/>
+                                                <GradientStop Color="#FF53C271" Offset="0.029"/>
+                                            </LinearGradientBrush>
+                                        </TabItem.Background>
+                                        <TabItem.Header >
+
+                                            <TextBlock 
+                                                    VerticalAlignment="Center"  HorizontalAlignment="Center"
+                                                    TextBlock.FontFamily="Tahoma"
+                                                    TextBlock.FontWeight="UltraLight"
+                                                    TextBlock.LineHeight="30"
+                                                    TextBlock.FontStretch="SemiExpanded"
+                                                    TextBlock.Foreground="White"                                                                  
+                                                    TextOptions.TextFormattingMode="Display"
+                                                   
+                                            
+                                            Style="{StaticResource HeaderTextBlockStyle}"  Height="50" Width="162"
+                     ><InlineUIContainer>
+                                                    <Image  x:Name="img6"   Source="/images/appbar.settings.png" Margin="+10,+10,+10,+10"  Width="32px" Height="32px"/>
+                                                </InlineUIContainer><Run Text=" "/><InlineUIContainer>
+                                                    <StackPanel Margin="+10,+15,+10,+10" Width="69">
+                                                        <TextBlock><Run Text="Settings"/></TextBlock> 
                                                    
                                                     </StackPanel>
                                                 </InlineUIContainer></TextBlock>

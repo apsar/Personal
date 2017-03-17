@@ -9,7 +9,7 @@
              mc:Ignorable="d"
              Height="526.15" Width="358"
              >
-    <Grid Margin="-261,0,0,0">
+    <Grid Margin="-10,0,0,0">
 
         <DataGrid x:Name="dataGrid" Margin="28,129,35,35.6"/>
         <TextBox Controls:TextBoxHelper.Watermark="Enter your url" x:Name="txtUrl" HorizontalAlignment="Left" Height="23" Margin="23,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="476" />

@@ -177,8 +177,8 @@ namespace Starvis
         private void listBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
 
-        }
 
+        }
         private void DataGrid_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
 
@@ -195,6 +195,11 @@ namespace Starvis
         }
 
         private void listBox1_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
+
+        private void VoiceValue_TextChanged(object sender, TextChangedEventArgs e)
         {
 
         }

@@ -16,7 +16,7 @@ using System.Windows.Shapes;
 namespace Starvis
 {
     /// <summary>
-    /// Interaction logic for VisualStudio.xaml
+    /// Interaction logic for Code.xaml
     /// </summary>
     public partial class Code : UserControl
     {

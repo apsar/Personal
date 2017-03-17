@@ -16,18 +16,13 @@ using System.Windows.Shapes;
 namespace Starvis
 {
     /// <summary>
-    /// Interaction logic for HotKey.xaml
+    /// Interaction logic for Jira.xaml
     /// </summary>
-    public partial class HotKey : UserControl
+    public partial class Jira : UserControl
     {
-        public HotKey()
+        public Jira()
         {
             InitializeComponent();
-        }
-
-        private void textBox_TextChanged(object sender, TextChangedEventArgs e)
-        {
-
         }
     }
 }

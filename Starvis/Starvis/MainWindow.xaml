@@ -40,16 +40,17 @@
             <Grid>
 
                 <StackPanel Canvas.ZIndex="2" Width="604" Canvas.Top="47" Margin="0,0,0,0">
-                    <Grid Height="70" Width="*">
+                    <Grid Height="95" >
                         <Grid.Background>
                             <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                                 <GradientStop Color="Black" Offset="0"/>
                                 <GradientStop Color="#FF53C271" Offset="0.135"/>
                             </LinearGradientBrush>
                         </Grid.Background>
-                        <TextBox Margin="10,19,151,15" x:Name="MainText" Controls:TextBoxHelper.Watermark="Type Your Command...."   TextChanged="TextBox_TextChanged" Height="25" RenderTransformOrigin="0.774,0.414"/>
-                        <Button HorizontalAlignment="Left" Margin="473,19,0,0" VerticalAlignment="Top" Width="64px" Height="64px" RenderTransformOrigin="0.244,1.474" Click="Listen_Click">
-                            <Image Source="/images/audio.png" Width="64px" Height="64px"></Image>
+                        <TextBox Margin="10,31,149,22" x:Name="MainText" Controls:TextBoxHelper.Watermark="Type Your Command...." RenderTransformOrigin="0.774,0.414"/>
+                        <Button HorizontalAlignment="Left" Margin="461,31,0,0" Content="Get" VerticalAlignment="Top" Width="52px" Height="42px"  Click="TextBox_TextChanged" RenderTransformOrigin="2.62,0.579"/>
+                        <Button HorizontalAlignment="Left" Margin="518,31,0,0" VerticalAlignment="Top" Width="52" Height="42px"  Click="Listen_Click">
+                            <Image Source="/images/appbar.microphone.google.png" Width="32px" Height="32px" />
                         </Button>
                     </Grid>
                     <Grid Height="438">
@@ -415,7 +416,7 @@
                                 <RowDefinition/>
                             </Grid.RowDefinitions>
 
-                            <local:Profile x:Name="ProfileTab" VerticalAlignment="Top" Margin="-216,0,0.4,0" Loaded="Profiles_Loaded" Height="358" Visibility="Visible" HorizontalAlignment="Right" Width="397"/>
+                            <local:Profile x:Name="ProfileTab" VerticalAlignment="Top" Margin="-280,0,0.4,0" Loaded="Profiles_Loaded" Height="358" Visibility="Visible" HorizontalAlignment="Right" Width="397"/>
                             <local:Outlook x:Name="OutlookTab" VerticalAlignment="Top" Margin="-280px,0,0.4,0"  Width="526" Height="358" Visibility="Hidden"/>
                             <local:Jira x:Name="JiraTab" VerticalAlignment="Top" Margin="-280px,0,0.4,0"  Width="526" Height="358" Visibility="Hidden"/>
                             <local:Code x:Name="VisualStudioTab" VerticalAlignment="Top" Margin="-280px,0,0.4,0"  Width="526" Height="358" Visibility="Hidden"/>

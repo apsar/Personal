@@ -4,15 +4,23 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:Starvis"
-             mc:Ignorable="d">
-    <Grid Margin="-261,0,0,0">
-        <ComboBox x:Name="commandType" HorizontalAlignment="Left" Margin="16,42,0,0" VerticalAlignment="Top" Width="120" SelectionChanged="commandType_SelectionChanged" SelectedIndex="0">
+             mc:Ignorable="d"
+             Height="526.319" Width="365.887">
+    <Grid Margin="-261,0,0,0" >
+        <Grid.RowDefinitions>
+            <RowDefinition Height="62*"/>
+            <RowDefinition Height="51*"/>
+            <RowDefinition Height="56*"/>
+            <RowDefinition Height="88*"/>
+            <RowDefinition Height="270*"/>
+        </Grid.RowDefinitions>
+        <ComboBox x:Name="commandType" HorizontalAlignment="Left" Margin="103,36,0,0" VerticalAlignment="Top" Width="120" SelectionChanged="commandType_SelectionChanged" SelectedIndex="0" Grid.RowSpan="2">
             <ComboBoxItem Tag="ALL">All Commands</ComboBoxItem>
             <ComboBoxItem Tag="COMPOSE">Compose Email</ComboBoxItem>
             <ComboBoxItem Tag="SEARCH">Search Email</ComboBoxItem>
             <ComboBoxItem Tag="READ">Read Email</ComboBoxItem>
         </ComboBox>
-        <StackPanel Name="COMPOSESTACK" HorizontalAlignment="Left" Height="194" Margin="169,76,0,0" VerticalAlignment="Top" Width="362" Visibility="Hidden">
+        <StackPanel Name="COMPOSESTACK" HorizontalAlignment="Left" Height="194" Margin="169,14.38,0,0" VerticalAlignment="Top" Width="362" Visibility="Hidden" Grid.RowSpan="4" Grid.Row="1">
             <Grid>
                 <Label x:Name="ForToEmail" Content="To Email List" Margin="17,10,262,-10"/>
                 <TextBox x:Name="ToEmail" Height="23" TextWrapping="Wrap" Text="To Emails" Margin="115,14,6,-10"/>
@@ -24,7 +32,7 @@
             </Grid>
 
         </StackPanel>
-        <StackPanel Name="SEARCHSTACK" HorizontalAlignment="Left" Height="214" Margin="174,76,0,0" VerticalAlignment="Top" Width="362" Visibility="Visible">
+        <StackPanel Name="SEARCHSTACK" HorizontalAlignment="Left" Height="214" Margin="174,14.38,0,0" VerticalAlignment="Top" Width="362" Visibility="Visible" Grid.RowSpan="4" Grid.Row="1">
             <Grid>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="165*"/>
@@ -40,7 +48,7 @@
             </Grid>
 
         </StackPanel>
-        <StackPanel Name="READSTACK" HorizontalAlignment="Left" Height="214" Margin="164,76,0,0" VerticalAlignment="Top" Width="362" Visibility="Hidden">
+        <StackPanel Name="READSTACK" HorizontalAlignment="Left" Height="214" Margin="164,14.38,0,0" VerticalAlignment="Top" Width="362" Visibility="Hidden" Grid.RowSpan="4" Grid.Row="1">
             <Grid>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="165*"/>
@@ -55,15 +63,15 @@
                 <Label Margin="10,55,41,81" Content="Unread Mails Count"/>
                 <TextBox Grid.ColumnSpan="2" Margin="137,55,19,78" Text="Unread Emails Count"></TextBox>
                 <Button x:Name="addReadCommand" Content="Add Command" Margin="100,165,141,-29" Click="addReadCommand_Click" Grid.ColumnSpan="2"/>
-                
+
             </Grid>
         </StackPanel>
-        <StackPanel Name="ALLSTACK" HorizontalAlignment="Left" Height="214" Margin="154,111,0,-35" VerticalAlignment="Top" Width="387" Visibility="Visible">
+        <StackPanel Name="ALLSTACK" HorizontalAlignment="Left" Height="350" Margin="50,0,0,0" VerticalAlignment="Top" Width="454" Visibility="Visible" Grid.RowSpan="5">
 
         </StackPanel>
-        <DataGrid x:Name="dataGrid" Margin="184,282,35,-117"/>
-        <TextBox x:Name="textCommandTxt" HorizontalAlignment="Left" Height="23" Margin="202,41,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="137"/>
-        <TextBox x:Name="voiceCommandTxt" HorizontalAlignment="Left" Height="23" Margin="365,41,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="171"/>
+        <DataGrid x:Name="dataGrid" Margin="184,25.2,42.4,39.4" Grid.Row="4"/>
+        <TextBox x:Name="textCommandTxt" HorizontalAlignment="Left" Height="23" Margin="261,41,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="109" Grid.RowSpan="2"/>
+        <TextBox x:Name="voiceCommandTxt" HorizontalAlignment="Left" Height="23" Margin="392,41,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="144" Grid.RowSpan="2"/>
         <Label x:Name="textCommand" Content="Text Command" HorizontalAlignment="Left" Margin="202,10,0,0" VerticalAlignment="Top"/>
         <Label x:Name="voiceCommand" Content="Voice Command" HorizontalAlignment="Left" Margin="365,10,0,0" VerticalAlignment="Top"/>
     </Grid>

@@ -12,14 +12,10 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-<<<<<<< HEAD
 using StarvisDB;
-=======
 using MahApps.Metro.Controls;
 using System.Windows.Media.Animation;
 using Starvis.Properties;
-
->>>>>>> 6084b8765488963a1d9f453e2b2db961b64c8693
 
 namespace Starvis
 {

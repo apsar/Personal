@@ -18,14 +18,16 @@ namespace Starvis.Utilities
             using (var db = new Models())
             {
 
-               
-
-                var result = db.ArenaDB.Where(q => q.TextCommand == name).FirstOrDefault();
-                if (result != null)
+                if (name != null)
                 {
-                    GetInstalledLocation(result.AppList);
-                }
 
+                    var result = db.ArenaDB.Where(q => (q.TextCommand).ToLower() == name.ToLower()).FirstOrDefault();
+                    if (result != null)
+                    {
+                        GetInstalledLocation(result.AppList);
+                    }
+
+                }
             }
 
         }

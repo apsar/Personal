@@ -74,6 +74,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="BaseWindow.cs" />
     <Compile Include="Code.xaml.cs">
       <DependentUpon>Code.xaml</DependentUpon>
     </Compile>
@@ -83,6 +84,7 @@
     <Compile Include="Settings.xaml.cs">
       <DependentUpon>Settings.xaml</DependentUpon>
     </Compile>
+    <Compile Include="TextToSpeech.cs" />
     <Page Include="Arena.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -171,7 +173,28 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Image\appbar.social.jira.png" />
+    <Resource Include="images\appbar.social.jira.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="images\appbar.visualstudio.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="images\appbar.people.profile.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="images\appbar.settings.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="images\appbar.social.apple.appstore.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="images\appbar.office.outlook.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="images\appbar.browser.wire.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="images\appbar.clipboard.variant.text.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

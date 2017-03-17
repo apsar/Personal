@@ -98,7 +98,7 @@
                                             
                                             Style="{StaticResource HeaderTextBlockStyle}"  Height="50" Width="162"
                      >
-                                                   <Image  x:Name="img"   Source="/images/appbar.social.jira.png" Margin="+10,+10,+10,+10"  Width="32px" Height="32px"/>
+                                                   <Image  x:Name="img"   Source="/images/appbar.people.profile.png" Margin="+10,+10,+10,+10"  Width="32px" Height="32px"/>
                                                   <StackPanel Margin="+10,+15,+10,+10" Width="69">
                                                   <TextBlock>Profile</TextBlock> 
                                                    
@@ -131,7 +131,7 @@
                                                    
                                             
                                             Style="{StaticResource HeaderTextBlockStyle}" Height="50" Width="162"
-                     >      <Image  x:Name="img2"   Source="/images/appbar.social.jira.png" Margin="+10,+10,+10,+10"  Width="32px" Height="32px"/>
+                     >      <Image  x:Name="img2"   Source="/images/appbar.office.outlook.png" Margin="+10,+10,+10,+10"  Width="32px" Height="32px"/>
                                                <StackPanel Margin="+10,+15,+10,+10" Width="69">
                                                   <TextBlock>Outlook</TextBlock> 
                                                    
@@ -306,7 +306,7 @@
                                             
                                             Style="{StaticResource HeaderTextBlockStyle}"  Height="50" Width="162"
                      >
-                                                   <Image  x:Name="img7"   Source="/images/appbar.social.jira.png" Margin="+10,+10,+10,+10"  Width="32px" Height="32px"/>
+                                                   <Image  x:Name="img7"   Source="/images/appbar.clipboard.variant.text.png" Margin="+10,+10,+10,+10"  Width="32px" Height="32px"/>
                                                   <StackPanel Margin="+10,+15,+10,+10" Width="69">
                                                   <TextBlock>HotKey</TextBlock> 
                                                    
@@ -343,7 +343,7 @@
                                             
                                             Style="{StaticResource HeaderTextBlockStyle}"  Height="50" Width="162"
                      >
-                                                   <Image  x:Name="img8"   Source="/images/appbar.social.jira.png" Margin="+10,+10,+10,+10"  Width="32px" Height="32px"/>
+                                                   <Image  x:Name="img8"   Source="/images/appbar.browser.wire.png" Margin="+10,+10,+10,+10"  Width="32px" Height="32px"/>
                                                   <StackPanel Margin="+10,+15,+10,+10" Width="69">
                                                   <TextBlock>Browse</TextBlock> 
                                                    

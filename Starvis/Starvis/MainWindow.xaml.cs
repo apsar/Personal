@@ -12,10 +12,10 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using StarvisDB;
 using MahApps.Metro.Controls;
 using System.Windows.Media.Animation;
 using Starvis.Properties;
-
 
 namespace Starvis
 {
@@ -28,6 +28,13 @@ namespace Starvis
         public MainWindow()
         {
             InitializeComponent();
+
+            using (var db = new Models())
+            {
+                var blog = new SettingsDB {  Key = "Key", Value = "Value" };
+                db.SettingsDB.Add(blog);
+                db.SaveChanges();
+            }
         }
 
         private void StackPanel_MouseEnter(object sender, MouseEventArgs e)

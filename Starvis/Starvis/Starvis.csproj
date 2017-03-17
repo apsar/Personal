@@ -181,6 +181,7 @@
       <DependentUpon>Settings.xaml</DependentUpon>
     </Compile>
     <Compile Include="Utilities\Batch.cs" />
+    <Compile Include="Utilities\CommandExecution.cs" />
     <Compile Include="Utilities\SpeechToText.cs" />
     <Compile Include="Utilities\TextAnalysis.cs" />
     <Compile Include="BaseWindow.cs" />

@@ -128,6 +128,18 @@ namespace Starvis.Utilities
             {
                 cmdExec.Run(result.rowID);
             }
+            else if(result.tableName =="ARENA")
+            {
+                Batch b = new Batch();
+                using (var db = new Models())
+                {
+                    var text = db.ArenaDB.Where(q => q.ArenaID == result.rowID).FirstOrDefault();
+                    if (!string.IsNullOrEmpty(text.TextCommand))
+                    {
+                        b.findexe(text.TextCommand);
+                    }
+                }
+            }
         }
 
 

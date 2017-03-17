@@ -168,7 +168,7 @@ namespace Starvis
         private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
         {
             Batch b = new Batch();
-             string textValue = this.MainText.Text;
+              string textValue = this.MainText.Text;
             if(!string.IsNullOrEmpty(textValue))
             {
                 string[] array = textValue.Split(' ');

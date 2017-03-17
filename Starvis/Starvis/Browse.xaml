@@ -6,7 +6,9 @@
              xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
              xmlns:ControlzEx="clr-namespace:ControlzEx;assembly=MahApps.Metro"
              xmlns:local="clr-namespace:Starvis"
-             mc:Ignorable="d">
+             mc:Ignorable="d"
+             Height="526.15" Width="358"
+             >
     <Grid Margin="-261,0,0,0">
 
         <DataGrid x:Name="dataGrid" Margin="28,129,35,35.6"/>

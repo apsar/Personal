@@ -18,9 +18,9 @@ namespace Starvis
     /// <summary>
     /// Interaction logic for VisualStudio.xaml
     /// </summary>
-    public partial class VisualStudio : UserControl
+    public partial class Code : UserControl
     {
-        public VisualStudio()
+        public Code()
         {
             InitializeComponent();
         }

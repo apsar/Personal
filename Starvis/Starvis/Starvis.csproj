@@ -40,6 +40,7 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Speech" />
     <Reference Include="System.Windows.Interactivity, Version=4.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\MahApps.Metro.1.5.0-alpha010\lib\net45\System.Windows.Interactivity.dll</HintPath>
       <Private>True</Private>
@@ -65,8 +66,9 @@
     <Compile Include="Settings.xaml.cs">
       <DependentUpon>Settings.xaml</DependentUpon>
     </Compile>
-    <Compile Include="VisualStudio.xaml.cs">
-      <DependentUpon>VisualStudio.xaml</DependentUpon>
+    <Compile Include="TextToSpeech.cs" />
+    <Compile Include="Code.xaml.cs">
+      <DependentUpon>Code.xaml</DependentUpon>
     </Compile>
     <Page Include="Arena.xaml">
       <SubType>Designer</SubType>
@@ -113,7 +115,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="VisualStudio.xaml">
+    <Page Include="Code.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

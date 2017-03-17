@@ -99,6 +99,8 @@ namespace Starvis
             SelectProject.SelectedIndex = 0;
             JIRAID.Text = "";
             QueryBox.Text = "";
+            TextCommand.Text = "";
+            VoiceCommand.Text = "";
         }
     }
 }

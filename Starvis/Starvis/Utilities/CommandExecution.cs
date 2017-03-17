@@ -12,14 +12,13 @@ namespace Starvis.Utilities
     class CommandExecution
     {
         public static string clipText;
-        public void Run (int rowID)
+        public void Run(int rowID)
         {
             var db = new Models();
             var url = db.WebDB.Where(w => w.WebID == rowID).FirstOrDefault().URL;
             var cmd = "start chrome " + url;
             Batch.ExecuteCommandAsync(cmd);
-        }
-        [STAThread]
+        } 
         public void CopyToClipBoard(int rowID)
         {
             var db = new Models();
@@ -35,5 +34,13 @@ namespace Starvis.Utilities
             Clipboard.SetText(clipText);
         }
 
+
+        public void ExecuteResult(int rowID)
+        {
+            var db = new Models();
+            var url = db.JIRADB.Where(w => w.JIRAID == rowID).FirstOrDefault().URL;
+            var cmd = "start chrome " + url;
+            Batch.ExecuteCommandAsync(cmd);
+        }
     }
 }

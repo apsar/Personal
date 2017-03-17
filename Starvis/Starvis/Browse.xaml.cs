@@ -37,8 +37,8 @@ namespace Starvis
             if (!string.IsNullOrWhiteSpace(text) && !string.IsNullOrWhiteSpace(url) && !string.IsNullOrWhiteSpace(voice))
             {
                 lblValidation.Visibility = Visibility.Hidden;
-                var web = new WebDB { URL = url, TextCommand = text, VoiceCommand = voice };
-                db.WebDB.Add(web);
+                var web1 = new WebDB { URL = url, TextCommand = text, VoiceCommand = voice };
+                db.WebDB.Add(web1);
                 db.SaveChanges();
 
                 ResetFields();
@@ -48,6 +48,7 @@ namespace Starvis
             {
                 lblValidation.Visibility = Visibility.Visible;
             }
+     
           
         }
         void ResetFields()

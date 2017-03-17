@@ -12,6 +12,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Starvis.Utilities;
+using Microsoft.CognitiveServices.SpeechRecognition;
 using StarvisDB;
 using MahApps.Metro.Controls;
 using System.Windows.Media.Animation;
@@ -25,7 +27,7 @@ namespace Starvis
     public partial class MainWindow : MetroWindow
 
     {
-        public MainWindow()
+        public  MainWindow()
         {
             InitializeComponent();
         }
@@ -98,7 +100,17 @@ namespace Starvis
             ProfileTab.Visibility = System.Windows.Visibility.Hidden;
             OutlookTab.Visibility = System.Windows.Visibility.Hidden;
             JiraTab.Visibility = System.Windows.Visibility.Hidden;
-
+            
+                BrowseTab.Visibility = System.Windows.Visibility.Hidden;
+          
+                ArenaTab.Visibility = System.Windows.Visibility.Hidden;
+           
+                SettingsTab.Visibility = System.Windows.Visibility.Hidden;
+            
+                VisualStudioTab.Visibility = System.Windows.Visibility.Hidden;
+           
+                HotKeyTab.Visibility = System.Windows.Visibility.Hidden;
+           
 
         }
 
@@ -146,6 +158,14 @@ namespace Starvis
 
 
         private void listBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+
+        {
+           
+            SpeechToText.ConverSpeechToText();
+
+        }
+
+        private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
         {
 
         }

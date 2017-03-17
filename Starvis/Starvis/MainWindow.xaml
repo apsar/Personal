@@ -8,7 +8,7 @@
         xmlns:ControlzEx="clr-namespace:ControlzEx;assembly=MahApps.Metro" x:Class="Starvis.MainWindow"
         mc:Ignorable="d"         
         BorderThickness="2"
-        ResizeMode="CanResizeWithGrip"
+        ResizeMode="NoResize"
         WindowTitleBrush="#70D08A"
         GlowBrush="#FF82CA96"
         WindowTransitionsEnabled="False"
@@ -37,8 +37,19 @@
                     <GradientStop Color="#FF434346" Offset="1"/>
                 </LinearGradientBrush>
             </Canvas.Background>
+
             <Grid>
+
                 <StackPanel Canvas.ZIndex="2" Width="604" Canvas.Top="47" Margin="0,0,0,0">
+                    <Grid Height="60">
+                        <Grid.Background>
+                            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                <GradientStop Color="Black" Offset="0"/>
+                                <GradientStop Color="#FF53C271" Offset="0.135"/>
+                            </LinearGradientBrush>
+                        </Grid.Background>
+                        <TextBox Margin="10,4,394,0" Controls:TextBoxHelper.Watermark="Type Your Command...."   TextChanged="TextBox_TextChanged" Height="25" Width="400" RenderTransformOrigin="0.774,0.414"/>
+                    </Grid>
                     <Grid Height="438">
                         <Grid.Background>
                             <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
@@ -58,14 +69,13 @@
                             <RowDefinition/>
                         </Grid.RowDefinitions>
                         <StackPanel Panel.ZIndex="2" x:Name="pnlLeftMenu" Orientation="Horizontal" HorizontalAlignment="Left" Margin="-150,0,0,-31.8" Grid.RowSpan="3" Grid.ColumnSpan="2" Width="198">
-                            <Border  BorderThickness="1" Width="150" Background="#FF53C271" Margin="0,0,0,0" >
-                                <TabControl x:Name="Tabs"  TabStripPlacement="Right" SelectionChanged="TabControl_SelectionChanged"  Height="438" VerticalAlignment="Top" Margin="0.2,0.2,-0.4,0">
+                            <Border  BorderThickness="0,0,0,8" Width="150" Background="#FF53C271" Margin="0,0,0,0" >
+                                <TabControl x:Name="Tabs"  TabStripPlacement="Right" SelectionChanged="TabControl_SelectionChanged"  Height="438" VerticalAlignment="Top" Margin="0.2,0.2,-0.4,0" Background="#FF53C271" Foreground="#FF53C271">
                                     <TabControl.Resources>
 
-                                        <Style TargetType="TextBlock"  x:Key="HeaderTextBlockStyle">
+                                        <Style TargetType="{x:Type TextBlock}"  x:Key="HeaderTextBlockStyle">
                                             <Style.Triggers>
-                                                <DataTrigger Binding="{Binding IsSelected,
-                          RelativeSource={RelativeSource AncestorType=TabItem}}"
+                                                <DataTrigger Binding="{Binding IsSelected, RelativeSource={RelativeSource AncestorType={x:Type TabItem}}}"
                          Value="True">
 
                                                     <Setter   Property="Background" Value="#FF38A97F" />
@@ -77,7 +87,7 @@
 
                                     </TabControl.Resources>
 
-                                    <TabItem  Name="Profile" Height="50" Width="162"   >
+                                    <TabItem  x:Name="Profile" Height="50" Width="162" Cursor="AppStarting"   >
 
                                         <TabItem.Background>
                                             <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
@@ -97,13 +107,15 @@
                                                     TextOptions.TextFormattingMode="Display"
                                                    
                                             
-                                            Style="{StaticResource HeaderTextBlockStyle}"  Height="50" Width="162"
-                     >
-                                                   <Image  x:Name="img"   Source="/images/appbar.people.profile.png" Margin="+10,+10,+10,+10"  Width="32px" Height="32px"/>
-                                                  <StackPanel Margin="+10,+15,+10,+10" Width="69">
-                                                  <TextBlock>Profile</TextBlock> 
+                                            Style="{StaticResource HeaderTextBlockStyle}"  Height="50" Width="157"
+                     ><InlineUIContainer>
+                                                    <Image  x:Name="img"   Source="/images/appbar.people.profile.png" Margin="+10,+10,+10,+10"  Width="32px" Height="32px"/>
+                                                </InlineUIContainer><Run Text=" "/><InlineUIContainer>
+                                                    <StackPanel Margin="+10,+15,+10,+10" Width="69">
+                                                        <TextBlock><Run Text="Profile"/></TextBlock> 
                                                    
-                                               </StackPanel></TextBlock>
+                                                    </StackPanel>
+                                                </InlineUIContainer></TextBlock>
 
 
 
@@ -113,7 +125,7 @@
 
 
                                     </TabItem>
-                                    <TabItem Name="Outlook" Height="50" Width="162"  >
+                                    <TabItem x:Name="Outlook" Height="50" Width="162"  >
                                         <TabItem.Background>
                                             <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
                                                 <GradientStop Color="#FFF0F0F0" Offset="0"/>
@@ -132,17 +144,20 @@
                                                    
                                             
                                             Style="{StaticResource HeaderTextBlockStyle}" Height="50" Width="162"
-                     >      <Image  x:Name="img2"   Source="/images/appbar.office.outlook.png" Margin="+10,+10,+10,+10"  Width="32px" Height="32px"/>
-                                               <StackPanel Margin="+10,+15,+10,+10" Width="69">
-                                                  <TextBlock>Outlook</TextBlock> 
+                     ><InlineUIContainer>
+                                                    <Image  x:Name="img2"   Source="/images/appbar.office.outlook.png" Margin="+10,+10,+10,+10"  Width="32px" Height="32px"/>
+                                                </InlineUIContainer><Run Text=" "/><InlineUIContainer>
+                                                    <StackPanel Margin="+10,+15,+10,+10" Width="69">
+                                                        <TextBlock><Run Text="Outlook"/></TextBlock> 
                                                    
-                                               </StackPanel> </TextBlock>
-                                        </TabItem.Header >
+                                                    </StackPanel>
+                                                </InlineUIContainer></TextBlock>
+                                        </TabItem.Header>
 
 
                                     </TabItem>
 
-                                    <TabItem Name="Jira" HorizontalAlignment="Right" Height="50" Width="162" FontFamily="Segoe UI Semibold"  >
+                                    <TabItem x:Name="Jira" HorizontalAlignment="Right" Height="50" Width="162" FontFamily="Segoe UI Semibold"  >
                                         <TabItem.Background>
                                             <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
                                                 <GradientStop Color="#FFF0F0F0" Offset="0"/>
@@ -160,18 +175,20 @@
                                                     TextOptions.TextFormattingMode="Display"
                                                    
                                             
-                                            Style="{StaticResource HeaderTextBlockStyle}" Height="60" Width="162">
+                                            Style="{StaticResource HeaderTextBlockStyle}" Height="60" Width="162"><InlineUIContainer>
                                                     <Image  x:Name="img3"   Source="/images/appbar.social.jira.png" Margin="+10,+10,+10,+10"  Width="32px" Height="32px"/>
-                                               <StackPanel Margin="+10,+15,+10,+10" Width="69">
-                                                  <TextBlock>Jira</TextBlock> 
+                                                </InlineUIContainer><Run Text=" "/><InlineUIContainer>
+                                                    <StackPanel Margin="+10,+15,+10,+10" Width="69">
+                                                        <TextBlock><Run Text="Jira"/></TextBlock> 
                                                    
-                                               </StackPanel> </TextBlock>
-                                        </TabItem.Header >
+                                                    </StackPanel>
+                                                </InlineUIContainer></TextBlock>
+                                        </TabItem.Header>
 
                                     </TabItem>
 
 
-                                    <TabItem  Name="Arena" Height="50" Width="162"   >
+                                    <TabItem  x:Name="Arena" Height="50" Width="162"   >
 
                                         <TabItem.Background>
                                             <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
@@ -192,12 +209,14 @@
                                                    
                                             
                                             Style="{StaticResource HeaderTextBlockStyle}"  Height="50" Width="162"
-                     >
-                                                   <Image  x:Name="img4"   Source="/images/appbar.social.jira.png" Margin="+10,+10,+10,+10"  Width="32px" Height="32px"/>
-                                                  <StackPanel Margin="+10,+15,+10,+10" Width="69">
-                                                  <TextBlock>Arena</TextBlock> 
+                     ><InlineUIContainer>
+                                                    <Image  x:Name="img4"   Source="/images/appbar.social.apple.appstore.png" Margin="+10,+10,+10,+10"  Width="32px" Height="32px"/>
+                                                </InlineUIContainer><Run Text=" "/><InlineUIContainer>
+                                                    <StackPanel Margin="+10,+15,+10,+10" Width="69">
+                                                        <TextBlock><Run Text="Arena"/></TextBlock> 
                                                    
-                                               </StackPanel></TextBlock>
+                                                    </StackPanel>
+                                                </InlineUIContainer></TextBlock>
 
 
 
@@ -208,7 +227,7 @@
 
                                     </TabItem>
 
-                                    <TabItem  Name="Code" Height="50" Width="162"   >
+                                    <TabItem  x:Name="Code" Height="50" Width="162"   >
 
                                         <TabItem.Background>
                                             <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
@@ -229,12 +248,14 @@
                                                    
                                             
                                             Style="{StaticResource HeaderTextBlockStyle}"  Height="50" Width="162"
-                     >
-                                                   <Image  x:Name="img5"   Source="/images/appbar.social.jira.png" Margin="+10,+10,+10,+10"  Width="32px" Height="32px"/>
-                                                  <StackPanel Margin="+10,+15,+10,+10" Width="69">
-                                                  <TextBlock>Code</TextBlock> 
+                     ><InlineUIContainer>
+                                                    <Image  x:Name="img5"   Source="/images/appbar.social.jira.png" Margin="+10,+10,+10,+10"  Width="32px" Height="32px"/>
+                                                </InlineUIContainer><Run Text=" "/><InlineUIContainer>
+                                                    <StackPanel Margin="+10,+15,+10,+10" Width="69">
+                                                        <TextBlock><Run Text="Code"/></TextBlock> 
                                                    
-                                               </StackPanel></TextBlock>
+                                                    </StackPanel>
+                                                </InlineUIContainer></TextBlock>
 
 
 
@@ -246,7 +267,7 @@
 
                                     </TabItem>
 
-                                    <TabItem  Name="Settings" Height="50" Width="162"   >
+                                    <TabItem  x:Name="Settings" Height="50" Width="162"   >
 
                                         <TabItem.Background>
                                             <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
@@ -267,12 +288,14 @@
                                                    
                                             
                                             Style="{StaticResource HeaderTextBlockStyle}"  Height="50" Width="162"
-                     >
-                                                   <Image  x:Name="img6"   Source="/images/appbar.social.jira.png" Margin="+10,+10,+10,+10"  Width="32px" Height="32px"/>
-                                                  <StackPanel Margin="+10,+15,+10,+10" Width="69">
-                                                  <TextBlock>Settings</TextBlock> 
+                     ><InlineUIContainer>
+                                                    <Image  x:Name="img6"   Source="/images/appbar.settings.png" Margin="+10,+10,+10,+10"  Width="32px" Height="32px"/>
+                                                </InlineUIContainer><Run Text=" "/><InlineUIContainer>
+                                                    <StackPanel Margin="+10,+15,+10,+10" Width="69">
+                                                        <TextBlock><Run Text="Settings"/></TextBlock> 
                                                    
-                                               </StackPanel></TextBlock>
+                                                    </StackPanel>
+                                                </InlineUIContainer></TextBlock>
 
 
 
@@ -285,7 +308,7 @@
 
 
 
-                                    <TabItem  Name="HotKey" Height="50" Width="162"   >
+                                    <TabItem  x:Name="HotKey" Height="50" Width="162"   >
 
                                         <TabItem.Background>
                                             <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
@@ -306,12 +329,14 @@
                                                    
                                             
                                             Style="{StaticResource HeaderTextBlockStyle}"  Height="50" Width="162"
-                     >
-                                                   <Image  x:Name="img7"   Source="/images/appbar.clipboard.variant.text.png" Margin="+10,+10,+10,+10"  Width="32px" Height="32px"/>
-                                                  <StackPanel Margin="+10,+15,+10,+10" Width="69">
-                                                  <TextBlock>HotKey</TextBlock> 
+                     ><InlineUIContainer>
+                                                    <Image  x:Name="img7"   Source="/images/appbar.clipboard.variant.text.png" Margin="+10,+10,+10,+10"  Width="32px" Height="32px"/>
+                                                </InlineUIContainer><Run Text=" "/><InlineUIContainer>
+                                                    <StackPanel Margin="+10,+15,+10,+10" Width="69">
+                                                        <TextBlock><Run Text="HotKey"/></TextBlock> 
                                                    
-                                               </StackPanel></TextBlock>
+                                                    </StackPanel>
+                                                </InlineUIContainer></TextBlock>
 
 
 
@@ -322,7 +347,7 @@
 
                                     </TabItem>
 
-                                    <TabItem  Name="Browse" Height="50" Width="162"   >
+                                    <TabItem  x:Name="Browse" Height="50" Width="162"   >
 
                                         <TabItem.Background>
                                             <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
@@ -343,12 +368,14 @@
                                                    
                                             
                                             Style="{StaticResource HeaderTextBlockStyle}"  Height="50" Width="162"
-                     >
-                                                   <Image  x:Name="img8"   Source="/images/appbar.browser.wire.png" Margin="+10,+10,+10,+10"  Width="32px" Height="32px"/>
-                                                  <StackPanel Margin="+10,+15,+10,+10" Width="69">
-                                                  <TextBlock>Browse</TextBlock> 
+                     ><InlineUIContainer>
+                                                    <Image  x:Name="img8"   Source="/images/appbar.browser.wire.png" Margin="+10,+10,+10,+10"  Width="32px" Height="32px"/>
+                                                </InlineUIContainer><Run Text=" "/><InlineUIContainer>
+                                                    <StackPanel Margin="+10,+15,+10,+10" Width="69">
+                                                        <TextBlock><Run Text="Browse"/></TextBlock> 
                                                    
-                                               </StackPanel></TextBlock>
+                                                    </StackPanel>
+                                                </InlineUIContainer></TextBlock>
 
 
 
@@ -366,9 +393,13 @@
 
                             </Border>
                             <Grid>
-                                <Button x:Name="btnLeftMenuHide" Width="48" Height="48" Click="btnLeftMenuHide_Click" Content="Hide" Visibility="Hidden"/>
-                                <Button x:Name="btnLeftMenuShow" Width="48" Height="48" Click="btnLeftMenuShow_Click">
-                                    <ListBox x:Name="listBox" Height="100" Width="100" SelectionChanged="listBox_SelectionChanged"/>
+                                <Button x:Name="btnLeftMenuHide" Width="52px" Height="52px" Click="btnLeftMenuHide_Click" Visibility="Hidden">
+                                    <Image Source="/images/appbar.chevron.right.png" Width="32px" Height="32px"/>
+                                </Button>
+                                <Button x:Name="btnLeftMenuShow" Width="52px" Height="52px" Click="btnLeftMenuShow_Click" >
+
+                                    <Image Source="/images/appbar.chevron.left.png" Width="32px" Height="32px"/>
+
 
                                 </Button>
 

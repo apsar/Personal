@@ -31,7 +31,7 @@
 
         <TextBox  x:Name="keyValue" HorizontalAlignment="Left" Height="23" Margin="67.8,99,0,0" TextWrapping="Wrap" Text="Key Value" VerticalAlignment="Top" Width="113" TextChanged="textBox_TextChanged" Grid.Column="1" Grid.Row="1"/>
 
-        <TextBox x:Name="VoiceValue" Grid.Column="1" HorizontalAlignment="Right" Height="23" Margin="0,130.8,185,239.2" TextWrapping="Wrap" Text="Voice Value" Width="113" Grid.Row="1" TextChanged="VoiceValue_TextChanged"/>
+        <TextBox x:Name="VoiceValue" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="68,137.8,0,232.2" TextWrapping="Wrap" Text="Voice Value" Width="113" Grid.Row="1" TextChanged="VoiceValue_TextChanged"/>
         <ListBox x:Name="listBox" HorizontalAlignment="Left" Height="148" Margin="10,10,0,0" VerticalAlignment="Top" PreviewMouseLeftButtonDown="ListBox_PreviewMouseLeftButtonDown" Width="160" Grid.ColumnSpan="2" SelectionChanged="listBox_SelectionChanged" Grid.RowSpan="2"/>
         <ListBox x:Name="listBox1" Grid.Column="1" HorizontalAlignment="Left" Height="148" Margin="48.8,10,0,0"   Drop="ListBox_Drop" AllowDrop="True" VerticalAlignment="Top" Width="183" Grid.RowSpan="2"/>
         <Button x:Name="button" Click="Button_Click_Create" Content="Create" Grid.Column="1" HorizontalAlignment="Left" Margin="134,182.8,0,0" VerticalAlignment="Top" Width="75" Height="25" Grid.Row="1"/>

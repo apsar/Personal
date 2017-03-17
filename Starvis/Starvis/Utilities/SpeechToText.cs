@@ -163,9 +163,23 @@ namespace Starvis.Utilities
 
         private static void CreateMicrophoneRecoClient()
         {
+            var db = new Models();
+            string language = "en-IN";
+            if (db != null && db.SettingsDB != null && db.SettingsDB.Any(s => s.Key.Equals("Language Preference", StringComparison.InvariantCultureIgnoreCase)))
+            {
+                language = db.SettingsDB.Where(s => s.Key.Equals("Language Preference", StringComparison.InvariantCultureIgnoreCase)).FirstOrDefault().Value;
+                if (language.Equals("English - US"))
+                {
+                    language = "en-US";
+                }
+                else
+                {
+                    language = "en-IN";
+                }
+            }
             micClient = SpeechRecognitionServiceFactory.CreateMicrophoneClient(
                 SpeechRecognitionMode.ShortPhrase,
-                 "en-IN",
+                 language,
                 "f078735144bb444d93025bfcc860894b");
             micClient.AuthenticationUri = string.Empty;
 
@@ -175,6 +189,7 @@ namespace Starvis.Utilities
             micClient.OnResponseReceived += OnMicShortPhraseResponseReceivedHandler;
 
         }
+
         private static void OnMicrophoneStatus(object sender, MicrophoneEventArgs e)
         {
 

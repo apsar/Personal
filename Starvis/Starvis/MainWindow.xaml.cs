@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using StarvisDB;
 
 namespace Starvis
 {
@@ -23,6 +24,13 @@ namespace Starvis
         public MainWindow()
         {
             InitializeComponent();
+
+            using (var db = new Models())
+            {
+                var blog = new SettingsDB {  Key = "Key", Value = "Value" };
+                db.SettingsDB.Add(blog);
+                db.SaveChanges();
+            }
         }
         public void test()
         {

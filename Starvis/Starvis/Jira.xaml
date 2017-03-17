@@ -5,8 +5,8 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:Starvis"
              mc:Ignorable="d" 
-             d:DesignHeight="358"
-             Loaded="UserControl_Loaded" Width="747.618">
+             Height="526.15" Width="358"
+             Loaded="UserControl_Loaded" >
     
         <Grid Height="490" Margin="0,0,0.4,-131.6" VerticalAlignment="Top">
             <Label Content="Select Category" HorizontalAlignment="Left" Margin="15,39,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.17,0.102" />

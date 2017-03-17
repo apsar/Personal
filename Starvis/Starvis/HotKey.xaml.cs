@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using StarvisDB;
 
 namespace Starvis
 {
@@ -23,6 +24,43 @@ namespace Starvis
         public HotKey()
         {
             InitializeComponent();
+            PopulateGrid();
+        }
+
+        private void Add_Click(object sender, RoutedEventArgs e)
+        {
+            var db = new Models();
+            string text = txtCopy.Text;
+            string textCommand = txtText.Text;
+            string voice = txtVoice.Text;
+            if (!string.IsNullOrWhiteSpace(text) && !string.IsNullOrWhiteSpace(textCommand) && !string.IsNullOrWhiteSpace(voice))
+            {
+                var web = new HotKeyDB { Value = text, TextCommand = textCommand, VoiceCommand = voice };
+                db.HotKeyDB.Add(web);
+                db.SaveChanges();
+                ResetFields();
+                lblValidation.Visibility = Visibility.Hidden;
+            }
+            else
+            {
+                lblValidation.Visibility = Visibility.Visible;
+            }
+
+
+        }
+        void ResetFields()
+        {
+            txtCopy.Text = string.Empty;
+            txtText.Text = string.Empty;
+            txtVoice.Text = string.Empty;
+            PopulateGrid();
+        }
+        void PopulateGrid()
+        {
+            var db = new Models();
+            dataGrid.ItemsSource = db.HotKeyDB.ToList();
+
+
         }
     }
 }

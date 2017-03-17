@@ -13,6 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using StarvisDB;
+using System.Windows;
 
 namespace Starvis
 {
@@ -33,12 +34,22 @@ namespace Starvis
             string url = txtUrl.Text;
             string text = txtText.Text;
             string voice = txtVoice.Text;
-            var web = new WebDB { URL=url,TextCommand = text, VoiceCommand = voice };
-            db.WebDB.Add(web);
-            db.SaveChanges();
-            
-            ResetFields();
-            PopulateGrid();
+            if (!string.IsNullOrWhiteSpace(text) && !string.IsNullOrWhiteSpace(url) && !string.IsNullOrWhiteSpace(voice))
+            {
+                lblValidation.Visibility = Visibility.Hidden;
+                var web1 = new WebDB { URL = url, TextCommand = text, VoiceCommand = voice };
+                db.WebDB.Add(web1);
+                db.SaveChanges();
+
+                ResetFields();
+                PopulateGrid();
+            }
+            else
+            {
+                lblValidation.Visibility = Visibility.Visible;
+            }
+     
+          
         }
         void ResetFields()
         {

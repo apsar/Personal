@@ -21,7 +21,10 @@ namespace Starvis.Utilities
                
 
                 var result = db.ArenaDB.Where(q => q.TextCommand == name).FirstOrDefault();
-                GetInstalledLocation(result.AppList);
+                if (result != null)
+                {
+                    GetInstalledLocation(result.AppList);
+                }
 
             }
 

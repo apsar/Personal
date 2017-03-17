@@ -25,7 +25,7 @@ namespace Starvis.Utilities
         private static MicrophoneRecognitionClient micClient;
 
         public static DbRecord result = new DbRecord();
-
+        [STAThread]
         public static void ConverSpeechToText()
 
         {
@@ -34,6 +34,10 @@ namespace Starvis.Utilities
                 if (micClient == null)
                 {
                     CreateMicrophoneRecoClient();
+                    micClient.StartMicAndRecognition();
+                }
+                else
+                {
                     micClient.StartMicAndRecognition();
                 }
             }
@@ -127,6 +131,24 @@ namespace Starvis.Utilities
             else if (result.tableName == "BROWSE")
             {
                 cmdExec.Run(result.rowID);
+                TextToSpeech.Speak("Your website is launched");
+            }
+            else if (result.tableName == "CLIPBOARD")
+            {
+                cmdExec.CopyToClipBoard(result.rowID);
+                TextToSpeech.Speak("Copied your text to clipboard");
+            }
+            else if (result.tableName == "ARENA")
+            {
+                Batch b = new Batch();
+                using (var db = new Models())
+                {
+                    var text = db.ArenaDB.Where(q => q.ArenaID == result.rowID).FirstOrDefault();
+                    if (!string.IsNullOrEmpty(text.TextCommand))
+                    {
+                        b.findexe(text.TextCommand);
+                    }
+                }
             }
             else if (result.tableName == "JIRA")
             {
@@ -189,7 +211,7 @@ namespace Starvis.Utilities
             features.Add("ARENA");
             features.Add("OUTLOOK");
             features.Add("BROWSE");
-            features.Add("HOTKEY");
+            features.Add("CLIPBOARD");
             features.Add("CODE");
             features.Add("PROFILE");
             features.Add("JIRA");
@@ -246,7 +268,7 @@ namespace Starvis.Utilities
 
                 
             }
-            else if (prefix.Equals("HOTKEY", StringComparison.InvariantCultureIgnoreCase))
+            else if (prefix.Equals("CLIPBOARD", StringComparison.InvariantCultureIgnoreCase))
             {
               
                     List<string> allCommands = new List<string>();
@@ -411,9 +433,9 @@ namespace Starvis.Utilities
                 {
                     return "BROWSE";
                 }
-                else if (i.Equals("HOTKEY", StringComparison.InvariantCultureIgnoreCase))
+                else if (i.Equals("CLIPBOARD", StringComparison.InvariantCultureIgnoreCase))
                 {
-                    return "HOTKEY";
+                    return "CLIPBOARD";
                 }
                 else if (i.Equals("OUTLOOK", StringComparison.InvariantCultureIgnoreCase))
                 {
@@ -472,7 +494,7 @@ namespace Starvis.Utilities
                     }
 
                 }
-                else if (prefix.Equals("HOTKEY", StringComparison.InvariantCultureIgnoreCase))
+                else if (prefix.Equals("CLIPBOARD", StringComparison.InvariantCultureIgnoreCase))
                 {
                     if (db.HotKeyDB.Any(h => sentence.Equals(h.VoiceCommand, StringComparison.InvariantCultureIgnoreCase)))
                     {

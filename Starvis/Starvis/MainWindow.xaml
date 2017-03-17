@@ -40,17 +40,20 @@
             <Grid>
 
                 <StackPanel Canvas.ZIndex="2" Width="604" Canvas.Top="47" Margin="0,0,0,0">
-                    <Grid Height="60">
+                    <Grid Height="95" >
                         <Grid.Background>
                             <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                                 <GradientStop Color="Black" Offset="0"/>
                                 <GradientStop Color="#FF53C271" Offset="0.135"/>
                             </LinearGradientBrush>
                         </Grid.Background>
-                        <TextBox Margin="10,19,151,15" x:Name="MainText" Controls:TextBoxHelper.Watermark="Type Your Command...."   TextChanged="TextBox_TextChanged" Height="25" RenderTransformOrigin="0.774,0.414"/>
-                        <Button Content="Listen" HorizontalAlignment="Left" Margin="473,19,0,0" VerticalAlignment="Top" Width="91" RenderTransformOrigin="0.244,1.474" Click="Listen_Click"/>
-                    </Grid>
-                    <Grid Height="440" Margin="-30,0,0,0">
+
+                        <TextBox Margin="10,31,149,22" KeyUp="TextBox_KeyUp" x:Name="MainText" Controls:TextBoxHelper.Watermark="Type Your Command...." RenderTransformOrigin="0.774,0.414"/>
+                        <Button HorizontalAlignment="Left" Margin="518,31,0,0" VerticalAlignment="Top" Width="52" Height="42px"  Click="Listen_Click">
+                            <Image Source="/images/appbar.microphone.google.png" Width="32px" Height="32px" />
+                        </Button>
+                </Grid>
+                    <Grid Height="438">
                         <Grid.Background>
                             <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                                 <GradientStop Color="Black" Offset="0"/>
@@ -65,13 +68,13 @@
                         </Grid.ColumnDefinitions>
                         <Grid.RowDefinitions>
                             <RowDefinition Height="0*"/>
-                            <RowDefinition Height="6.535"/>
-                            <RowDefinition Height="177.465"/>
-                            <RowDefinition/>
+                            <RowDefinition Height="184"/>
+                            <RowDefinition Height="2*"/>
+                            <RowDefinition Height="83*"/>
                         </Grid.RowDefinitions>
-                        <StackPanel Panel.ZIndex="2" x:Name="pnlLeftMenu" Orientation="Horizontal" HorizontalAlignment="Left" Margin="-150,0,0,-32" Grid.RowSpan="4" Width="198">
-                            <Border  BorderThickness="0,0,0,8" Width="139" Background="#FF53C271" Margin="0,0,0,0.4" >
-                                <TabControl x:Name="Tabs"  TabStripPlacement="Right" SelectionChanged="TabControl_SelectionChanged"  Height="438" VerticalAlignment="Top" Margin="0.2,0.2,-0.4,0" Background="#FF53C271" Foreground="#FF53C271">
+                        <StackPanel Panel.ZIndex="2" x:Name="pnlLeftMenu" Orientation="Horizontal" HorizontalAlignment="Left" Margin="-150,0,0,0.4" Grid.RowSpan="4" Width="301">
+                            <Border  BorderThickness="0,0,0,8" Width="140" Background="#FF53C271" Margin="0,0,0,0.4" >
+                                <TabControl x:Name="Tabs"  TabStripPlacement="Right" SelectionChanged="TabControl_SelectionChanged"  Height="428" VerticalAlignment="Top" Margin="0,10,0,-7.6" Background="#FF53C271" Foreground="#FF53C271">
                                     <TabControl.Resources>
 
                                         <Style TargetType="{x:Type TextBlock}"  x:Key="HeaderTextBlockStyle">
@@ -88,7 +91,7 @@
 
                                     </TabControl.Resources>
 
-                                    <TabItem  x:Name="Profile" Height="50" Width="162" Cursor="AppStarting"   >
+                                    <!--<TabItem  x:Name="Profile" Height="50" Width="162" Cursor="AppStarting"   >
 
                                         <TabItem.Background>
                                             <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
@@ -125,7 +128,7 @@
 
 
 
-                                    </TabItem>
+                                    </TabItem>-->
                                     <TabItem x:Name="Outlook" Height="50" Width="162"  >
                                         <TabItem.Background>
                                             <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
@@ -228,7 +231,7 @@
 
                                     </TabItem>
 
-                                    <TabItem  x:Name="Code" Height="50" Width="162"   >
+                                    <!--<TabItem  x:Name="Code" Height="50" Width="162"   >
 
                                         <TabItem.Background>
                                             <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
@@ -266,7 +269,7 @@
 
 
 
-                                    </TabItem>
+                                    </TabItem>-->
 
                                     <TabItem  x:Name="Settings" Height="50" Width="162"   >
 
@@ -394,12 +397,12 @@
 
                             </Border>
                             <Grid>
-                                <Button x:Name="btnLeftMenuHide" Width="52px" Height="52px" Click="btnLeftMenuHide_Click" Visibility="Hidden">
-                                    <Image Source="/images/appbar.chevron.right.png" Width="32px" Height="32px"/>
+                                <Button x:Name="btnLeftMenuHide" Width="52px" Height="52px" Click="btnLeftMenuHide_Click" Opacity="0.3" Visibility="Hidden">
+                                    <Image Source="/images/appbar.chevron.right.png" Width="16px" Height="16px"/>
                                 </Button>
-                                <Button x:Name="btnLeftMenuShow" Width="52px" Height="52px" Click="btnLeftMenuShow_Click" >
+                                <Button x:Name="btnLeftMenuShow" Width="52px" Height="52px" Opacity="0.3" Click="btnLeftMenuShow_Click" >
 
-                                    <Image Source="/images/appbar.chevron.left.png" Width="32px" Height="32px" Opacity="0.3"/>
+                                    <Image Source="/images/appbar.chevron.left.png" Width="16px" Height="16px" />
 
 
                                 </Button>
@@ -407,20 +410,20 @@
 
                             </Grid>
                         </StackPanel>
-                        <Label Content="hello" Margin="0,0,6.2,6.535" Grid.RowSpan="2"/>
-                        <Grid Margin="9.6,3.465,9.6,21" Grid.RowSpan="2" Grid.Column="2" Grid.Row="2" >
+                        <Label Content="hello" Margin="0,0,5.6,184" Grid.RowSpan="2"/>
+                        <Grid Margin="9.8,10,10,21.4" Grid.RowSpan="4" Grid.Column="2" >
                             <Grid.RowDefinitions>
                                 <RowDefinition/>
                             </Grid.RowDefinitions>
 
-                            <local:Profile x:Name="ProfileTab" VerticalAlignment="Top" Margin="-216,0,0.4,0" Loaded="Profiles_Loaded" Height="358" Visibility="Visible" HorizontalAlignment="Right" Width="397"/>
-                            <local:Outlook x:Name="OutlookTab" VerticalAlignment="Top" Margin="0,0,9.4,0"  Width="526"  Height="358" Visibility="Hidden"/>
-                            <local:Jira x:Name="JiraTab" VerticalAlignment="Top" Margin="0,0,9.4,0"   Width="526" Height="358" Visibility="Hidden"/>
-                            <local:Code x:Name="VisualStudioTab" VerticalAlignment="Top" Margin="0,0,9.4,0"   Width="526" Height="358" Visibility="Hidden"/>
+                            <local:Profile x:Name="ProfileTab" VerticalAlignment="Top" Margin="-280,0,0.4,0" Loaded="Profiles_Loaded" Height="358" Visibility="Visible" HorizontalAlignment="Right" Width="397"/>
+                            <local:Outlook x:Name="OutlookTab" VerticalAlignment="Top" Margin="-280px,0,0.4,0"  Width="526" Height="358" Visibility="Hidden"/>
+                            <local:Jira x:Name="JiraTab" VerticalAlignment="Top" Margin="-280px,0,0.4,0"  Width="526" Height="358" Visibility="Hidden"/>
+                            <local:Code x:Name="VisualStudioTab" VerticalAlignment="Top" Margin="-280px,0,0.4,0"  Width="526" Height="358" Visibility="Hidden"/>
                             <local:Arena x:Name="ArenaTab" VerticalAlignment="Top" Margin="-280px,0,0.4,0"  Width="526" Height="358" Visibility="Hidden"/>
-                            <local:Settings x:Name="SettingsTab" VerticalAlignment="Top" Margin="0,0,9.4,0"   Width="526" Height="358" Visibility="Hidden"/>
-                            <local:Browse x:Name="BrowseTab" VerticalAlignment="Top" Margin="0,0,9.4,0"  Width="526"  Height="358" Visibility="Hidden"/>
-                            <local:HotKey x:Name="HotKeyTab" VerticalAlignment="Top" Margin="0,0,9.4,0"  Width="526"  Height="358" Visibility="Hidden"/>
+                            <local:Settings x:Name="SettingsTab" VerticalAlignment="Top" Margin="-280px,0,0.4,0"  Width="526" Height="358" Visibility="Hidden"/>
+                            <local:Browse x:Name="BrowseTab" VerticalAlignment="Top" Margin="-280px,0,0.4,0"  Width="526" Height="358" Visibility="Hidden"/>
+                            <local:HotKey x:Name="HotKeyTab" VerticalAlignment="Top" Margin="-280px,0,0.4,0"  Width="526" Height="358" Visibility="Hidden"/>
                         </Grid>
 
 

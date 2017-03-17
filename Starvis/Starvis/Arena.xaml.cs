@@ -52,14 +52,17 @@ namespace Starvis
                 object data = DependencyProperty.UnsetValue;
                 while (data == DependencyProperty.UnsetValue)
                 {
-                    data = source.ItemContainerGenerator.ItemFromContainer(element);
-                    if (data == DependencyProperty.UnsetValue)
+                    if (source.ItemContainerGenerator != null)
                     {
-                        element = VisualTreeHelper.GetParent(element) as UIElement;
-                    }
-                    if (element == source)
-                    {
-                        return null;
+                        data = source.ItemContainerGenerator.ItemFromContainer(element);
+                        if (data == DependencyProperty.UnsetValue)
+                        {
+                            element = VisualTreeHelper.GetParent(element) as UIElement;
+                        }
+                        if (element == source)
+                        {
+                            return null;
+                        }
                     }
                 }
                 if (data != DependencyProperty.UnsetValue)
@@ -94,22 +97,6 @@ namespace Starvis
 
         private void button1_Click(object sender, RoutedEventArgs e)
         {
-            Microsoft.Win32.OpenFileDialog dlg = new Microsoft.Win32.OpenFileDialog();
-
-            // Set filter for file extension and default file extension
-            dlg.DefaultExt = ".txt";
-            dlg.Filter = "Text documents (.txt)|*.txt";
-
-            // Display OpenFileDialog by calling ShowDialog method
-            Nullable<bool> result = dlg.ShowDialog();
-
-            // Get the selected file name and display in a TextBox
-            if (result == true)
-            {
-                // Open document
-                string filename = dlg.FileName;
-                FileNameTextBox.Text = filename;
-            }
         }
         private void Button_Click_Create(object sender, RoutedEventArgs e)
         {
@@ -122,20 +109,21 @@ namespace Starvis
             {
                 result = result + ";" + item;
             }
-
-
             using (var db = new Models())
             {
                 var blog = new ArenaDB { Name = "Name1", AppList = result, TextCommand = keyValue, VoiceCommand = voiceValue };
                 db.ArenaDB.Add(blog);
                 db.SaveChanges();
             }
-
-
+            GetInstalledApps();
+            setSource();
         }
 
         public void GetInstalledApps()
         {
+            resetListBox();
+            itemlist = new ObservableCollection<string>();
+            
             string uninstallKey = @"SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall";
             using (RegistryKey rk = Registry.LocalMachine.OpenSubKey(uninstallKey))
             {
@@ -169,10 +157,16 @@ namespace Starvis
             }
         }
 
+
+        public void resetListBox()
+        {
+           // listBox1.ItemsSource = new List<String>();
+        }
         private void Button_Click_Reset(object sender, RoutedEventArgs e)
         {
 
-
+            GetInstalledApps();
+            setSource();
         }
 
         private void textBox_TextChanged(object sender, TextChangedEventArgs e)
@@ -192,22 +186,7 @@ namespace Starvis
 
         private void button2_Click(object sender, RoutedEventArgs e)
         {
-            Microsoft.Win32.OpenFileDialog dlg = new Microsoft.Win32.OpenFileDialog();
-
-            // Set filter for file extension and default file extension
-            dlg.DefaultExt = ".exe";
-            dlg.Filter = "*.exe";
-
-            // Display OpenFileDialog by calling ShowDialog method
-            Nullable<bool> result = dlg.ShowDialog();
-
-            // Get the selected file name and display in a TextBox
-            if (result == true)
-            {
-                // Open document
-                string filename = dlg.FileName;
-                FileNameTextBox.Text = filename;
-            }
+            
         }
 
         private void FileNameTextBox_TextChanged(object sender, TextChangedEventArgs e)

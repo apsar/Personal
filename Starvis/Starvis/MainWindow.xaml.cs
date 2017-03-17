@@ -27,6 +27,7 @@ namespace Starvis
     public partial class MainWindow : MetroWindow
 
     {
+        
         public  MainWindow()
         {
             InitializeComponent();
@@ -165,11 +166,27 @@ namespace Starvis
 
         }
 
-        private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
+        //private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
+        //{
+            
+        //}
+
+        //private void MainWindowTest_Loaded(object sender, RoutedEventArgs e)
+        //{
+        //    new BaseWindow().SettingsInsertUpdate("Mode", "Text Mode");
+        //}
+
+        //private void Listen_Click(object sender, RoutedEventArgs e)
+        //{
+        //    SpeechToText.ConverSpeechToText();
+        //}
+
+        private void TextBox_TextChanged(object sender, RoutedEventArgs e)
         {
+
             Batch b = new Batch();
-             string textValue = this.MainText.Text;
-            if(!string.IsNullOrEmpty(textValue))
+            string textValue = this.MainText.Text;
+            if (!string.IsNullOrEmpty(textValue))
             {
                 string[] array = textValue.Split(' ');
                 if (!string.IsNullOrEmpty(array[0]) && !string.IsNullOrEmpty(array[1]))
@@ -182,14 +199,91 @@ namespace Starvis
             }
         }
 
+
         private void MainWindowTest_Loaded(object sender, RoutedEventArgs e)
         {
             new BaseWindow().SettingsInsertUpdate("Mode", "Text Mode");
         }
 
+        [STAThread]
         private void Listen_Click(object sender, RoutedEventArgs e)
         {
             SpeechToText.ConverSpeechToText();
         }
+
+        private void TextBox_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.Key != System.Windows.Input.Key.Enter) return;
+
+            e.Handled = true;
+
+            Batch b = new Batch();
+            //string textValue = this.MainText.Text;
+           
+            string textCommand = MainText.Text;
+            if(!string.IsNullOrWhiteSpace(textCommand))
+            {
+                if(!textCommand.Contains(" "))
+                {
+                    TextToSpeech.Speak("Please enter the full command");
+                }
+                else
+                {
+                    string[] commands = textCommand.Split(' ');
+                    if(commands.Count()<2)
+                    {
+                        TextToSpeech.Speak("Please enter the full command");
+                    }
+                    else
+                    {
+    
+                        CommandExecution cmdExecution = new CommandExecution();
+                        int RowID;
+                        var db = new Models();
+                        if(commands[0].Equals("B",StringComparison.InvariantCultureIgnoreCase))
+                        {
+                            if (db.WebDB.Any(w=>w.TextCommand.Equals(commands[1],StringComparison.InvariantCultureIgnoreCase)))
+                            {
+                                RowID = db.WebDB.Where(w => w.TextCommand.Equals(commands[1], StringComparison.InvariantCultureIgnoreCase)).FirstOrDefault().WebID;
+                                cmdExecution.Run(RowID);
+                            }
+
+                        }
+                        else if (commands[0].Equals("C", StringComparison.InvariantCultureIgnoreCase))
+                        {
+                            if (db.HotKeyDB.Any(w => w.TextCommand.Equals(commands[1], StringComparison.InvariantCultureIgnoreCase)))
+                            {
+                                RowID = db.HotKeyDB.Where(w => w.TextCommand.Equals(commands[1], StringComparison.InvariantCultureIgnoreCase)).FirstOrDefault().HotKeyID;
+                                cmdExecution.CopyToClipBoard(RowID);
+                            }
+
+                        }
+                        else if (commands[0].Equals("A", StringComparison.InvariantCultureIgnoreCase))
+                        {
+                            b.findexe(commands[0]);
+                        }
+                        else if (commands[0].Equals("J", StringComparison.InvariantCultureIgnoreCase))
+                        {
+                            if (db.JIRADB.Any(w => w.TextCommand.Equals(commands[1], StringComparison.InvariantCultureIgnoreCase)))
+                            {
+                                RowID = db.JIRADB.Where(w => w.TextCommand.Equals(commands[1], StringComparison.InvariantCultureIgnoreCase)).FirstOrDefault().JIRAID;
+                                cmdExecution.ExecuteResult(RowID);
+                            }
+
+                        }
+                        else if (commands[0].Equals("O", StringComparison.InvariantCultureIgnoreCase))
+                        {
+                            if (db.OutlookDB.Any(w => w.TextCommand.Equals(commands[1], StringComparison.InvariantCultureIgnoreCase)))
+                            {
+                                RowID = db.OutlookDB.Where(w => w.TextCommand.Equals(commands[1], StringComparison.InvariantCultureIgnoreCase)).FirstOrDefault().OutlookID;
+                                new OutlookUtils().HandleOutlookOperations(RowID);
+                            }
+
+                        }
+                    }
+                }
+            }
+        }
+
     }
 }

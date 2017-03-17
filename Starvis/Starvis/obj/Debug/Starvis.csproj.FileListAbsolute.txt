@@ -1,4 +1,3 @@
-C:\Users\Sbabu\Documents\Personal1\Starvis\Starvis\obj\Debug\Starvis.csprojResolveAssemblyReference.cache
 C:\Users\Sbabu\Documents\Personal1\Starvis\Starvis\obj\Debug\Arena.g.cs
 C:\Users\Sbabu\Documents\Personal1\Starvis\Starvis\obj\Debug\Browse.g.cs
 C:\Users\Sbabu\Documents\Personal1\Starvis\Starvis\obj\Debug\Code.g.cs
@@ -96,3 +95,4 @@ C:\Users\Sbabu\Documents\Personal1\Starvis\Starvis\obj\Debug\Starvis.Properties.
 C:\Users\Sbabu\Documents\Personal1\Starvis\Starvis\obj\Debug\Starvis.csproj.GenerateResource.Cache
 C:\Users\Sbabu\Documents\Personal1\Starvis\Starvis\obj\Debug\Starvis.exe
 C:\Users\Sbabu\Documents\Personal1\Starvis\Starvis\obj\Debug\Starvis.pdb
+C:\Users\Sbabu\Documents\Personal1\Starvis\Starvis\obj\Debug\Starvis.csprojResolveAssemblyReference.cache

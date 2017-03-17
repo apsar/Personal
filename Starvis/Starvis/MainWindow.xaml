@@ -15,6 +15,7 @@
         x:Name="MainWindowTest"
         WindowStartupLocation="CenterScreen"
         Title="Starvis" Height="486.442" Width="614.777" Background="{x:Null}"
+        Loaded="MainWindowTest_Loaded"
     >
 
 
@@ -382,7 +383,7 @@
                             <local:Jira x:Name="JiraTab" VerticalAlignment="Top" Margin="0,0,10,-21"  Height="358" Visibility="Hidden"/>
                             <local:Code x:Name="VisualStudioTab" VerticalAlignment="Top" Margin="0,0,10,-21"  Height="358" Visibility="Hidden"/>
                             <local:Arena x:Name="ArenaTab" VerticalAlignment="Top" Margin="0,0,10,-21"  Height="358" Visibility="Hidden"/>
-                            <local:Settings x:Name="SettingsTab" VerticalAlignment="Top" Margin="0,0,10,-21"  Height="358" Visibility="Hidden"/>
+                            <local:Settings x:Name="SettingsTab" VerticalAlignment="Top" Margin="-280px,0,0.4,0"  Width="526" Height="358" Visibility="Hidden"/>
                             <local:Browse x:Name="BrowseTab" VerticalAlignment="Top" Margin="0,0,10,-21"  Height="358" Visibility="Hidden"/>
                             <local:HotKey x:Name="HotKeyTab" VerticalAlignment="Top" Margin="0,0,10,-21"  Height="358" Visibility="Hidden"/>
                         </Grid>

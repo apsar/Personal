@@ -28,13 +28,6 @@ namespace Starvis
         public MainWindow()
         {
             InitializeComponent();
-
-            using (var db = new Models())
-            {
-                var blog = new SettingsDB {  Key = "Key", Value = "Value" };
-                db.SettingsDB.Add(blog);
-                db.SaveChanges();
-            }
         }
 
         private void StackPanel_MouseEnter(object sender, MouseEventArgs e)
@@ -155,6 +148,11 @@ namespace Starvis
         private void listBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
 
+        }
+
+        private void MainWindowTest_Loaded(object sender, RoutedEventArgs e)
+        {
+            new BaseWindow().SettingsInsertUpdate("Mode", "Text Mode");
         }
     }
 }

@@ -35,108 +35,130 @@ namespace Starvis.Utilities
 
         public void ReadAnEmail(OutlookDB row)
         {
-            List<string> mailsToBeRead = new List<string>();
-            OutLookApp app = new OutLookApp();
-            MicrosoftOutLook.NameSpace outlookNS = app.GetNamespace("MAPI");
-            MicrosoftOutLook.MAPIFolder inboxFolder
-              = outlookNS.GetDefaultFolder(MicrosoftOutLook.OlDefaultFolders.olFolderInbox);
-
-            MicrosoftOutLook.Items items = inboxFolder.Items.Restrict("[Unread] = true");
-
-            foreach (object mail in items)
+            try
             {
-                if (mail is MicrosoftOutLook.MailItem)
+                List<string> mailsToBeRead = new List<string>();
+                OutLookApp app = new OutLookApp();
+                MicrosoftOutLook.NameSpace outlookNS = app.GetNamespace("MAPI");
+                MicrosoftOutLook.MAPIFolder inboxFolder
+                  = outlookNS.GetDefaultFolder(MicrosoftOutLook.OlDefaultFolders.olFolderInbox);
+
+                MicrosoftOutLook.Items items = inboxFolder.Items.Restrict("[Unread] = true");
+
+                foreach (object mail in items)
                 {
-                    MicrosoftOutLook.MailItem email = (MicrosoftOutLook.MailItem)mail;
-                    if (!string.IsNullOrWhiteSpace(row.SearchKey))
+                    if (mail is MicrosoftOutLook.MailItem)
                     {
-                        if (!email.Body.Contains(row.SearchKey))
+                        MicrosoftOutLook.MailItem email = (MicrosoftOutLook.MailItem)mail;
+                        if (!string.IsNullOrWhiteSpace(row.SearchKey))
+                        {
+                            if (!email.Body.Contains(row.SearchKey))
+                            {
+                                continue;
+                            }
+                        }
+
+                        //if (!string.IsNullOrWhiteSpace(row.From) && row.From != email.SenderEmailAddress)
+                        //{
+                        //    continue;
+                        //}
+
+                        //if (!string.IsNullOrWhiteSpace(row.To))
+                        //{
+                        //    foreach (MicrosoftOutLook.Recipient recepient in email.Recipients)
+                        //    {
+
+                        //    }
+                        //}
+                        if (mailsToBeRead.Count > row.UnReadMailCount)
                         {
                             continue;
                         }
+                        mailsToBeRead.Add("From:" + email.SenderName + ", Subject:" + email.Subject + ", MailBody:" + email.Body);
                     }
-
-                    //if (!string.IsNullOrWhiteSpace(row.From) && row.From != email.SenderEmailAddress)
-                    //{
-                    //    continue;
-                    //}
-
-                    //if (!string.IsNullOrWhiteSpace(row.To))
-                    //{
-                    //    foreach (MicrosoftOutLook.Recipient recepient in email.Recipients)
-                    //    {
-
-                    //    }
-                    //}
-                    if (mailsToBeRead.Count > row.UnReadMailCount)
-                    {
-                        continue;
-                    }
-                    mailsToBeRead.Add("From:" + email.SenderName + ", Subject:" + email.Subject + ", MailBody:" + email.Body);
+                }
+                int mailNumber = 1;
+                foreach (string email in mailsToBeRead)
+                {
+                    TextToSpeech.Speak("Mail: " + mailNumber + "," + email);
+                    mailNumber++;
                 }
             }
-            int mailNumber = 1;
-            foreach (string email in mailsToBeRead)
+            catch (Exception ex)
             {
-                TextToSpeech.Speak("Mail: " + mailNumber + "," + email);
-                mailNumber++;
+
             }
         }
 
         public void OpenComposeEmail(OutlookDB row)
         {
-            string outlookPath = @"C:\Program Files\Microsoft Office\Office15\outlook.exe";
-            string arguments = "/c ipm.note /m \"" + row.To + @"&subject=" + row.Subject + @"&body=" + row.Body + "\"";
-            System.Diagnostics.Process.Start(outlookPath, arguments);
+            try
+            {
+                string outlookPath = @"C:\Program Files\Microsoft Office\Office15\outlook.exe";
+                string arguments = "/c ipm.note /m \"" + row.To + @"&subject=" + row.Subject + @"&body=" + row.Body + "\"";
+                System.Diagnostics.Process.Start(outlookPath, arguments);
+            }
+            catch (Exception ex)
+            {
+
+            }
         }
+
 
         public void SearchEmail(OutlookDB row)
         {
-            List<string> mailsToBeRead = new List<string>();
-            OutLookApp app = new OutLookApp();
-            MicrosoftOutLook.NameSpace outlookNS = app.GetNamespace("MAPI");
-            MicrosoftOutLook.MAPIFolder inboxFolder
-              = outlookNS.GetDefaultFolder(MicrosoftOutLook.OlDefaultFolders.olFolderInbox);
-
-            MicrosoftOutLook.Items items = inboxFolder.Items.Restrict("[Unread] = true");
-
-            foreach (object mail in items)
+            try
             {
-                if (mail is MicrosoftOutLook.MailItem)
+                List<string> mailsToBeRead = new List<string>();
+                OutLookApp app = new OutLookApp();
+                MicrosoftOutLook.NameSpace outlookNS = app.GetNamespace("MAPI");
+                MicrosoftOutLook.MAPIFolder inboxFolder
+                  = outlookNS.GetDefaultFolder(MicrosoftOutLook.OlDefaultFolders.olFolderInbox);
+
+                MicrosoftOutLook.Items items = inboxFolder.Items.Restrict("[Unread] = true");
+
+                foreach (object mail in items)
                 {
-                    MicrosoftOutLook.MailItem email = (MicrosoftOutLook.MailItem)mail;
-                    if (!string.IsNullOrWhiteSpace(row.SearchKey))
+                    if (mail is MicrosoftOutLook.MailItem)
                     {
-                        if (!email.Body.Contains(row.SearchKey))
+                        MicrosoftOutLook.MailItem email = (MicrosoftOutLook.MailItem)mail;
+                        if (!string.IsNullOrWhiteSpace(row.SearchKey))
                         {
-                            continue;
+                            if (!email.Body.Contains(row.SearchKey))
+                            {
+                                continue;
+                            }
                         }
+
+                        //if (!string.IsNullOrWhiteSpace(row.From) && row.From != email.SenderEmailAddress)
+                        //{
+                        //    continue;
+                        //}
+
+                        //if (!string.IsNullOrWhiteSpace(row.To))
+                        //{
+                        //    foreach (MicrosoftOutLook.Recipient recepient in email.Recipients)
+                        //    {
+
+                        //    }
+                        //}
+                        //if (mailsToBeRead.Count > row.UnReadMailCount)
+                        //{
+                        //    continue;
+                        //}
+                        mailsToBeRead.Add("From:" + email.SenderName + ", Subject:" + email.Subject);
                     }
-
-                    //if (!string.IsNullOrWhiteSpace(row.From) && row.From != email.SenderEmailAddress)
-                    //{
-                    //    continue;
-                    //}
-
-                    //if (!string.IsNullOrWhiteSpace(row.To))
-                    //{
-                    //    foreach (MicrosoftOutLook.Recipient recepient in email.Recipients)
-                    //    {
-
-                    //    }
-                    //}
-                    //if (mailsToBeRead.Count > row.UnReadMailCount)
-                    //{
-                    //    continue;
-                    //}
-                    mailsToBeRead.Add("From:" + email.SenderName + ", Subject:" + email.Subject);
+                }
+                int mailNumber = 1;
+                foreach (string email in mailsToBeRead)
+                {
+                    TextToSpeech.Speak("Mail Number: " + mailNumber + "," + email);
+                    mailNumber++;
                 }
             }
-            int mailNumber = 1;
-            foreach (string email in mailsToBeRead)
+            catch (Exception ex)
             {
-                TextToSpeech.Speak("Mail Number: " + mailNumber + "," + email);
-                mailNumber++;
+
             }
         }
     }

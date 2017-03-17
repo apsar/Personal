@@ -49,7 +49,6 @@
                         </Grid.Background>
 
                         <TextBox Margin="10,31,149,22" KeyUp="TextBox_KeyUp" x:Name="MainText" Controls:TextBoxHelper.Watermark="Type Your Command...." RenderTransformOrigin="0.774,0.414"/>
-                        <Button HorizontalAlignment="Left" Margin="461,31,0,0" Content="Get" VerticalAlignment="Top" Width="52px" Height="42px"  Click="TextBox_TextChanged" RenderTransformOrigin="2.62,0.579"/>
                         <Button HorizontalAlignment="Left" Margin="518,31,0,0" VerticalAlignment="Top" Width="52" Height="42px"  Click="Listen_Click">
                             <Image Source="/images/appbar.microphone.google.png" Width="32px" Height="32px" />
                         </Button>

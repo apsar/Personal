@@ -262,49 +262,21 @@ namespace Starvis
                         {
                             b.findexe(commands[1]);
                         }
-                        else if (commands[0].Equals("B", StringComparison.InvariantCultureIgnoreCase))
+                        else if (commands[0].Equals("J", StringComparison.InvariantCultureIgnoreCase))
                         {
-                            if (db.WebDB.Any(w => w.TextCommand.Equals(commands[1], StringComparison.InvariantCultureIgnoreCase)))
+                            if (db.JIRADB.Any(w => w.TextCommand.Equals(commands[1], StringComparison.InvariantCultureIgnoreCase)))
                             {
-                                RowID = db.WebDB.Where(w => w.TextCommand.Equals(commands[1], StringComparison.InvariantCultureIgnoreCase)).FirstOrDefault().WebID;
-                                cmdExecution.Run(RowID);
+                                RowID = db.JIRADB.Where(w => w.TextCommand.Equals(commands[1], StringComparison.InvariantCultureIgnoreCase)).FirstOrDefault().JIRAID;
+                                cmdExecution.ExecuteResult(RowID);
                             }
 
                         }
-                        else if (commands[0].Equals("B", StringComparison.InvariantCultureIgnoreCase))
+                        else if (commands[0].Equals("O", StringComparison.InvariantCultureIgnoreCase))
                         {
-                            if (db.WebDB.Any(w => w.TextCommand.Equals(commands[1], StringComparison.InvariantCultureIgnoreCase)))
+                            if (db.OutlookDB.Any(w => w.TextCommand.Equals(commands[1], StringComparison.InvariantCultureIgnoreCase)))
                             {
-                                RowID = db.WebDB.Where(w => w.TextCommand.Equals(commands[1], StringComparison.InvariantCultureIgnoreCase)).FirstOrDefault().WebID;
-                                cmdExecution.Run(RowID);
-                            }
-
-                        }
-                        else if (commands[0].Equals("B", StringComparison.InvariantCultureIgnoreCase))
-                        {
-                            if (db.WebDB.Any(w => w.TextCommand.Equals(commands[1], StringComparison.InvariantCultureIgnoreCase)))
-                            {
-                                RowID = db.WebDB.Where(w => w.TextCommand.Equals(commands[1], StringComparison.InvariantCultureIgnoreCase)).FirstOrDefault().WebID;
-                                cmdExecution.Run(RowID);
-                            }
-
-
-                        }
-                       else  if (commands[0].Equals("B", StringComparison.InvariantCultureIgnoreCase))
-                        {
-                            if (db.WebDB.Any(w => w.TextCommand.Equals(commands[1], StringComparison.InvariantCultureIgnoreCase)))
-                            {
-                                RowID = db.WebDB.Where(w => w.TextCommand.Equals(commands[1], StringComparison.InvariantCultureIgnoreCase)).FirstOrDefault().WebID;
-                                cmdExecution.Run(RowID);
-                            }
-
-                        }
-                        if (commands[0].Equals("B", StringComparison.InvariantCultureIgnoreCase))
-                        {
-                            if (db.WebDB.Any(w => w.TextCommand.Equals(commands[1], StringComparison.InvariantCultureIgnoreCase)))
-                            {
-                                RowID = db.WebDB.Where(w => w.TextCommand.Equals(commands[1], StringComparison.InvariantCultureIgnoreCase)).FirstOrDefault().WebID;
-                                cmdExecution.Run(RowID);
+                                RowID = db.OutlookDB.Where(w => w.TextCommand.Equals(commands[1], StringComparison.InvariantCultureIgnoreCase)).FirstOrDefault().OutlookID;
+                                new OutlookUtils().HandleOutlookOperations(RowID);
                             }
 
                         }

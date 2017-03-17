@@ -128,6 +128,10 @@ namespace Starvis.Utilities
             {
                 cmdExec.Run(result.rowID);
             }
+            else if (result.tableName == "JIRA")
+            {
+                cmdExec.ExecuteResult(result.rowID);
+            }
         }
 
 

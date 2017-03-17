@@ -48,7 +48,7 @@ namespace Starvis
         public string GetCurrentModeType()
         {
             Models models = new Models();
-            SettingsDB rec = models.SettingsDB.Where(q => q.Key == "Name").FirstOrDefault();
+            SettingsDB rec = models.SettingsDB.Where(q => q.Key == "Mode").FirstOrDefault();
             if (rec != null)
                 return rec.Value;
 

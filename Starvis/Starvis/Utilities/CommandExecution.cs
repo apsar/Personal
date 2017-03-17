@@ -16,5 +16,13 @@ namespace Starvis.Utilities
             var cmd = "start chrome " + url;
             Batch.ExecuteCommandAsync(cmd);
         }
+
+        public void ExecuteResult(int rowID)
+        {
+            var db = new Models();
+            var url = db.JIRADB.Where(w => w.JIRAID == rowID).FirstOrDefault().URL;
+            var cmd = "start chrome " + url;
+            Batch.ExecuteCommandAsync(cmd);
+        }
     }
 }

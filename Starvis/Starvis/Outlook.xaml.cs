@@ -27,10 +27,58 @@ namespace Starvis
 
         private void comboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-
+            int index = comboBox.SelectedIndex;
+            
+            switch (index)
+            {
+                case 0:
+                    ALLSTACK.Visibility = Visibility.Visible;
+                    COMPOSESTACK.Visibility = Visibility.Hidden;
+                    SEARCHSTACK.Visibility = Visibility.Hidden;
+                    READSTACK.Visibility = Visibility.Hidden;
+                    break;
+                case 1:
+                    ALLSTACK.Visibility = Visibility.Hidden;
+                    COMPOSESTACK.Visibility = Visibility.Visible;
+                    SEARCHSTACK.Visibility = Visibility.Hidden;
+                    READSTACK.Visibility = Visibility.Hidden;
+                    break;
+                case 2:
+                    ALLSTACK.Visibility = Visibility.Hidden;
+                    COMPOSESTACK.Visibility = Visibility.Hidden;
+                    SEARCHSTACK.Visibility = Visibility.Visible;
+                    READSTACK.Visibility = Visibility.Hidden;
+                    break;
+                case 3:
+                    ALLSTACK.Visibility = Visibility.Hidden;
+                    COMPOSESTACK.Visibility = Visibility.Hidden;
+                    SEARCHSTACK.Visibility = Visibility.Hidden;
+                    READSTACK.Visibility = Visibility.Visible;
+                    break;
+            }
         }
 
         private void textBox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+        }
+
+        private void textBox2_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+        }
+
+        private void textBox2_TextChanged_1(object sender, TextChangedEventArgs e)
+        {
+
+        }
+
+        private void button_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, RoutedEventArgs e)
         {
 
         }

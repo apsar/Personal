@@ -132,6 +132,10 @@ namespace Starvis.Utilities
             {
                 cmdExec.ExecuteResult(result.rowID);
             }
+            else if (result.tableName == "OUTLOOK")
+            {
+                new OutlookUtils().HandleOutlookOperations(result.rowID);
+            }
         }
 
 

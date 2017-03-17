@@ -4,12 +4,82 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Threading;
+using Microsoft.Win32;
+using System.IO;
+using StarvisDB;
 
 namespace Starvis.Utilities
 {
     class Batch
     {
-       static public void ExecuteCommandSync(object command)
+
+        public void findexe(string name)
+        {
+            using (var db = new Models())
+            {
+
+               
+
+                var result = db.ArenaDB.Where(q => q.TextCommand == name).FirstOrDefault();
+                GetInstalledLocation(result.AppList);
+
+            }
+
+        }
+
+        public void GetInstalledLocation(string Softwares)
+        {
+            string location = string.Empty;
+            List<String> SoftwaresName = Softwares.Split(';').ToList();
+            List<String> SoftwareLocations = new List<string>();
+            List<String> ExeLocations = new List<String>();
+            string uninstallKey = @"SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall";
+            using (RegistryKey rk = Registry.LocalMachine.OpenSubKey(uninstallKey))
+            {
+                foreach (string skName in rk.GetSubKeyNames())
+                {
+                    using (RegistryKey sk = rk.OpenSubKey(skName))
+                    {
+
+                        try
+                        {
+                            if (SoftwaresName.Contains(sk.GetValue("DisplayName").ToString()))
+                            {
+                                SoftwareLocations.Add(sk.GetValue("InstallLocation").ToString());
+                            }
+                        }
+                        catch (Exception ex)
+                        { }
+                    }
+                }
+
+                foreach (var loc in SoftwareLocations)
+                {
+                    if (!string.IsNullOrEmpty(loc))
+                    {
+                        string[] array2 = Directory.GetFiles(loc, "*.exe", SearchOption.AllDirectories);
+                        string path = string.Empty;
+                        foreach (var arr in array2)
+                        {
+                            if (!arr.Contains("uni"))
+                            {
+                                path = arr;
+                                break;
+                            }
+                        }
+                        Batch bt = new Batch();
+                        var objecttest = path;
+                        Batch.ExecuteCommandAsync("\"" + objecttest + "\"");
+
+                    }
+                }
+            }
+        }
+
+
+
+
+        static public void ExecuteCommandSync(object command)
         {
             try
             {

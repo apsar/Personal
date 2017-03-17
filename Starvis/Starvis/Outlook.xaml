@@ -6,73 +6,75 @@
              xmlns:local="clr-namespace:Starvis"
              mc:Ignorable="d"
              Height="526.319" Width="365.887">
-    <Grid Margin="-261,0,0,0" >
-        <Grid.RowDefinitions>
-            <RowDefinition Height="62*"/>
-            <RowDefinition Height="51*"/>
-            <RowDefinition Height="56*"/>
-            <RowDefinition Height="88*"/>
-            <RowDefinition Height="270*"/>
-        </Grid.RowDefinitions>
-        <ComboBox x:Name="commandType" HorizontalAlignment="Left" Margin="103,36,0,0" VerticalAlignment="Top" Width="120" SelectionChanged="commandType_SelectionChanged" SelectedIndex="0" Grid.RowSpan="2">
-            <ComboBoxItem Tag="ALL">All Commands</ComboBoxItem>
-            <ComboBoxItem Tag="COMPOSE">Compose Email</ComboBoxItem>
-            <ComboBoxItem Tag="SEARCH">Search Email</ComboBoxItem>
-            <ComboBoxItem Tag="READ">Read Email</ComboBoxItem>
-        </ComboBox>
-        <StackPanel Name="COMPOSESTACK" HorizontalAlignment="Left" Height="194" Margin="169,14.38,0,0" VerticalAlignment="Top" Width="362" Visibility="Hidden" Grid.RowSpan="4" Grid.Row="1">
-            <Grid>
-                <Label x:Name="ForToEmail" Content="To Email List" Margin="17,10,262,-10"/>
-                <TextBox x:Name="ToEmail" Height="23" TextWrapping="Wrap" Text="To Emails" Margin="115,14,6,-10"/>
-                <Label x:Name="ForToSubject" Content="Email Subject" Margin="17,53,263,-53"/>
-                <TextBox x:Name="Subject" Height="23" TextWrapping="Wrap" Text="Email Subject" Margin="115,57,6,-53"/>
-                <Label x:Name="ForEmailBody" Content="Email Body" Margin="17,105,271,-105" VerticalAlignment="Stretch"/>
-                <TextBox x:Name="EmailBody" TextWrapping="Wrap" AcceptsReturn="True" Text="Email Body" Margin="115,105,6,-129" RenderTransformOrigin="0.495,0.842"/>
-                <Button x:Name="addComposeMessageCommand" Content="Add Command"  Click="addComposeMessageCommand_Click" Margin="115,167,160,-167"/>
-            </Grid>
+    <ScrollViewer Height="526" HorizontalScrollBarVisibility="Visible" VerticalScrollBarVisibility="Visible" VerticalAlignment="Top" Margin="0,0,-219,0">
+        <Grid Height="490" Margin="0,0,0.4,-131.6" VerticalAlignment="Top">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="62*"/>
+                <RowDefinition Height="51*"/>
+                <RowDefinition Height="56*"/>
+                <RowDefinition Height="88*"/>
+                <RowDefinition Height="270*"/>
+            </Grid.RowDefinitions>
+            <ComboBox x:Name="commandType" HorizontalAlignment="Left" Margin="20,41,0,0" VerticalAlignment="Top" Width="120" SelectionChanged="commandType_SelectionChanged" SelectedIndex="0" Grid.RowSpan="2">
+                <ComboBoxItem Tag="ALL">All Commands</ComboBoxItem>
+                <ComboBoxItem Tag="COMPOSE">Compose Email</ComboBoxItem>
+                <ComboBoxItem Tag="SEARCH">Search Email</ComboBoxItem>
+                <ComboBoxItem Tag="READ">Read Email</ComboBoxItem>
+            </ComboBox>
+            <StackPanel Name="COMPOSESTACK" HorizontalAlignment="Left" Height="194" Margin="60,14.38,0,0" VerticalAlignment="Top" Width="362" Visibility="Hidden" Grid.RowSpan="4" Grid.Row="1">
+                <Grid>
+                    <Label x:Name="ForToEmail" Content="To Email List" Margin="17,10,262,-10"/>
+                    <TextBox x:Name="ToEmail" Height="23" TextWrapping="Wrap" Text="To Emails" Margin="115,14,6,-10"/>
+                    <Label x:Name="ForToSubject" Content="Email Subject" Margin="17,53,263,-53"/>
+                    <TextBox x:Name="Subject" Height="23" TextWrapping="Wrap" Text="Email Subject" Margin="115,57,6,-53"/>
+                    <Label x:Name="ForEmailBody" Content="Email Body" Margin="17,105,271,-105" VerticalAlignment="Stretch"/>
+                    <TextBox x:Name="EmailBody" TextWrapping="Wrap" AcceptsReturn="True" Text="Email Body" Margin="115,105,6,-129" RenderTransformOrigin="0.495,0.842"/>
+                    <Button x:Name="addComposeMessageCommand" Content="Add Command"  Click="addComposeMessageCommand_Click" Margin="115,167,160,-167"/>
+                </Grid>
 
-        </StackPanel>
-        <StackPanel Name="SEARCHSTACK" HorizontalAlignment="Left" Height="214" Margin="174,14.38,0,0" VerticalAlignment="Top" Width="362" Visibility="Visible" Grid.RowSpan="4" Grid.Row="1">
-            <Grid>
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="165*"/>
-                    <ColumnDefinition Width="197*"/>
-                </Grid.ColumnDefinitions>
-                <TextBox x:Name="searchKey" TextWrapping="Wrap" Text="Search Key" Margin="112,24,44,112" Grid.ColumnSpan="2"/>
-                <Label x:Name="searchKeyLabel" Content="Search Key" Margin="18,20,36.178,116"/>
-                <!--<Label x:Name="FromEmailsLabel" Content="From Emails" Margin="18,64,36.178,72"/>
-                <TextBox x:Name="fromEmails" TextWrapping="Wrap" Text="From Emails" Margin="112,68,44,68" Grid.ColumnSpan="2" TextChanged="fromEmails_TextChanged"/>
-                <Label x:Name="ToEmailsLabels" Content="To Emails" Margin="18,107,36,29"/>
-                <TextBox x:Name="ToEmails" TextWrapping="Wrap" Text="To Emails" Margin="112,111,44,25" Grid.ColumnSpan="2"/>-->
-                <Button x:Name="addSearchCommand" Content="Add Command" Margin="100,165,141,-29" Click="addSearchCommand_Click" Grid.ColumnSpan="2"/>
-            </Grid>
+            </StackPanel>
+            <StackPanel Name="SEARCHSTACK" HorizontalAlignment="Left" Height="214" Margin="60,14.38,0,0" VerticalAlignment="Top" Width="362" Visibility="Hidden" Grid.RowSpan="4" Grid.Row="1">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="165*"/>
+                        <ColumnDefinition Width="197*"/>
+                    </Grid.ColumnDefinitions>
+                    <TextBox x:Name="searchKey" TextWrapping="Wrap" Text="Search Key" Margin="112,24,44,112" Grid.ColumnSpan="2"/>
+                    <Label x:Name="searchKeyLabel" Content="Search Key" Margin="18,20,36.178,116"/>
+                    <!--<Label x:Name="FromEmailsLabel" Content="From Emails" Margin="18,64,36.178,72"/>
+                    <TextBox x:Name="fromEmails" TextWrapping="Wrap" Text="From Emails" Margin="112,68,44,68" Grid.ColumnSpan="2" TextChanged="fromEmails_TextChanged"/>
+                    <Label x:Name="ToEmailsLabels" Content="To Emails" Margin="18,107,36,29"/>
+                    <TextBox x:Name="ToEmails" TextWrapping="Wrap" Text="To Emails" Margin="112,111,44,25" Grid.ColumnSpan="2"/>-->
+                    <Button x:Name="addSearchCommand" Content="Add Command" Margin="100,165,141,-29" Click="addSearchCommand_Click" Grid.ColumnSpan="2"/>
+                </Grid>
 
-        </StackPanel>
-        <StackPanel Name="READSTACK" HorizontalAlignment="Left" Height="214" Margin="164,14.38,0,0" VerticalAlignment="Top" Width="362" Visibility="Hidden" Grid.RowSpan="4" Grid.Row="1">
-            <Grid>
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="165*"/>
-                    <ColumnDefinition Width="197*"/>
-                </Grid.ColumnDefinitions>
-                <TextBox x:Name="containsKey" TextWrapping="Wrap" Text="Contains Key" Margin="137,20,19,116" Grid.ColumnSpan="2"/>
-                <Label x:Name="containsKeyLabel" Content="Contains Key" Margin="10,20,41,116"/>
-                <!--<Label x:Name="readFromEmailsLabel" Content="From Emails" Margin="10,89,41,47"/>
-                <TextBox x:Name="readfromEmails" TextWrapping="Wrap" Text="From Emails" Margin="137,93,19,43" Grid.ColumnSpan="2"/>
-                <Label x:Name="readToEmailsLabels" Content="To Emails" Margin="10,126,41,10"/>
-                <TextBox x:Name="readToEmails" TextWrapping="Wrap" Text="To Emails" Margin="137,126,19,10" Grid.ColumnSpan="2"/>-->
-                <Label Margin="10,55,41,81" Content="Unread Mails Count"/>
-                <TextBox Grid.ColumnSpan="2" Margin="137,55,19,78" Text="Unread Emails Count"></TextBox>
-                <Button x:Name="addReadCommand" Content="Add Command" Margin="100,165,141,-29" Click="addReadCommand_Click" Grid.ColumnSpan="2"/>
+            </StackPanel>
+            <StackPanel Name="READSTACK" HorizontalAlignment="Left" Height="214" Margin="60,14.38,0,0" VerticalAlignment="Top" Width="362" Visibility="Hidden" Grid.RowSpan="4" Grid.Row="1">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="165*"/>
+                        <ColumnDefinition Width="197*"/>
+                    </Grid.ColumnDefinitions>
+                    <TextBox x:Name="containsKey" TextWrapping="Wrap" Text="Contains Key" Margin="137,20,19,116" Grid.ColumnSpan="2"/>
+                    <Label x:Name="containsKeyLabel" Content="Contains Key" Margin="10,20,41,116"/>
+                    <!--<Label x:Name="readFromEmailsLabel" Content="From Emails" Margin="10,89,41,47"/>
+                    <TextBox x:Name="readfromEmails" TextWrapping="Wrap" Text="From Emails" Margin="137,93,19,43" Grid.ColumnSpan="2"/>
+                    <Label x:Name="readToEmailsLabels" Content="To Emails" Margin="10,126,41,10"/>
+                    <TextBox x:Name="readToEmails" TextWrapping="Wrap" Text="To Emails" Margin="137,126,19,10" Grid.ColumnSpan="2"/>-->
+                    <Label Margin="10,55,41,81" Content="Unread Mails Count"/>
+                    <TextBox Grid.ColumnSpan="2" Margin="137,55,19,78" Text="Unread Emails Count"></TextBox>
+                    <Button x:Name="addReadCommand" Content="Add Command" Margin="100,165,141,-29" Click="addReadCommand_Click" Grid.ColumnSpan="2"/>
 
-            </Grid>
-        </StackPanel>
-        <StackPanel Name="ALLSTACK" HorizontalAlignment="Left" Height="350" Margin="50,0,0,0" VerticalAlignment="Top" Width="454" Visibility="Visible" Grid.RowSpan="5">
+                </Grid>
+            </StackPanel>
+            <StackPanel Name="ALLSTACK" HorizontalAlignment="Left" Height="350" Margin="60,0,0,0" VerticalAlignment="Top" Width="454" Visibility="Visible" Grid.RowSpan="5">
 
-        </StackPanel>
-        <DataGrid x:Name="dataGrid" Margin="184,25.2,42.4,39.4" Grid.Row="4"/>
-        <TextBox x:Name="textCommandTxt" HorizontalAlignment="Left" Height="23" Margin="261,41,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="109" Grid.RowSpan="2"/>
-        <TextBox x:Name="voiceCommandTxt" HorizontalAlignment="Left" Height="23" Margin="392,41,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="144" Grid.RowSpan="2"/>
-        <Label x:Name="textCommand" Content="Text Command" HorizontalAlignment="Left" Margin="202,10,0,0" VerticalAlignment="Top"/>
-        <Label x:Name="voiceCommand" Content="Voice Command" HorizontalAlignment="Left" Margin="365,10,0,0" VerticalAlignment="Top"/>
-    </Grid>
+            </StackPanel>
+            <DataGrid x:Name="dataGrid" Margin="22,25,9.6,39" Grid.Row="4"/>
+            <TextBox x:Name="textCommandTxt" HorizontalAlignment="Left" Height="23" Margin="161,41,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="109" Grid.RowSpan="2"/>
+            <TextBox x:Name="voiceCommandTxt" HorizontalAlignment="Left" Height="23" Margin="292,41,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="144" Grid.RowSpan="2"/>
+            <Label x:Name="textCommand" Content="Text Command" HorizontalAlignment="Left" Margin="163,10,0,0" VerticalAlignment="Top"/>
+            <Label x:Name="voiceCommand" Content="Voice Command" HorizontalAlignment="Left" Margin="293,10,-25.4,0" VerticalAlignment="Top"/>
+        </Grid>
+    </ScrollViewer>
 </UserControl>

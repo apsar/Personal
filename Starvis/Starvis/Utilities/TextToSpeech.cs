@@ -15,5 +15,10 @@ namespace Starvis
         {
             speaker.Speak(text);
         }
+
+        public static void SpeakAsync(string text)
+        {
+            speaker.SpeakAsync(text);
+        }
     }
 }

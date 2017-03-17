@@ -188,6 +188,10 @@
     <Compile Include="Migrations\20170317035205_StarvisEntities.designer.cs">
       <DependentUpon>20170317035205_StarvisEntities.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\20170317083028_StarvisEntities_1.cs" />
+    <Compile Include="Migrations\20170317083028_StarvisEntities_1.designer.cs">
+      <DependentUpon>20170317083028_StarvisEntities_1.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\ModelsModelSnapshot.cs" />
     <Compile Include="Models.cs" />
     <Compile Include="Code.xaml.cs">
@@ -271,7 +275,9 @@
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <None Include="packages.config" />
+    <None Include="packages.config">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

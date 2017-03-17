@@ -8,9 +8,10 @@ using StarvisDB;
 namespace Starvis.Migrations
 {
     [DbContext(typeof(Models))]
-    partial class ModelsModelSnapshot : ModelSnapshot
+    [Migration("20170317083028_StarvisEntities_1")]
+    partial class StarvisEntities_1
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
             modelBuilder
                 .HasAnnotation("ProductVersion", "1.1.1");

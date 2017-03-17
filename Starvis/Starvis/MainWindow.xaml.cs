@@ -12,6 +12,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Starvis.Utilities;
+using Microsoft.CognitiveServices.SpeechRecognition;
 using StarvisDB;
 using MahApps.Metro.Controls;
 using System.Windows.Media.Animation;
@@ -25,9 +27,15 @@ namespace Starvis
     public partial class MainWindow : MetroWindow
 
     {
-        public MainWindow()
+        public  MainWindow()
         {
             InitializeComponent();
+ 
+            test();
+
+        }
+        public  void test()
+        { 
 
             using (var db = new Models())
             {
@@ -163,7 +171,10 @@ namespace Starvis
 
 
         private void listBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+
         {
+           
+            SpeechToText.ConverSpeechToText();
 
         }
 

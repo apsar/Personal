@@ -4,11 +4,16 @@
 winexe
 C#
 .cs
+<<<<<<< HEAD
 D:\Hackathon\Personal\Starvis\Starvis\obj\Debug\
+=======
+C:\Users\apsard\Documents\GitHub\Personal\Starvis\Starvis\obj\Debug\
+>>>>>>> 3112545ce30697a183e691004d20f37b103d2bb4
 Starvis
 none
 false
 DEBUG;TRACE
+<<<<<<< HEAD
 D:\Hackathon\Personal\Starvis\Starvis\App.xaml
 91065198355
 
@@ -17,4 +22,14 @@ D:\Hackathon\Personal\Starvis\Starvis\App.xaml
 Arena.xaml;Browse.xaml;Code.xaml;HotKey.xaml;Jira.xaml;MainWindow.xaml;Outlook.xaml;Profile.xaml;Settings.xaml;
 
 False
+=======
+C:\Users\apsard\Documents\GitHub\Personal\Starvis\Starvis\App.xaml
+91065198355
+2-442273870
+27220737724
+104-256256621
+Arena.xaml;Browse.xaml;Code.xaml;HotKey.xaml;Jira.xaml;MainWindow.xaml;Outlook.xaml;Profile.xaml;Settings.xaml;
+
+True
+>>>>>>> 3112545ce30697a183e691004d20f37b103d2bb4
 

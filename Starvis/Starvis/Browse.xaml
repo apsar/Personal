@@ -16,5 +16,6 @@
         <TextBox  Controls:TextBoxHelper.Watermark="Enter you text command" x:Name="txtText" HorizontalAlignment="Left" Height="23" Margin="26,47,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="118"/>
         <TextBox Controls:TextBoxHelper.Watermark="Enter your voice command" x:Name="txtVoice" HorizontalAlignment="Left" Height="23" Margin="155,47,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="356"/>
         <Button Content="Add" HorizontalAlignment="Left" Margin="99,87,0,0" VerticalAlignment="Top" Width="283" Click="Add_Click"/>
+        <Label Content="All fields are mandatory" Foreground="Red" x:Name="lblValidation" Visibility="Hidden" HorizontalAlignment="Left" Margin="101,114,0,0"  VerticalAlignment="Top" Width="278" Height="12"/>
     </Grid>
 </UserControl>

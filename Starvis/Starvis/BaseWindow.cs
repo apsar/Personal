@@ -43,5 +43,15 @@ namespace Starvis
 
             return null;
         }
+
+        public void OutlookInsert(OutlookDB row)
+        {
+            using (Models db = new Models())
+            {
+                Models models = new Models();
+                db.OutlookDB.Add(row);
+                db.SaveChanges();
+            }
+        }
     }
 }

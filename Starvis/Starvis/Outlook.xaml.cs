@@ -28,20 +28,21 @@ namespace Starvis
             Loaded += Window_Loaded;
         }
 
+        private Models models { get; set; }
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
             // do work here
-            Models models = new Models();
+            models = new Models();
             dataGrid.ItemsSource = models.OutlookDB.ToList();
         }
 
-        private void comboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        private void commandType_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            if (!comboBox.IsLoaded)
+            if (!commandType.IsLoaded)
             {
                 return;
             }
-            int index = comboBox.SelectedIndex;
+            int index = commandType.SelectedIndex;
             
             switch (index)
             {
@@ -72,29 +73,48 @@ namespace Starvis
             }
         }
 
-        private void textBox_TextChanged(object sender, TextChangedEventArgs e)
+        private void addComposeMessageCommand_Click(object sender, RoutedEventArgs e)
         {
-
+            OutlookDB row = new OutlookDB() {
+                VoiceCommand = voiceCommandTxt.Text,
+                TextCommand = textCommandTxt.Text,
+                Subject = Subject.Text,
+                Body = EmailBody.Text,
+                To = ToEmail.Text,
+                Type = commandType.Text
+            };
+            new BaseWindow().OutlookInsert(row);
+            dataGrid.ItemsSource = models.OutlookDB.ToList();
         }
 
-        private void textBox2_TextChanged(object sender, TextChangedEventArgs e)
+        private void addSearchCommand_Click(object sender, RoutedEventArgs e)
         {
-
+            OutlookDB row = new OutlookDB()
+            {
+                VoiceCommand = voiceCommandTxt.Text,
+                TextCommand = textCommandTxt.Text,
+//                To = ToEmails.Text,
+                Type = commandType.Text,
+                SearchKey = searchKey.Text,
+//                From = fromEmails.Text
+            };
+            new BaseWindow().OutlookInsert(row);
+            dataGrid.ItemsSource = models.OutlookDB.ToList();
         }
 
-        private void textBox2_TextChanged_1(object sender, TextChangedEventArgs e)
+        private void addReadCommand_Click(object sender, RoutedEventArgs e)
         {
-
-        }
-
-        private void button_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void button1_Click(object sender, RoutedEventArgs e)
-        {
-
+            OutlookDB row = new OutlookDB()
+            {
+                VoiceCommand = voiceCommandTxt.Text,
+                TextCommand = textCommandTxt.Text,
+//                To = readToEmails.Text,
+//                From = readfromEmails.Text,
+                Type = commandType.Text,
+                SearchKey = containsKey.Text
+            };
+            new BaseWindow().OutlookInsert(row);
+            dataGrid.ItemsSource = models.OutlookDB.ToList();
         }
     }
 }

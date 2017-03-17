@@ -198,5 +198,10 @@ namespace Starvis
         {
 
         }
+
+        private void VoiceValue_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+        }
     }
 }
